@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+body{font-family: Arial; font-size: 14px}
+table{vertical-align: top;}
+table td, table td * {
+    vertical-align: top;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+.classType{color:blue;}
+.objectType{color:green}
+.dataType{color:orange}
+</style>
+<link rel="stylesheet" href="WebContent/WEB-INF/templates/css/style.css">	
+  <title>Discovering Ontology</title>
+</head>
+<body>
+<p>
+<div>Number of Classes: ${classCount}</div>
+<div>Number of Data Properties: ${dataPropertyCount}</div>
+<div>Number of Object Properties: ${objectPropertyCount}</div>	
+<div>Number of Instances of All Classes: ${classInstance}</div>	
+<div>Number of Instances of Properties: ${PropertyInstance}</div>	
+
+</p>
+	<table>
+		<tr ><th class="classType" >Classes</th><th class="objectType">Object Properties</th><th class="dataType">Data Properties</th></tr>
+		<tr>
+			<td>
+				<table border=1 class="classType">
+					
+					<tr><th>Name</th><th>Label</th><th>SuperClass</th></tr>
+					<#list classes as class>
+					<tr>
+						<td>
+							${class.className}
+						</td>
+						<td>
+							${class.classLabel}
+						</td>
+						<td>
+							${class.superClass}
+						</td>
+					</tr>
+					</#list>
+				</table>
+			</td>
+			<td>
+				<table border=1 class="objectType">
+					<tr><th>Name</th><th>Domain</th><th>Range</th></tr>
+					<#list objectProperties as objprop>
+					<tr>
+						<td>
+							${objprop.name}
+						</td>
+						<td>
+							${objprop.domain}
+						</td>
+						<td>
+							${objprop.range}
+						</td>
+					</tr>
+					</#list>
+				</table>
+				
+			</td>
+			<td>
+				<table border=1 class="dataType">
+					
+					<tr><th>Name</th><th>Domain</th><th>Range</th></tr>
+					<#list dataProperties as dataprop>
+					<tr>
+						<td>
+							${dataprop.name}
+						</td>
+						<td>
+							${dataprop.domain}
+						</td>
+						<td>
+							${dataprop.range}
+						</td>
+					</tr>
+					</#list>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
