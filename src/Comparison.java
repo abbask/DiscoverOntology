@@ -86,7 +86,7 @@ public class Comparison extends HttpServlet {
 			dataPropertiesCountCompare = examinDataPropertyCount(newGraphName, newEndpoint, oldGraphName, oldEndpoint);
 			individualCountCompare = examinIndividualCount(newGraphName, newEndpoint, oldGraphName, oldEndpoint);
 			
-			classCompare = examineClassListCompare(newGraphName, newEndpoint, oldGraphName, oldEndpoint);
+			//classCompare = examineClassListCompare(newGraphName, newEndpoint, oldGraphName, oldEndpoint);
 			
 			
 			break;
@@ -94,7 +94,7 @@ public class Comparison extends HttpServlet {
 		default:
 			break;
 		}
-		
+//		root.put("classes", classList.get("classes"));
 		root.put("classCountCompare", classCountCompare);
 		root.put("objectPropertiesCountCompare", objectPropertiesCountCompare);
 		root.put("dataPropertiesCountCompare", dataPropertiesCountCompare);
@@ -105,6 +105,7 @@ public class Comparison extends HttpServlet {
 //		System.out.println("Object Properties Comparison: " + objectPropertiesCountCompare);
 //		System.out.println("Data Properties Comparison: " + dataPropertiesCountCompare);
 //		System.out.println("Individuals Comparison: " + individualCountCompare);
+//		System.out.println("classCompare: " + classCompare);
 		
 		Gson gson = new Gson();
 		String result = gson.toJson(root);

@@ -2,6 +2,23 @@
 <head>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/compareExamine.js"></script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css">	
   <title>Discovering Ontology - Comparing</title>
@@ -19,14 +36,9 @@
 			<div><label for="oldGraphName"></label><button id="examine" name="examine" type="button" >Examine</button><div>
 		</form>  	
 	</div>
-	<div>
-		<div class="classCount">Number of Classes: ${classCountCompare}</div>
-		<div class="dataPropertyCount">Number of Data Properties: ${dataPropertiesCountCompare}</div>
-		<div class="objectPropertyCount">Number of Object Properties: ${objectPropertiesCountCompare}</div>	
-		<div class="classInstance">Number of Individuals: ${individualCountCompare}</div>	
-		<div class="classInstance">Classes: ${classCompare}</div>	
-	</div>
+	
 </div>
-
+<div id="resultDiv">
+</div>
 </body>
 </html>
