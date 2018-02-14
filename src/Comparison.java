@@ -3,6 +3,7 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -12,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
 
 import arq.load;
 import freemarker.template.Configuration;
@@ -66,6 +69,8 @@ public class Comparison extends HttpServlet {
 		
 		Map<String, Object> classCompare = new HashMap<String, Object>();
 		
+		Map<String, Object> root = new HashMap<String, Object>();
+		
 		String action = req.getParameter("action");
 
 		newGraphName = (!req.getParameter("newGraphName").equals(""))? req.getParameter("newGraphName") : newGraphName ;
@@ -90,10 +95,32 @@ public class Comparison extends HttpServlet {
 			break;
 		}
 		
-		System.out.println("Class Comparison: " + classCountCompare);
-		System.out.println("Object Properties Comparison: " + objectPropertiesCountCompare);
-		System.out.println("Data Properties Comparison: " + dataPropertiesCountCompare);
-		System.out.println("Individuals Comparison: " + individualCountCompare);				
+		root.put("classCountCompare", classCountCompare);
+		root.put("objectPropertiesCountCompare", objectPropertiesCountCompare);
+		root.put("dataPropertiesCountCompare", dataPropertiesCountCompare);
+		root.put("individualCountCompare", individualCountCompare);
+		root.put("classCompare", classCompare);
+		
+//		System.out.println("Class Comparison: " + classCountCompare);
+//		System.out.println("Object Properties Comparison: " + objectPropertiesCountCompare);
+//		System.out.println("Data Properties Comparison: " + dataPropertiesCountCompare);
+//		System.out.println("Individuals Comparison: " + individualCountCompare);
+		
+		Gson gson = new Gson();
+		String result = gson.toJson(root);
+
+		res.setContentType("application/json");
+		PrintWriter pw = null;
+		try {
+			pw = res.getWriter ();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		finally {
+			pw.print(result);
+			pw.close();
+		}
+		
 		
 	}
 	

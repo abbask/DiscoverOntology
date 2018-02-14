@@ -19,6 +19,13 @@
 			<div><label for="oldGraphName"></label><button id="examine" name="examine" type="button" >Examine</button><div>
 		</form>  	
 	</div>
+	<div>
+		<div class="classCount">Number of Classes: ${classCountCompare}</div>
+		<div class="dataPropertyCount">Number of Data Properties: ${dataPropertiesCountCompare}</div>
+		<div class="objectPropertyCount">Number of Object Properties: ${objectPropertiesCountCompare}</div>	
+		<div class="classInstance">Number of Individuals: ${individualCountCompare}</div>	
+		<div class="classInstance">Classes: ${classCompare}</div>	
+	</div>
 </div>
 
 </body>
