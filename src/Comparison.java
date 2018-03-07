@@ -94,18 +94,13 @@ public class Comparison extends HttpServlet {
 		default:
 			break;
 		}
-//		root.put("classes", classList.get("classes"));
+
 		root.put("classCountCompare", classCountCompare);
 		root.put("objectPropertiesCountCompare", objectPropertiesCountCompare);
 		root.put("dataPropertiesCountCompare", dataPropertiesCountCompare);
 		root.put("individualCountCompare", individualCountCompare);
 		root.put("classCompare", classCompare);
 		
-//		System.out.println("Class Comparison: " + classCountCompare);
-//		System.out.println("Object Properties Comparison: " + objectPropertiesCountCompare);
-//		System.out.println("Data Properties Comparison: " + dataPropertiesCountCompare);
-//		System.out.println("Individuals Comparison: " + individualCountCompare);
-//		System.out.println("classCompare: " + classCompare);
 		
 		Gson gson = new Gson();
 		String result = gson.toJson(root);
