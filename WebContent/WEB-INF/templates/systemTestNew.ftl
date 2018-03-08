@@ -29,7 +29,26 @@
 	<p>You can add new system test.</p>
 
 	<div>
-		
+		<form>
+		  <div class="form-group">
+		    <label for="name">Name</label>
+		    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
+		    <small id="nameHelp" class="form-text text-muted">Please select name for your system test.</small>
+		  </div>
+		  <div class="form-group">
+		    <label for="endPoint">Endpoint</label>
+		    <input type="text" class="form-control" id="endPoint" aria-describedby="endPointHelp" placeholder="Enter endPoint url">
+		    <small id="endPointHelp" class="form-text text-muted">Please specify the end point url.</small>
+		  </div>
+		  <div class="form-check">
+		  	<label for="graph">Graph</label>
+		    <input type="text" class="form-control" id="graph" placeholder="Enter graph name">
+		    
+		  </div>
+		  </br>
+		  
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
 </div>
 
