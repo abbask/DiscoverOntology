@@ -28,7 +28,7 @@
 	<h3>List of System Tests</h3>
 	<p>You can see list of system test and load them.</p>
 	<div>
-		<a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add System Test</a>
+		<a href="SystemTestNew" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add System Test</a>
 	
 	</div>
 	<div>
