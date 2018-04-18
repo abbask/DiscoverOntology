@@ -1876,32 +1876,6 @@
     <oscar:hasFullName>Jay Cassidy</oscar:hasFullName>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </oscar:Editor>
-  <j.0:Select>
-    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
-    >500</j.0:limit>
-    <j.0:resultVariables rdf:parseType="Collection">
-      <rdf:Description>
-        <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >s</j.0:varName>
-      </rdf:Description>
-    </j.0:resultVariables>
-    <j.0:where rdf:parseType="Collection">
-      <rdf:Description>
-        <j.0:object rdf:parseType="Resource">
-          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >o</j.0:varName>
-        </j.0:object>
-        <j.0:predicate rdf:parseType="Resource">
-          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >p</j.0:varName>
-        </j.0:predicate>
-        <j.0:subject rdf:parseType="Resource">
-          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >s</j.0:varName>
-        </j.0:subject>
-      </rdf:Description>
-    </j.0:where>
-  </j.0:Select>
   <oscar:Producer rdf:about="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#TeddySchwarzman">
     <oscar:featuredAs rdf:resource="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#cast029"/>
     <oscar:hasFullName>Teddy Schwarzman</oscar:hasFullName>
@@ -2031,31 +2005,6 @@
     <oscar:hasFullName>Jonathan Gordon</oscar:hasFullName>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </oscar:Producer>
-  <j.0:Select>
-    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
-    >100</j.0:limit>
-    <j.0:resultVariables rdf:parseType="Collection">
-      <rdf:Description>
-        <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >Concept</j.0:varName>
-      </rdf:Description>
-    </j.0:resultVariables>
-    <j.0:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
-    >true</j.0:distinct>
-    <j.0:where rdf:parseType="Collection">
-      <rdf:Description>
-        <j.0:object rdf:parseType="Resource">
-          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >Concept</j.0:varName>
-        </j.0:object>
-        <j.0:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-        <j.0:subject rdf:parseType="Resource">
-          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-          >?0</j.0:varName>
-        </j.0:subject>
-      </rdf:Description>
-    </j.0:where>
-  </j.0:Select>
   <oscar:Producer rdf:about="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#ChristianColson">
     <oscar:featuredAs rdf:resource="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#cast030"/>
     <oscar:hasFullName>Christian Colson</oscar:hasFullName>
@@ -2221,6 +2170,31 @@
     <oscar:hasFullName>Ido Ostrowsky</oscar:hasFullName>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   </oscar:Producer>
+  <j.0:Select>
+    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+    >100</j.0:limit>
+    <j.0:resultVariables rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Concept</j.0:varName>
+      </rdf:Description>
+    </j.0:resultVariables>
+    <j.0:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.0:distinct>
+    <j.0:where rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:object rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Concept</j.0:varName>
+        </j.0:object>
+        <j.0:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <j.0:subject rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >?0</j.0:varName>
+        </j.0:subject>
+      </rdf:Description>
+    </j.0:where>
+  </j.0:Select>
   <oscar:Actress rdf:about="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#RooneyMara">
     <oscar:featuredAs>
       <oscar:Cast rdf:about="http://www.semanticweb.org/abbas/ontologies/2015/2/oscar#cast142">

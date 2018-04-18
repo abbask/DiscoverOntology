@@ -39,6 +39,9 @@ public class SPARQL2SPINConverter
 		System.out.println( "\nSPIN Representation:" );
 		model.write( System.out, FileUtils.langTurtle );
 		
+		System.out.println( "\nSPIN Representation:" );
+		model.write( System.out, FileUtils.langXMLAbbrev );
+		
 		//String fileNameRDF = "result-simple.rdf";
 		String fileNameOWL = "result-simple.owl";
 		//FileWriter outRDF ;
