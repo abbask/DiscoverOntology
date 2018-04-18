@@ -1,43 +1,29 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:j.0="http://spinrdf.org/sp#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:j.1="http://www.semanticweb.org/Word#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
-  <rdf:Description rdf:nodeID="A0">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A1"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <j.0:subject rdf:nodeID="A2"/>
-    <j.0:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
-    <j.0:object rdf:nodeID="A3"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept</j.0:varName>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?0</j.0:varName>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <j.0:where rdf:nodeID="A0"/>
-    <j.0:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</j.0:distinct>
-    <j.0:resultVariables rdf:nodeID="A5"/>
-    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long">100</j.0:limit>
-    <rdf:type rdf:resource="http://spinrdf.org/sp#Select"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="A6"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Noun">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Organization">
-    <rdf:type rdf:resource="#Noun"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concept</j.0:varName>
-  </rdf:Description>
+    xmlns:j.0="http://spinrdf.org/sp#">
+  <j.0:Select>
+    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+    >100</j.0:limit>
+    <j.0:resultVariables rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Concept</j.0:varName>
+      </rdf:Description>
+    </j.0:resultVariables>
+    <j.0:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.0:distinct>
+    <j.0:where rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:object rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Concept</j.0:varName>
+        </j.0:object>
+        <j.0:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <j.0:subject rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >?0</j.0:varName>
+        </j.0:subject>
+      </rdf:Description>
+    </j.0:where>
+  </j.0:Select>
 </rdf:RDF>
