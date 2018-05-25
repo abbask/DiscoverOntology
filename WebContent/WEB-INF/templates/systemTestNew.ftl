@@ -29,7 +29,7 @@
 	<p>You can add new system test.</p>
 
 	<div>
-		<form>
+		<form method="post">   
 		  <div class="form-group">
 		    <label for="name">Name</label>
 		    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
@@ -43,11 +43,13 @@
 		  <div class="form-check">
 		  	<label for="graph">Graph</label>
 		    <input type="text" class="form-control" id="graph" placeholder="Enter graph name">
-		    
+		    <small id="endPointHelp" class="form-text text-muted">Please specify the graph name.</small>
 		  </div>
 		  </br>
 		  
 		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <a class="btn btn-default pull-right" href="/DiscoverOntology/SystemTestList" role="button">Cancel</a>
+
 		</form>
 	</div>
 </div>

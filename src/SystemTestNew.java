@@ -42,7 +42,7 @@ public class SystemTestNew extends HttpServlet{
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
 
-//		compareAll(req,res);
+		save(req,res);
 		
 	}
 	
@@ -68,9 +68,6 @@ public class SystemTestNew extends HttpServlet{
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 
-//		ArrayList<MyTestSystem> testSystems = new ArrayList<>();
-//
-//		root.put("testSystems", testSystems);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
@@ -85,6 +82,10 @@ public class SystemTestNew extends HttpServlet{
 		}
 
 		toClient.close();
+	}
+	
+	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("Saving started");
 	}
 
 }
