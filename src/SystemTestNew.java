@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -20,6 +22,7 @@ import model.MyTestSystem;
 public class SystemTestNew extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
+	final static Logger logger = Logger.getLogger(SystemTestNew.class);
 
 
 	private String	   	   templatePath = null;
@@ -86,6 +89,17 @@ public class SystemTestNew extends HttpServlet{
 	
 	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("Saving started");
+		if(logger.isDebugEnabled()){
+			logger.debug("debug: Saving started");
+		}
+		
+		if(logger.isInfoEnabled()){
+			logger.info("info: Saving started");
+		}
+		
+		logger.warn("warn: Saving started");
+		logger.error("error: Saving started");
+		logger.fatal("fatal: Saving started");
 	}
 
 }
