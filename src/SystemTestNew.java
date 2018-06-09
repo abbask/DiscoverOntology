@@ -88,18 +88,13 @@ public class SystemTestNew extends HttpServlet{
 	}
 	
 	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		System.out.println("Saving started");
-		if(logger.isDebugEnabled()){
-			logger.debug("debug: Saving started");
-		}
+
 		
-		if(logger.isInfoEnabled()){
-			logger.info("info: Saving started");
-		}
-		
+		/*
 		logger.warn("warn: Saving started");
 		logger.error("error: Saving started");
 		logger.fatal("fatal: Saving started");
+		*/
 	}
 
 }

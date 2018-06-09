@@ -26,3 +26,21 @@
 2018-06-09 15:58:53 WARN  SystemTestNew:100 - warn: Saving started
 2018-06-09 15:58:53 ERROR SystemTestNew:101 - error: Saving started
 2018-06-09 15:58:53 FATAL SystemTestNew:102 - fatal: Saving started
+2018-06-09 16:21:01 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en_US.ftl"): Not found
+2018-06-09 16:21:01 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en.ftl"): Not found
+2018-06-09 16:21:01 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew.ftl"): Found
+2018-06-09 16:21:01 DEBUG cache:45 - "systemTestNew.ftl"("en_US", Cp1252, parsed): using cached since C:\Users\abbas\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DiscoverOntology\WEB-INF\templates\systemTestNew.ftl hasn't changed.
+2018-06-09 16:21:03 DEBUG cache:45 - Couldn't find template in cache for "systemTestList.ftl"("en_US", Cp1252, parsed); will try to load it.
+2018-06-09 16:21:03 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestList_en_US.ftl"): Not found
+2018-06-09 16:21:03 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestList_en.ftl"): Not found
+2018-06-09 16:21:03 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestList.ftl"): Found
+2018-06-09 16:21:03 DEBUG cache:45 - Loading template for "systemTestList.ftl"("en_US", Cp1252, parsed) from "C:\\Users\\abbas\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\DiscoverOntology\\WEB-INF\\templates\\systemTestList.ftl"
+2018-06-09 16:21:05 DEBUG cache:45 - "systemTestNew.ftl"("en_US", Cp1252, parsed) cached copy not yet stale; using cached.
+2018-06-09 16:23:28 INFO  SystemTestNew:97 - info: Saving started
+2018-06-09 16:23:28 WARN  SystemTestNew:100 - warn: Saving started
+2018-06-09 16:23:28 ERROR SystemTestNew:101 - error: Saving started
+2018-06-09 16:23:28 FATAL SystemTestNew:102 - fatal: Saving started
+2018-06-09 16:25:10 INFO  SystemTestNew:97 - info: Saving started
+2018-06-09 16:25:10 WARN  SystemTestNew:100 - warn: Saving started
+2018-06-09 16:25:10 ERROR SystemTestNew:101 - error: Saving started
+2018-06-09 16:25:10 FATAL SystemTestNew:102 - fatal: Saving started
