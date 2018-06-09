@@ -1,0 +1,28 @@
+2018-06-09 15:56:43 DEBUG cache:45 - Couldn't find template in cache for "systemTestNew.ftl"("en_US", Cp1252, parsed); will try to load it.
+2018-06-09 15:56:43 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en_US.ftl"): Not found
+2018-06-09 15:56:43 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en.ftl"): Not found
+2018-06-09 15:56:43 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew.ftl"): Found
+2018-06-09 15:56:43 DEBUG cache:45 - Loading template for "systemTestNew.ftl"("en_US", Cp1252, parsed) from "C:\\Users\\abbas\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\DiscoverOntology\\WEB-INF\\templates\\systemTestNew.ftl"
+2018-06-09 15:56:51 DEBUG SystemTestNew:93 - debug: Saving started
+2018-06-09 15:56:51 INFO  SystemTestNew:97 - info: Saving started
+2018-06-09 15:56:51 WARN  SystemTestNew:100 - warn: Saving started
+2018-06-09 15:56:51 ERROR SystemTestNew:101 - error: Saving started
+2018-06-09 15:56:51 FATAL SystemTestNew:102 - fatal: Saving started
+2018-06-09 15:58:14 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en_US.ftl"): Not found
+2018-06-09 15:58:14 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en.ftl"): Not found
+2018-06-09 15:58:14 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew.ftl"): Found
+2018-06-09 15:58:14 DEBUG cache:45 - "systemTestNew.ftl"("en_US", Cp1252, parsed): using cached since C:\Users\abbas\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DiscoverOntology\WEB-INF\templates\systemTestNew.ftl hasn't changed.
+2018-06-09 15:58:16 DEBUG SystemTestNew:93 - debug: Saving started
+2018-06-09 15:58:16 INFO  SystemTestNew:97 - info: Saving started
+2018-06-09 15:58:16 WARN  SystemTestNew:100 - warn: Saving started
+2018-06-09 15:58:16 ERROR SystemTestNew:101 - error: Saving started
+2018-06-09 15:58:16 FATAL SystemTestNew:102 - fatal: Saving started
+2018-06-09 15:58:52 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en_US.ftl"): Not found
+2018-06-09 15:58:52 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew_en.ftl"): Not found
+2018-06-09 15:58:52 DEBUG cache:45 - TemplateLoader.findTemplateSource("systemTestNew.ftl"): Found
+2018-06-09 15:58:52 DEBUG cache:45 - "systemTestNew.ftl"("en_US", Cp1252, parsed): using cached since C:\Users\abbas\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DiscoverOntology\WEB-INF\templates\systemTestNew.ftl hasn't changed.
+2018-06-09 15:58:53 DEBUG SystemTestNew:93 - debug: Saving started
+2018-06-09 15:58:53 INFO  SystemTestNew:97 - info: Saving started
+2018-06-09 15:58:53 WARN  SystemTestNew:100 - warn: Saving started
+2018-06-09 15:58:53 ERROR SystemTestNew:101 - error: Saving started
+2018-06-09 15:58:53 FATAL SystemTestNew:102 - fatal: Saving started
