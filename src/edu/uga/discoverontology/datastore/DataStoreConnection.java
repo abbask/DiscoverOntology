@@ -1,3 +1,4 @@
+package edu.uga.discoverontology.datastore; 
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -5,12 +6,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import model.MyConcept;
-import model.MyProperty;
-
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
+
+import edu.uga.discoverontology.model.MyConcept;
+import edu.uga.discoverontology.model.MyProperty;
 
 public class DataStoreConnection {
 	private String serviceURI = "http://localhost:8890/sparql/";

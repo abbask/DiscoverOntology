@@ -1,8 +1,11 @@
+package edu.uga.discoverontology.presentation;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -11,19 +14,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
+import edu.uga.discoverontology.service.SystemTestService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import model.MyTestSystem;
-import model.MyUnitTest;
 
-@WebServlet("/UnitTestList")
-public class SystemUnitTestList extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet("/SystemTestNew")
+public class SystemTestNew extends HttpServlet{
 	
+	private static final long serialVersionUID = 1L;
+	final static Logger logger = Logger.getLogger(SystemTestNew.class);
+
+
 	private String	   	   templatePath = null;
 	static  String         templateDir = "WEB-INF/templates";
-	static  String         templateName = "systemUnitList.ftl";
+	static  String         templateName = "systemTestNew.ftl";
 
 	private Configuration  cfg; 
 
@@ -40,8 +47,20 @@ public class SystemUnitTestList extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
-
-//		compareAll(req,res);
+//		String s = req.getParameter("name");
+//		System.out.println("Req: " + s);
+//		
+//		
+//		Map params = req.getParameterMap();
+//	    Iterator i = params.keySet().iterator();
+//	    while ( i.hasNext() )
+//	      {
+//	        String key = (String) i.next();
+//	        String value = ((String[]) params.get( key ))[ 0 ];
+//	        System.out.println("key=" + key + ", value=" + value);
+//	      }
+//		
+		save(req,res);
 		
 	}
 	
@@ -67,9 +86,6 @@ public class SystemUnitTestList extends HttpServlet {
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 
-		ArrayList<MyUnitTest> unitTests = new ArrayList<>();
-
-		root.put("unitTests", unitTests);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
@@ -84,6 +100,21 @@ public class SystemUnitTestList extends HttpServlet {
 		}
 
 		toClient.close();
+	}
+	
+	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String name = "";
+		String graph = "";
+		String endPoint ="";
+		
+		name = (!req.getParameter("name").equals(""))? req.getParameter("name") : name ;
+		graph = (!req.getParameter("graph").equals(""))? req.getParameter("graph") : graph ;
+		endPoint = (!req.getParameter("endPoint").equals(""))? req.getParameter("endPoint") : endPoint ;
+		
+		SystemTestService systemTestService = new SystemTestService();
+		systemTestService.Add(name, endPoint, graph);
+		
+		
 	}
 
 }

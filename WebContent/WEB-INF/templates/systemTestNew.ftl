@@ -29,20 +29,20 @@
 	<p>You can add new system test.</p>
 
 	<div>
-		<form method="post">   
+		<form method="post" data-toggle="validator" role="form">   
 		  <div class="form-group">
 		    <label for="name">Name</label>
-		    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name">
+		    <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter name" required>
 		    <small id="nameHelp" class="form-text text-muted">Please select name for your system test.</small>
 		  </div>
 		  <div class="form-group">
 		    <label for="endPoint">Endpoint</label>
-		    <input type="text" class="form-control" id="endPoint" aria-describedby="endPointHelp" placeholder="Enter endPoint url">
+		    <input type="text" class="form-control" id="endPoint" name="endPoint" aria-describedby="endPointHelp" placeholder="Enter endPoint url" required>
 		    <small id="endPointHelp" class="form-text text-muted">Please specify the end point url.</small>
 		  </div>
 		  <div class="form-check">
 		  	<label for="graph">Graph</label>
-		    <input type="text" class="form-control" id="graph" placeholder="Enter graph name">
+		    <input type="text" class="form-control" id="graph" name="graph" placeholder="Enter graph name" required>
 		    <small id="endPointHelp" class="form-text text-muted">Please specify the graph name.</small>
 		  </div>
 		  </br>

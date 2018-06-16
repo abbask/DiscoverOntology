@@ -1,7 +1,8 @@
+package edu.uga.discoverontology.presentation;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,23 +13,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
+import edu.uga.discoverontology.model.MyTestSystem;
+import edu.uga.discoverontology.model.MyUnitTest;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import model.MyTestSuite;
-import model.MyTestSystem;
 
-@WebServlet("/SystemTestList")
-public class SystemTestList extends HttpServlet{
-	
+@WebServlet("/UnitTestList")
+public class SystemUnitTestList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-
+	
 	private String	   	   templatePath = null;
 	static  String         templateDir = "WEB-INF/templates";
-	static  String         templateName = "systemTestList.ftl";
+	static  String         templateName = "systemUnitList.ftl";
 
 	private Configuration  cfg; 
 
@@ -49,7 +46,7 @@ public class SystemTestList extends HttpServlet{
 //		compareAll(req,res);
 		
 	}
-
+	
 	public void loadPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		Template       					template;
 		String         					templatePath = null;
@@ -72,9 +69,9 @@ public class SystemTestList extends HttpServlet{
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 
-		ArrayList<MyTestSystem> testSystems = new ArrayList<>();
+		ArrayList<MyUnitTest> unitTests = new ArrayList<>();
 
-		root.put("testSystems", testSystems);
+		root.put("unitTests", unitTests);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
@@ -90,7 +87,5 @@ public class SystemTestList extends HttpServlet{
 
 		toClient.close();
 	}
-	
-	
 
 }

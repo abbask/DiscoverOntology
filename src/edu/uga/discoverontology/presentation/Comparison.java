@@ -1,4 +1,4 @@
-
+package edu.uga.discoverontology.presentation;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import arq.load;
+import edu.uga.discoverontology.datastore.DataStoreConnection;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

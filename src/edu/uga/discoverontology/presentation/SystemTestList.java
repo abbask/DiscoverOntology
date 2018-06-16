@@ -1,6 +1,9 @@
+package edu.uga.discoverontology.presentation;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,21 +16,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import com.google.gson.Gson;
+
+import edu.uga.discoverontology.model.MyTestSuite;
+import edu.uga.discoverontology.model.MyTestSystem;
+import edu.uga.discoverontology.service.SystemTestService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import model.MyTestSystem;
 
-@WebServlet("/SystemTestNew")
-public class SystemTestNew extends HttpServlet{
+@WebServlet("/SystemTestList")
+public class SystemTestList extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
-	final static Logger logger = Logger.getLogger(SystemTestNew.class);
+	final static Logger logger = Logger.getLogger(SystemTestList.class);
 
 
 	private String	   	   templatePath = null;
 	static  String         templateDir = "WEB-INF/templates";
-	static  String         templateName = "systemTestNew.ftl";
+	static  String         templateName = "systemTestList.ftl";
 
 	private Configuration  cfg; 
 
@@ -45,10 +52,10 @@ public class SystemTestNew extends HttpServlet{
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
 
-		save(req,res);
+//		compareAll(req,res);
 		
 	}
-	
+
 	public void loadPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		Template       					template;
 		String         					templatePath = null;
@@ -70,7 +77,12 @@ public class SystemTestNew extends HttpServlet{
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
+		
+		SystemTestService systemTestService = new SystemTestService();
 
+		ArrayList<MyTestSystem> testSystems = systemTestService.listAll();
+
+		root.put("testSystems", testSystems);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
@@ -79,6 +91,7 @@ public class SystemTestNew extends HttpServlet{
 		try {
 			template.process(root, toClient);
 			toClient.flush();
+			
 		} catch (TemplateException e) {
 			throw new ServletException(
 					"Error while processing FreeMarker template", e);
@@ -87,14 +100,6 @@ public class SystemTestNew extends HttpServlet{
 		toClient.close();
 	}
 	
-	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		
-		/*
-		logger.warn("warn: Saving started");
-		logger.error("error: Saving started");
-		logger.fatal("fatal: Saving started");
-		*/
-	}
+	
 
 }

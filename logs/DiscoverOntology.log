@@ -44,3 +44,16 @@
 2018-06-09 16:25:10 WARN  SystemTestNew:100 - warn: Saving started
 2018-06-09 16:25:10 ERROR SystemTestNew:101 - error: Saving started
 2018-06-09 16:25:10 FATAL SystemTestNew:102 - fatal: Saving started
+2018-06-16 13:29:06 ERROR MySQLConnection:32 - MySQLConnection: sqlException error - Connection error
+2018-06-16 13:30:09 ERROR MySQLConnection:33 - MySQLConnection: sqlException error - Connection error
+2018-06-16 21:03:09 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:03:17 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:03:27 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:05:26 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:07:12 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
+2018-06-16 21:07:16 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:08:45 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:08:47 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:08:49 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:09:03 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-16 21:09:26 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.

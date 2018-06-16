@@ -1,4 +1,4 @@
-package model;
+package edu.uga.discoverontology.model;
 
 public class MyUnitTest {
 	

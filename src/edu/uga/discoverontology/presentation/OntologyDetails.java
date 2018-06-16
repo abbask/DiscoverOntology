@@ -1,3 +1,4 @@
+package edu.uga.discoverontology.presentation; 
 
 import java.io.*;
 import java.util.*;
@@ -28,6 +29,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+
+import edu.uga.discoverontology.datastore.DataStoreConnection;
 
 /**
  * Servlet implementation class Result
