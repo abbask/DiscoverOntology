@@ -114,7 +114,7 @@ public class SystemTestNew extends HttpServlet{
 		SystemTestService systemTestService = new SystemTestService();
 		systemTestService.Add(name, endPoint, graph);
 		
-		
+		res.sendRedirect(req.getContextPath() + "/SystemTestList");
 	}
 
 }
