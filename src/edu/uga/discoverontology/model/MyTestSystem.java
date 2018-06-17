@@ -7,13 +7,13 @@ public class MyTestSystem {
 	private String name;
 	private String endPoint;
 	private String graph;
-	private ArrayList<MyTest> suites;
+	private ArrayList<MyUnitTest> suites;
 	
 	public MyTestSystem() {
 		
 	}
 	
-	public MyTestSystem(String name, String endPoint, String graph, ArrayList<MyTest> suites) {
+	public MyTestSystem(String name, String endPoint, String graph, ArrayList<MyUnitTest> suites) {
 		super();
 		this.name = name;
 		this.endPoint = endPoint;
@@ -39,10 +39,10 @@ public class MyTestSystem {
 	public void setGraph(String graph) {
 		this.graph = graph;
 	}
-	public ArrayList<MyTest> getSuites() {
+	public ArrayList<MyUnitTest> getSuites() {
 		return suites;
 	}
-	public void setSuites(ArrayList<MyTest> suites) {
+	public void setSuites(ArrayList<MyUnitTest> suites) {
 		this.suites = suites;
 	}
 

@@ -36,16 +36,32 @@
 		    <small id="nameHelp" class="form-text text-muted">Please select name for your system test.</small>
 		  </div>
 		  <div class="form-group">
-		    <label for="statement">Statement</label>
-		    <input type="text" class="form-control" id="statement" name="statement" aria-describedby="statementHelp" placeholder="Enter SPARQL statement" required>
-		    <small id="statementHelp" class="form-text text-muted">Please specify the SPARQL statement.</small>
+		    <label for="query">Query</label>
+		    <input type="text" class="form-control" id="query" name="query" aria-describedby="queryHelp" placeholder="Enter SPARQL query" required>
+		    <small id="queryHelp" class="form-text text-muted">Please specify the SPARQL query.</small>
 		  </div>
+		  
 		  <div class="form-check">
-		  	<label for="result">Result</label>
-		    <input type="text" class="form-control" id="result" name="result" aria-describedby="resultHelp" placeholder="Enter results" required>
-		    <small id="resultHelp" class="form-text text-muted">Please specify the results.</small>
+		  	<label for="assertType">Assert Type</label>
+		    <select class="form-control" id="assertType" name="assertType">
+		      <option>GREATER</option>
+		      <option>EQUAL</option>
+		      <option>LESS</option>
+		    </select>
+		    <small id="assertTypeHelp" class="form-text text-muted">Please specify assert type.</small>
 		  </div>
-		  </br>
+		  
+		  <div class="form-group">
+		    <label for="expectedValue">Expected Value</label>
+		    <input type="text" class="form-control" id="expectedValue" name="expectedValue" aria-describedby="expectedValueHelp" placeholder="Enter Expected Value" required>
+		    <small id="expectedValueHelp" class="form-text text-muted">Please specify the expected value.</small>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="message">Message</label>
+		    <input type="text" class="form-control" id="message" name="message" aria-describedby="messageHelp" placeholder="Enter a message" required>
+		    <small id="messageHelp" class="form-text text-muted">Please specify a message.</small>
+		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		  <a class="btn btn-default pull-right" href="/DiscoverOntology/UnitTestList" role="button">Cancel</a>

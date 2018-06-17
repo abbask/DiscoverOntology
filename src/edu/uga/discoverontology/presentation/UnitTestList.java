@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import edu.uga.discoverontology.model.MyTest;
 import edu.uga.discoverontology.model.MyTestSystem;
+import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.service.UnitTestService;
 import edu.uga.discoverontology.service.SystemTestService;
 import freemarker.template.Configuration;
@@ -77,7 +77,7 @@ public class UnitTestList extends HttpServlet{
 		
 		UnitTestService unitTestService = new UnitTestService();
 
-		ArrayList<MyTest> unitTests = unitTestService.listAll();
+		ArrayList<MyUnitTest> unitTests = unitTestService.listAll();
 
 		root.put("unitTests", unitTests);
 		
