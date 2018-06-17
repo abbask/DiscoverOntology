@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 import edu.uga.discoverontology.service.SystemTestService;
+import edu.uga.discoverontology.service.UnitTestService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -92,20 +93,25 @@ public class UnitTestNew extends HttpServlet {
 	}
 	
 	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		/*
+		
 		String name = "";
-		String graph = "";
-		String endPoint ="";
+		String assertType = "";
+		String query ="";
+		String expectedValue="";
+		String message="";
 		
 		name = (!req.getParameter("name").equals(""))? req.getParameter("name") : name ;
-		graph = (!req.getParameter("graph").equals(""))? req.getParameter("graph") : graph ;
-		endPoint = (!req.getParameter("endPoint").equals(""))? req.getParameter("endPoint") : endPoint ;
+		assertType = (!req.getParameter("assertType").equals(""))? req.getParameter("assertType") : assertType ;
+		query = (!req.getParameter("query").equals(""))? req.getParameter("query") : query ;
+		expectedValue = (!req.getParameter("expectedValue").equals(""))? req.getParameter("expectedValue") : expectedValue ;
+		message = (!req.getParameter("message").equals(""))? req.getParameter("message") : message ;
 		
-		SystemTestService systemTestService = new SystemTestService();
-		systemTestService.Add(name, endPoint, graph);
+		UnitTestService unitTestService = new UnitTestService(); 
+		unitTestService.Add(name, assertType, query, expectedValue, message);
 		
-		res.sendRedirect(req.getContextPath() + "/SystemTestList");
-		*/
+		
+		res.sendRedirect(req.getContextPath() + "/UnitTestList");
+	
 	}
 	
 }

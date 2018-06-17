@@ -3,7 +3,7 @@ package edu.uga.discoverontology.model;
 public class MyUnitTest {
 	
 	private String name;
-	private AssertType assertType;
+	private String assertType;
 	private String query;
 	private String expectedValue;
 	private String message;
@@ -22,10 +22,10 @@ public class MyUnitTest {
 	public void setQuery(String query) {
 		this.query = query;
 	}
-	public AssertType getAssertType() {
+	public String getAssertType() {
 		return assertType;
 	}
-	public void setAssertType(AssertType assertType) {
+	public void setAssertType(String assertType) {
 		this.assertType = assertType;
 	}
 	public String getExpectedValue() {

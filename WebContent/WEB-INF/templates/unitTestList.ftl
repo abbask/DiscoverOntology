@@ -35,8 +35,12 @@
 		  <thead>
 		    <tr>
 		      <th scope="col">name</th>
+		      <th scope="col">assert type</th>
+		      <th scope="col">query</th>
+		      <th scope="col">expected value</th>
+		      <th scope="col">message</th>
 		      
-		      <th scope="col">tests</th>
+		      
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -47,7 +51,16 @@
 					</td>
 
 					<td>
-						
+						${unitTest.assertType}
+					</td>
+					<td>
+						${unitTest.query}
+					</td>
+					<td>
+						${unitTest.expectedValue}
+					</td>
+					<td>
+						${unitTest.message}
 					</td>
 				</tr>
 			<#else>
