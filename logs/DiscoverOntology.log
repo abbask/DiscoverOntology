@@ -232,3 +232,9 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 2018-06-17 16:57:36 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-17 16:57:39 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-17 16:57:40 INFO  UnitTestService:35 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-17 17:02:23 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 17:02:40 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
+2018-06-17 17:02:40 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 17:02:43 INFO  UnitTestService:34 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-17 17:18:33 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 17:18:34 INFO  UnitTestService:34 - UnitTestService.listAll :  unit_tests retrieved.

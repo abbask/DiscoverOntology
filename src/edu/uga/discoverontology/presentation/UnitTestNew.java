@@ -3,9 +3,7 @@ package edu.uga.discoverontology.presentation;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -21,17 +19,20 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-@WebServlet("/SystemTestNew")
-public class SystemTestNew extends HttpServlet{
-	
-	private static final long serialVersionUID = 1L;
+@WebServlet("/UnitTestNew")
+public class UnitTestNew extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
 	final static Logger logger = Logger.getLogger(SystemTestNew.class);
 
 
 	private String	   	   templatePath = null;
 	static  String         templateDir = "WEB-INF/templates";
-	static  String         templateName = "systemTestNew.ftl";
-
+	static  String         templateName = "unitTestNew.ftl";
+	
 	private Configuration  cfg; 
 
 	public void init() {
@@ -91,6 +92,7 @@ public class SystemTestNew extends HttpServlet{
 	}
 	
 	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		/*
 		String name = "";
 		String graph = "";
 		String endPoint ="";
@@ -103,6 +105,7 @@ public class SystemTestNew extends HttpServlet{
 		systemTestService.Add(name, endPoint, graph);
 		
 		res.sendRedirect(req.getContextPath() + "/SystemTestList");
+		*/
 	}
-
+	
 }
