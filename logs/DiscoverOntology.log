@@ -62,3 +62,6 @@
 2018-06-16 21:42:36 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
 2018-06-16 21:43:22 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
 2018-06-16 21:43:22 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 12:20:52 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 12:21:01 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 12:23:53 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
