@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 
 import edu.uga.discoverontology.model.MyTest;
-import edu.uga.discoverontology.model.MyTestSuite;
 import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.service.UnitTestService;
 import edu.uga.discoverontology.service.SystemTestService;

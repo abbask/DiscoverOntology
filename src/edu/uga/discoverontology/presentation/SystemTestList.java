@@ -18,7 +18,6 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import edu.uga.discoverontology.model.MyTestSuite;
 import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.service.SystemTestService;
 import freemarker.template.Configuration;

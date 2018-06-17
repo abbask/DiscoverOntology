@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 
 import edu.uga.discoverontology.datastore.MySQLConnection;
 import edu.uga.discoverontology.model.MyTest;
-import edu.uga.discoverontology.model.MyTestSuite;
 import edu.uga.discoverontology.presentation.SystemTestNew;
 
 public class UnitTestService {
