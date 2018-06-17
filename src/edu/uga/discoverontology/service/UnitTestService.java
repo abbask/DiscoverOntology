@@ -7,31 +7,32 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import edu.uga.discoverontology.datastore.MySQLConnection;
+import edu.uga.discoverontology.model.MyTest;
 import edu.uga.discoverontology.model.MyTestSuite;
 import edu.uga.discoverontology.presentation.SystemTestNew;
 
-public class SuiteTestService {
+public class UnitTestService {
 	
-	final static Logger logger = Logger.getLogger(SystemTestNew.class);
+	final static Logger logger = Logger.getLogger(UnitTestService.class);
 	
-	public ArrayList<MyTestSuite> listAll() {
+	public ArrayList<MyTest> listAll() {
 		
-		ArrayList<MyTestSuite> list = new ArrayList<>();
+		ArrayList<MyTest> list = new ArrayList<>();
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
 		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT * FROM suite_tests");
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
-			MyTestSuite myTestSuite = new MyTestSuite();
-			myTestSuite.setName(resObj.getString("name"));
-			list.add(myTestSuite);
+			MyTest myTest = new MyTest();
+			myTest.setName(resObj.getString("name"));
+			list.add(myTest);
         }
 		
 		} catch (Exception sqlException) {
 			logger.error(sqlException.getMessage(), sqlException);
 		}
-		logger.info("SuiteTestService.listAll :  suite_tests retrieved.");
+		logger.info("UnitTestService.listAll :  unit_tests retrieved.");
 		return list;
 	}
 

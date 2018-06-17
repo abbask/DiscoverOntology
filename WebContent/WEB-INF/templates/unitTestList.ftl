@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Suite Test List</title>
+  <title>Unit Test List</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,19 +16,18 @@
       <a class="navbar-brand" href="#">Ontology Test</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
-      <li><a href="/DiscoverOntology/SuiteTestList">Suite Test List</a></li>
-      <li><a href="/DiscoverOntology/UnitTestList">Unit Test List</a></li>
+      <li><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>      
+      <li class="active"><a href="/DiscoverOntology/UnitTestList">Unit Testing</a></li>
       
     </ul>
   </div>
 </nav>
   
 <div class="container">
-	<h3>List of System Tests</h3>
-	<p>You can see list of system test and load them.</p>
+	<h3>List of Unit Tests</h3>
+	<p>You can see list of unit test and load them.</p>
 	<div>
-		<a href="SuiteTestNew" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add Suite Test</a>
+		<a href="UnitTestNew" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add Unit Test</a>
 	
 	</div>
 	<div>
@@ -41,10 +40,10 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<#list suiteTests as suiteTest>
+		  	<#list unitTests as unitTest>
 				<tr>
 					<td>
-						${suiteTest.name}
+						${unitTest.name}
 					</td>
 
 					<td>

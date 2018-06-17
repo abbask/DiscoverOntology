@@ -15,27 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import edu.uga.discoverontology.model.MyTest;
 import edu.uga.discoverontology.model.MyTestSuite;
 import edu.uga.discoverontology.model.MyTestSystem;
-import edu.uga.discoverontology.service.SuiteTestService;
+import edu.uga.discoverontology.service.UnitTestService;
 import edu.uga.discoverontology.service.SystemTestService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-@WebServlet("/SuiteTestList")
-public class SuiteTestList extends HttpServlet{
+@WebServlet("/UnitTestList")
+public class UnitTestList extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
-	final static Logger logger = Logger.getLogger(SuiteTestList.class);
+	final static Logger logger = Logger.getLogger(UnitTestList.class);
 
 	private String	   	   templatePath = null;
 	static  String         templateDir = "WEB-INF/templates";
-	static  String         templateName = "suiteTestList.ftl";
+	static  String         templateName = "unitTestList.ftl";
 
 	private Configuration  cfg; 
 
-	public void init() {
+		public void init() {
 
 		cfg = new Configuration(Configuration.VERSION_2_3_23);
 		cfg.setServletContextForTemplateLoading( getServletContext(), 
@@ -75,11 +76,11 @@ public class SuiteTestList extends HttpServlet{
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 		
-		SuiteTestService suiteTestService = new SuiteTestService();
+		UnitTestService unitTestService = new UnitTestService();
 
-		ArrayList<MyTestSuite> suiteTests = suiteTestService.listAll();
+		ArrayList<MyTest> unitTests = unitTestService.listAll();
 
-		root.put("suiteTests", suiteTests);
+		root.put("unitTests", unitTests);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));

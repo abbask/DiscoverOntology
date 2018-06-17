@@ -65,3 +65,6 @@
 2018-06-17 12:20:52 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-17 12:21:01 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-17 12:23:53 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 13:19:48 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-17 13:19:50 INFO  SystemTestNew:34 - SuiteTestService.listAll :  suite_tests retrieved.
+2018-06-17 16:52:09 INFO  SystemTestNew:67 - SystemTestService.listAll :  system_tests retrieved.

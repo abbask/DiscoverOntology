@@ -17,7 +17,6 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
-      <li><a href="/DiscoverOntology/SuiteTestList">Suite Test List</a></li>
       <li><a href="/DiscoverOntology/UnitTestList">Unit Test List</a></li>
       
     </ul>
