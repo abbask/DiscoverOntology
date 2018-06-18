@@ -3,22 +3,29 @@ package edu.uga.discoverontology.model;
 import java.util.ArrayList;
 
 public class MyTestSystem {
-	
+	private int ID;
 	private String name;
 	private String endPoint;
 	private String graph;
-	private ArrayList<MyUnitTest> suites;
+	private ArrayList<MyUnitTest> units;
 	
 	public MyTestSystem() {
 		
 	}
 	
-	public MyTestSystem(String name, String endPoint, String graph, ArrayList<MyUnitTest> suites) {
-		super();
+	public MyTestSystem(String name, String endPoint, String graph, ArrayList<MyUnitTest> units) {
 		this.name = name;
 		this.endPoint = endPoint;
 		this.graph = graph;
-		this.suites = suites;
+		this.units = units;
+	}
+	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 	public String getName() {
@@ -40,15 +47,15 @@ public class MyTestSystem {
 		this.graph = graph;
 	}
 	public ArrayList<MyUnitTest> getSuites() {
-		return suites;
+		return units;
 	}
-	public void setSuites(ArrayList<MyUnitTest> suites) {
-		this.suites = suites;
+	public void setSuites(ArrayList<MyUnitTest> units) {
+		this.units = units;
 	}
 
 	@Override
 	public String toString() {
-		return "MyTestSystem [name=" + name + ", endPoint=" + endPoint + ", graph=" + graph + ", suites=" + suites
+		return "MyTestSystem [name=" + name + ", endPoint=" + endPoint + ", graph=" + graph + ", suites=" + units
 				+ "]";
 	}
 	

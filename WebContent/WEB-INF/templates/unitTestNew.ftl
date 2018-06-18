@@ -47,7 +47,7 @@
 		      <option>EQUAL</option>
 		      <option>LESS</option>
 		    </select>
-		    <small id="assertTypeHelp" class="form-text text-muted">Please specify assert type.</small>
+		    <small id="assertTypeHelp" class="form-text text-muted">Please select assert type.</small>
 		  </div>
 		  
 		  <div class="form-group">
@@ -60,6 +60,18 @@
 		    <label for="message">Message</label>
 		    <input type="text" class="form-control" id="message" name="message" aria-describedby="messageHelp" placeholder="Enter a message" required>
 		    <small id="messageHelp" class="form-text text-muted">Please specify a message.</small>
+		  </div>
+		  
+		  <div class="form-check">
+		  	<label for="systemTest">System Test</label>
+		    <select class="form-control" id="systemTest" name="systemTest">
+		    	<#list systemTests as systemTest>
+		    		<option value="${systemTest.ID}">${systemTest.name}</option>
+		    	<#else>
+		    		
+		    	</#list>
+		    </select>
+		    <small id="systemTestHelp" class="form-text text-muted">Please select system test.</small>
 		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Submit</button>

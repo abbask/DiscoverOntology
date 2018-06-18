@@ -7,6 +7,7 @@ public class MyUnitTest {
 	private String query;
 	private String expectedValue;
 	private String message;
+	private MyTestSystem systemTest;
 
 	
 	public String getName() {
@@ -41,6 +42,12 @@ public class MyUnitTest {
 		this.message = message;
 	}
 	
+	public MyTestSystem getSystemTest() {
+		return systemTest;
+	}
+	public void setSystemTest(MyTestSystem systemTest) {
+		this.systemTest = systemTest;
+	}
 	@Override
 	public String toString() {
 		return "MyUnitTest [name=" + name + ", assertType=" + assertType + ", expectedValue=" + expectedValue

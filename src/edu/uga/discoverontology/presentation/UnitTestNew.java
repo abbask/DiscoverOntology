@@ -3,6 +3,7 @@ package edu.uga.discoverontology.presentation;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.service.SystemTestService;
 import edu.uga.discoverontology.service.UnitTestService;
 import freemarker.template.Configuration;
@@ -76,6 +78,12 @@ public class UnitTestNew extends HttpServlet {
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 
+		SystemTestService systemTestService = new SystemTestService();
+		ArrayList<MyTestSystem> systemTests = systemTestService.listAll();
+		
+		root.put("systemTests", systemTests);
+		
+		
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
@@ -93,13 +101,15 @@ public class UnitTestNew extends HttpServlet {
 	}
 	
 	protected void save(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
+		int systemTestID = 0;
 		String name = "";
 		String assertType = "";
 		String query ="";
 		String expectedValue="";
 		String message="";
 		
+		
+		systemTestID = (!req.getParameter("systemTest").equals(0))? Integer.valueOf(req.getParameter("systemTest")) : systemTestID ;
 		name = (!req.getParameter("name").equals(""))? req.getParameter("name") : name ;
 		assertType = (!req.getParameter("assertType").equals(""))? req.getParameter("assertType") : assertType ;
 		query = (!req.getParameter("query").equals(""))? req.getParameter("query") : query ;
@@ -107,7 +117,7 @@ public class UnitTestNew extends HttpServlet {
 		message = (!req.getParameter("message").equals(""))? req.getParameter("message") : message ;
 		
 		UnitTestService unitTestService = new UnitTestService(); 
-		unitTestService.Add(name, assertType, query, expectedValue, message);
+		unitTestService.Add(name, assertType, query, expectedValue, message,systemTestID);
 		
 		
 		res.sendRedirect(req.getContextPath() + "/UnitTestList");

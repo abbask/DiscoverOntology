@@ -53,6 +53,7 @@ public class SystemTestService {
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
 			MyTestSystem myTestSystem = new MyTestSystem();
+			myTestSystem.setID(resObj.getInt("ID"));
 			myTestSystem.setName(resObj.getString("name"));
 			myTestSystem.setEndPoint(resObj.getString("endpoint"));
 			myTestSystem.setGraph(resObj.getString("graph"));

@@ -18,7 +18,7 @@ public class UnitTestService {
 	
 	final static Logger logger = Logger.getLogger(UnitTestService.class);
 	
-	public void Add(String name, String assertType, String query, String expectedValue, String  message) {
+	public void Add(String name, String assertType, String query, String expectedValue, String  message, int systemTestID) {
 		MySQLConnection conn = new MySQLConnection();
 		Connection c = conn.openConnection();
 		
@@ -26,7 +26,7 @@ public class UnitTestService {
 			c.setAutoCommit(false);
 			Statement stmtObj = c.createStatement();
 
-			String queryString = "INSERT INTO unit_tests (name,assertType,query, expectedValue, message) VALUES ('" + name + "','" + assertType + "','" + query + "', '" + expectedValue + "','" + message + "')";
+			String queryString = "INSERT INTO unit_tests (name,assertType,query, expectedValue, message,system_test_id) VALUES ('" + name + "','" + assertType + "','" + query + "', '" + expectedValue + "','" + message + "'," + systemTestID + ")";
 			stmtObj.executeUpdate(queryString); 
 
 			c.commit();
@@ -48,7 +48,7 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT * FROM unit_tests");
+		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.assertType,u.query,u.expectedValue,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID ");
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
 			MyUnitTest myUnitTest = new MyUnitTest();
@@ -57,6 +57,12 @@ public class UnitTestService {
 			myUnitTest.setQuery(resObj.getString("query"));
 			myUnitTest.setExpectedValue(resObj.getString("expectedValue"));
 			myUnitTest.setMessage(resObj.getString("message"));
+			
+			MyTestSystem systemTest = new MyTestSystem();
+			systemTest.setID(resObj.getInt("system_test_id"));
+			systemTest.setName(resObj.getString("system_test_name"));
+			myUnitTest.setSystemTest(systemTest);
+			
 			list.add(myUnitTest);
         }
 		

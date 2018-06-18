@@ -39,7 +39,7 @@
 		      <th scope="col">query</th>
 		      <th scope="col">expected value</th>
 		      <th scope="col">message</th>
-		      
+		      <th scope="col">system test id</th>
 		      
 		    </tr>
 		  </thead>
@@ -61,6 +61,9 @@
 					</td>
 					<td>
 						${unitTest.message}
+					</td>
+					<td>
+						${unitTest.systemTest.name}
 					</td>
 				</tr>
 			<#else>
