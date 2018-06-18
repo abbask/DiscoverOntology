@@ -690,3 +690,9 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Colu
 2018-06-18 11:54:26 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
 2018-06-18 11:55:35 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
 2018-06-18 11:56:10 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-18 12:22:27 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-18 12:22:29 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-18 12:22:30 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-18 12:22:31 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-18 12:22:38 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-18 12:22:51 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
