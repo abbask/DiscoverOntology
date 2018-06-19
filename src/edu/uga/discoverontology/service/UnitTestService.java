@@ -55,7 +55,6 @@ public class UnitTestService {
 			myUnitTest.setName(resObj.getString("name"));
 			myUnitTest.setAssertType(resObj.getString("assertType"));
 			myUnitTest.setQuery(resObj.getString("query"));
-			myUnitTest.setExpectedValue(resObj.getString("expectedValue"));
 			myUnitTest.setMessage(resObj.getString("message"));
 			
 			MyTestSystem systemTest = new MyTestSystem();

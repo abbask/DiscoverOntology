@@ -40,6 +40,9 @@
 		    <small id="queryHelp" class="form-text text-muted">Please specify the SPARQL query.</small>
 		  </div>
 		  
+		  
+		  
+		  <!--
 		  <div class="form-check">
 		  	<label for="assertType">Assert Type</label>
 		    <select class="form-control" id="assertType" name="assertType">
@@ -55,6 +58,7 @@
 		    <input type="text" class="form-control" id="expectedValue" name="expectedValue" aria-describedby="expectedValueHelp" placeholder="Enter Expected Value" required>
 		    <small id="expectedValueHelp" class="form-text text-muted">Please specify the expected value.</small>
 		  </div>
+		  -->
 		  
 		  <div class="form-group">
 		    <label for="message">Message</label>

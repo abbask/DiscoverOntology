@@ -1,15 +1,23 @@
 package edu.uga.discoverontology.model;
 
+import java.util.ArrayList;
+
 public class MyUnitTest {
 	
+	private int ID;
 	private String name;
 	private String assertType;
 	private String query;
-	private String expectedValue;
 	private String message;
 	private MyTestSystem systemTest;
-
+	private ArrayList<ExpectedValue> expectedValues;
 	
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
 	public String getName() {
 		return name;
 	}
@@ -29,12 +37,7 @@ public class MyUnitTest {
 	public void setAssertType(String assertType) {
 		this.assertType = assertType;
 	}
-	public String getExpectedValue() {
-		return expectedValue;
-	}
-	public void setExpectedValue(String expectedValue) {
-		this.expectedValue = expectedValue;
-	}
+
 	public String getMessage() {
 		return message;
 	}
@@ -48,11 +51,21 @@ public class MyUnitTest {
 	public void setSystemTest(MyTestSystem systemTest) {
 		this.systemTest = systemTest;
 	}
+	
+	public ArrayList<ExpectedValue> getExpectedValues() {
+		return expectedValues;
+	}
+	public void setExpectedValues(ArrayList<ExpectedValue> expectedValues) {
+		this.expectedValues = expectedValues;
+	}
+	
 	@Override
 	public String toString() {
-		return "MyUnitTest [name=" + name + ", assertType=" + assertType + ", expectedValue=" + expectedValue
-				+ ", message=" + message + "]";
+		return "MyUnitTest [ID=" + ID + ", name=" + name + ", assertType=" + assertType + ", query=" + query
+				+ ", message=" + message + ", systemTest=" + systemTest + ", expectedValues=" + expectedValues + "]";
 	}
+	
+	
 
 	
 
