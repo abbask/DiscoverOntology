@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import edu.uga.discoverontology.model.ExpectedValue;
 import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.service.SystemTestService;
 import edu.uga.discoverontology.service.UnitTestService;
@@ -105,16 +106,32 @@ public class UnitTestNew extends HttpServlet {
 		String name = "";
 		String assertType = "";
 		String query ="";
-		String expectedValue="";
 		String message="";
+		String scallar="";
+		String subject="";
+		String predicate="";
+		String object="";
 		
 		
 		systemTestID = (!req.getParameter("systemTest").equals(0))? Integer.valueOf(req.getParameter("systemTest")) : systemTestID ;
 		name = (!req.getParameter("name").equals(""))? req.getParameter("name") : name ;
 		assertType = (!req.getParameter("assertType").equals(""))? req.getParameter("assertType") : assertType ;
 		query = (!req.getParameter("query").equals(""))? req.getParameter("query") : query ;
-		expectedValue = (!req.getParameter("expectedValue").equals(""))? req.getParameter("expectedValue") : expectedValue ;
 		message = (!req.getParameter("message").equals(""))? req.getParameter("message") : message ;
+		
+		scallar = (!req.getParameter("formValue").equals(""))? req.getParameter("formValue") : scallar ;
+		subject = (!req.getParameter("fromSubject").equals(""))? req.getParameter("fromSubject") : subject ;
+		predicate = (!req.getParameter("fromPredicate").equals(""))? req.getParameter("fromPredicate") : predicate ;
+		object = (!req.getParameter("formObject").equals(""))? req.getParameter("formObject") : object ;
+		
+		ExpectedValue expectedValue;
+		
+		if (scallar.isEmpty()) {
+			expectedValue =  new ExpectedValue(subject, predicate, object);
+		}
+		else{
+			expectedValue = new ExpectedValue(scallar, "", "");
+		}
 		
 		UnitTestService unitTestService = new UnitTestService(); 
 		unitTestService.Add(name, assertType, query, expectedValue, message,systemTestID);

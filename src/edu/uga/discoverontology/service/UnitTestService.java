@@ -18,15 +18,17 @@ public class UnitTestService {
 	
 	final static Logger logger = Logger.getLogger(UnitTestService.class);
 	
-	public void Add(String name, String assertType, String query, String expectedValue, String  message, int systemTestID) {
+	public void Add(String name, String assertType, String query, ExpectedValue expectedValue, String  message, int systemTestID) {
 		MySQLConnection conn = new MySQLConnection();
 		Connection c = conn.openConnection();
 		
 		try {
 			c.setAutoCommit(false);
 			Statement stmtObj = c.createStatement();
+			
+			
 
-			String queryString = "INSERT INTO unit_tests (name,assertType,query, expectedValue, message,system_test_id) VALUES ('" + name + "','" + assertType + "','" + query + "', '" + expectedValue + "','" + message + "'," + systemTestID + ")";
+			String queryString = "INSERT INTO unit_tests (name,assertType,query, expected_value_id, message,system_test_id) VALUES ('" + name + "','" + assertType + "','" + query + "', '" + expected_value_id + "','" + message + "'," + systemTestID + ")";
 			stmtObj.executeUpdate(queryString); 
 
 			c.commit();
