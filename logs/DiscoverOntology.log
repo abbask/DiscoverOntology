@@ -697,3 +697,126 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Colu
 2018-06-18 12:22:38 INFO  UnitTestService:72 - UnitTestService.listAll :  unit_tests retrieved.
 2018-06-18 12:22:51 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-18 13:36:46 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:38:42 ERROR UnitTestService:69 - Unknown column 'u.expectedValue' in 'field list'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'u.expectedValue' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1030)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1885)
+	at edu.uga.discoverontology.service.UnitTestService.listAll(UnitTestService.java:52)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:80)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-19 12:38:42 INFO  UnitTestService:71 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-19 12:38:44 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:39:39 ERROR UnitTestService:69 - Unknown column 'u.expectedValue' in 'field list'
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'u.expectedValue' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1030)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1885)
+	at edu.uga.discoverontology.service.UnitTestService.listAll(UnitTestService.java:52)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:80)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-19 12:39:39 INFO  UnitTestService:71 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-19 12:39:40 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:40:21 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:41:12 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:41:46 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:42:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:42:16 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:42:38 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:44:02 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:46:04 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:53:25 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:54:43 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:56:10 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:58:40 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:59:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:59:25 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 12:59:39 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:00:16 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:04:18 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:07:43 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:09:27 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:11:33 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:14:09 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:19:35 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:20:39 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:24:07 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:24:27 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:24:47 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:26:05 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:26:40 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:26:42 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:29:44 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:30:42 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:32:30 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:35:09 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:35:37 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-19 13:35:39 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.

@@ -7,6 +7,52 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type='text/javascript'>
+	$(window).on("load",function(){
+	     $(function(){
+	     	type = 1;
+	         $('#type').change(function(){
+	         	
+			    type = $(this).val();
+			    
+			    $('#value').val('');
+		    	$('#subject').val('');
+		    	$('#predicate').val('');
+		    	$('#object').val('');
+		    	$('#formValue').val('');
+				$('#formSubject').val( '');
+				$('#formPredicate').val('');
+				$('#formObject').val('');
+			    
+			    if (type == 1){
+			    	$('.visibility1').css('visibility','visible');
+			    	$('.visibility2').css('visibility','hidden');
+			    	
+			    }
+			    else if (type == 2){
+			    	$('.visibility1').css('visibility','hidden');
+			    	$('.visibility2').css('visibility','visible');
+			    }
+			    
+			});// change
+			
+			//modalSave
+			$('#modalSave').click(function(){	
+			
+				$('#formValue').val( $('#value').val());
+				$('#formSubject').val( $('#subject').val());
+				$('#formPredicate').val( $('#predicate').val());
+				$('#formObject').val( $('#object').val());
+				
+				$('#expectedValueModalBut').addClass('btn-primary').removeClass('btn-danger');
+				
+				$('#expectedValueModal').modal('toggle');
+    			return false;
+			
+			});	
+	     })
+	});
+	</script>
 </head>
 <body>
 
@@ -59,6 +105,62 @@
 		    <small id="expectedValueHelp" class="form-text text-muted">Please specify the expected value.</small>
 		  </div>
 		  -->
+		  
+		  <div class="form-group">
+			<!-- Button trigger modal -->
+			<button id="expectedValueModalBut" type="button" class="btn btn-danger" data-toggle="modal" data-target="#expectedValueModal">
+			  Expected Values
+			</button>
+		
+			<!-- Modal -->
+			<div class="modal fade" id="expectedValueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="expectedValueModalLabel">Expected Value</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="form-check">
+					  	<label for="type">Expected Value type</label>
+					    <select class="form-control" id="type" name="type">
+					    	<option value="1">Scallar</option>
+					    	<option value="2">Triple</option>				    		
+					    </select>
+					    <small id="type" class="form-text text-muted">Please select type.</small>
+					  </div>	
+					  <div class="form-group visibility1" style="visibility: visible">
+					    <label for="value">Value</label>
+					    <input type="text" class="form-control" id="value" name="value" placeholder="Enter value" required>
+					  </div>
+					  <div class="form-group visibility2" style="visibility: hidden">
+					    <label for="subject">Subject</label>
+					    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" required>
+					  </div>
+					  <div class="form-group visibility2" style="visibility: hidden">
+					    <label for="predicate">Predicate</label>
+					    <input type="text" class="form-control" id="predicate" name="predicate" placeholder="Enter predicate" required>
+					  </div>
+					  <div class="form-group visibility2" style="visibility: hidden">
+					    <label for="object">Object</label>
+					    <input type="text" class="form-control" id="object" name="object" placeholder="Enter object" required>
+					  </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button id="modalSave" type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <input id="formValue" type="hidden" value=""/>
+		  <input id="formSubject" type="hidden" value=""/>
+		  <input id="formPredicate" type="hidden" value=""/>
+		  <input id="formObject" type="hidden" value=""/>
 		  
 		  <div class="form-group">
 		    <label for="message">Message</label>
