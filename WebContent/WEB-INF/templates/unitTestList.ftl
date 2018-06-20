@@ -35,9 +35,7 @@
 		  <thead>
 		    <tr>
 		      <th scope="col">name</th>
-		      <th scope="col">assert type</th>
 		      <th scope="col">query</th>
-		      <th scope="col">expected value</th>
 		      <th scope="col">message</th>
 		      <th scope="col">system test id</th>
 		      
@@ -49,15 +47,8 @@
 					<td>
 						${unitTest.name}
 					</td>
-
-					<td>
-						${unitTest.assertType}
-					</td>
 					<td>
 						${unitTest.query}
-					</td>
-					<td>
-						${unitTest.expectedValue}
 					</td>
 					<td>
 						${unitTest.message}
@@ -68,7 +59,7 @@
 				</tr>
 			<#else>
 			  <tr>
-			  	<td colspan="2">
+			  	<td colspan="4">
 			  		No data found
 			  	</td>
 			  </tr>

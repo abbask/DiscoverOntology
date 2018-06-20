@@ -1,10 +1,12 @@
 package edu.uga.discoverontology.presentation;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -15,7 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import edu.uga.discoverontology.model.ExpectedValue;
+import edu.uga.discoverontology.model.ExpectedValueGson;
 import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.service.SystemTestService;
 import edu.uga.discoverontology.service.UnitTestService;
@@ -108,33 +114,35 @@ public class UnitTestNew extends HttpServlet {
 		String query ="";
 		String message="";
 		String scallar="";
-		String subject="";
-		String predicate="";
-		String object="";
-		
-		
+		String triple="";
+
 		systemTestID = (!req.getParameter("systemTest").equals(0))? Integer.valueOf(req.getParameter("systemTest")) : systemTestID ;
 		name = (!req.getParameter("name").equals(""))? req.getParameter("name") : name ;
-		assertType = (!req.getParameter("assertType").equals(""))? req.getParameter("assertType") : assertType ;
 		query = (!req.getParameter("query").equals(""))? req.getParameter("query") : query ;
 		message = (!req.getParameter("message").equals(""))? req.getParameter("message") : message ;
 		
+		
+		assertType = (!req.getParameter("formAssertType").equals(""))? req.getParameter("formAssertType") : assertType ;
 		scallar = (!req.getParameter("formValue").equals(""))? req.getParameter("formValue") : scallar ;
-		subject = (!req.getParameter("fromSubject").equals(""))? req.getParameter("fromSubject") : subject ;
-		predicate = (!req.getParameter("fromPredicate").equals(""))? req.getParameter("fromPredicate") : predicate ;
-		object = (!req.getParameter("formObject").equals(""))? req.getParameter("formObject") : object ;
+		triple = (!req.getParameter("formTripple").equals(""))? req.getParameter("formTripple") : triple ;
 		
-		ExpectedValue expectedValue;
-		
-		if (scallar.isEmpty()) {
-			expectedValue =  new ExpectedValue(subject, predicate, object);
+		Gson gson = new Gson();
+	    
+		ArrayList<ExpectedValue> tempExpectedValues = new ArrayList<>();
+		ExpectedValue[] expectedValues ;
+		if (scallar.isEmpty() || scallar == null) {
+			expectedValues = gson.fromJson(triple, ExpectedValue[].class);
+			assertType = "EQUAL";
 		}
 		else{
-			expectedValue = new ExpectedValue(scallar, "", "");
+			ExpectedValue expectedValue = new ExpectedValue(scallar, "", "");
+			tempExpectedValues.add(expectedValue);
+			expectedValues = new ExpectedValue[tempExpectedValues.size()];
+			expectedValues = tempExpectedValues.toArray(expectedValues);
 		}
 		
 		UnitTestService unitTestService = new UnitTestService(); 
-		unitTestService.Add(name, assertType, query, expectedValue, message,systemTestID);
+		unitTestService.Add(name, query,assertType, expectedValues, message,systemTestID);
 		
 		
 		res.sendRedirect(req.getContextPath() + "/UnitTestList");
