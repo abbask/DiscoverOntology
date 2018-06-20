@@ -137,7 +137,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Ontology Test</a>
+      <a class="navbar-brand" href="/DiscoverOntology/OntologyTest">Ontology Test</a>
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
