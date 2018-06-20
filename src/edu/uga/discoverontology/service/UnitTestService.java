@@ -59,7 +59,7 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID ");
+		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID Order by system_test_name ");
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
 			int id = resObj.getInt("id");

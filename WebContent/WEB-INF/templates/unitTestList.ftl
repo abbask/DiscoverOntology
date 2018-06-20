@@ -46,7 +46,7 @@
 					<td>
 						${unitTest.name}
 					</td>
-					<td>
+					<td style="text-overflow: ellipsis;">
 						${unitTest.query}
 					</td>
 					<td>

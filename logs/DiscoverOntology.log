@@ -448,3 +448,46 @@ freemarker.core.InvalidReferenceException: [... Exception message was already pr
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 2018-06-20 15:39:53 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 17:38:36 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 17:39:30 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 17:40:23 INFO  UnitTestService:48 - UnitTestService.add : new unit_test is rolled back.
+2018-06-20 17:40:23 ERROR UnitTestService:52 - Data truncation: Data too long for column 'query' at row 1
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'query' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3489)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2536)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at edu.uga.discoverontology.service.UnitTestService.Add(UnitTestService.java:31)
+	at edu.uga.discoverontology.presentation.UnitTestNew.save(UnitTestNew.java:145)
+	at edu.uga.discoverontology.presentation.UnitTestNew.doPost(UnitTestNew.java:62)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 17:40:23 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 17:42:07 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 17:42:34 INFO  UnitTestService:44 - UnitTestService.add : new unit_test commited.
+2018-06-20 17:42:34 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 17:47:05 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 17:47:13 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
