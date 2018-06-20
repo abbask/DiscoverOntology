@@ -37,7 +37,7 @@
 		      <th scope="col">name</th>
 		      <th scope="col">query</th>
 		      <th scope="col">message</th>
-		      <th scope="col">system test id</th>
+		      <th scope="col">system test</th>
 		      
 		    </tr>
 		  </thead>

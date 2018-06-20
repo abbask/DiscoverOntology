@@ -17,8 +17,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
-      <li><a href="/DiscoverOntology/SuiteTestList">Suite Test List</a></li>
-      <li><a href="/DiscoverOntology/UnitTestList">Unit Test List</a></li>
+      <li><a href="/DiscoverOntology/UnitTestList">Unit Testing</a></li>
       
     </ul>
   </div>
@@ -31,17 +30,17 @@
 	<div>
 		<form method="post" data-toggle="validator" role="form">   
 		  <div class="form-group">
-		    <label for="name">Name</label>
+		    <label for="name">Name:</label>
 		    <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter name" required>
 		    <small id="nameHelp" class="form-text text-muted">Please select name for your system test.</small>
 		  </div>
 		  <div class="form-group">
-		    <label for="endPoint">Endpoint</label>
+		    <label for="endPoint">End point:</label>
 		    <input type="text" class="form-control" id="endPoint" name="endPoint" aria-describedby="endPointHelp" placeholder="Enter endPoint url" required>
 		    <small id="endPointHelp" class="form-text text-muted">Please specify the end point url.</small>
 		  </div>
 		  <div class="form-check">
-		  	<label for="graph">Graph</label>
+		  	<label for="graph">Graph name:</label>
 		    <input type="text" class="form-control" id="graph" name="graph" placeholder="Enter graph name" required>
 		    <small id="endPointHelp" class="form-text text-muted">Please specify the graph name.</small>
 		  </div>

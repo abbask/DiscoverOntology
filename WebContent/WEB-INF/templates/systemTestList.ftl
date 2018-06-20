@@ -17,7 +17,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
-      <li><a href="/DiscoverOntology/UnitTestList">Unit Test List</a></li>
+      <li><a href="/DiscoverOntology/UnitTestList">Unit Testing</a></li>
       
     </ul>
   </div>
@@ -35,9 +35,8 @@
 		  <thead>
 		    <tr>
 		      <th scope="col">name</th>
-		      <th scope="col">endPoint</th>
+		      <th scope="col">end point</th>
 		      <th scope="col">graph</th>
-		      <th scope="col">suites</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -51,9 +50,6 @@
 					</td>
 					<td>
 						${testSystem.graph}
-					</td>
-					<td>
-						
 					</td>
 				</tr>
 			<#else>

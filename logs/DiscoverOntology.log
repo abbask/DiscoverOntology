@@ -61,3 +61,33 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'subje
 2018-06-20 12:58:34 INFO  UnitTestService:45 - UnitTestService.add : new unit_test commited.
 2018-06-20 12:58:34 INFO  UnitTestService:83 - UnitTestService.listAll :  unit_tests retrieved.
 2018-06-20 13:28:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 13:29:55 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 13:30:12 INFO  UnitTestService:43 - UnitTestService.add : new unit_test commited.
+2018-06-20 13:30:12 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:36:15 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:37:19 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:37:41 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:38:52 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:39:20 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
+2018-06-20 14:39:20 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:39:30 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:39:32 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:39:34 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:39:35 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:39:37 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:39:38 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:40:26 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:40:31 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:40:54 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:40:57 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:40:58 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:40:59 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:41:32 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:41:52 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:41:57 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:41:58 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:42:23 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:43:01 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-20 14:43:22 INFO  UnitTestService:43 - UnitTestService.add : new unit_test commited.
+2018-06-20 14:43:22 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 14:43:37 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.

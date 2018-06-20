@@ -141,7 +141,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/DiscoverOntology/SystemTestList">System Testing</a></li>
-      <li ><a href="/DiscoverOntology/UnitTestList">Unit Test List</a></li>
+      <li ><a href="/DiscoverOntology/UnitTestList">Unit Testing</a></li>
       
     </ul>
   </div>
@@ -181,19 +181,13 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			      	<div class="form-check">
+			      	 <div class="form-check form-group">
 					  	<label for="type">Expected Value type</label>
 					    <select class="form-control" id="type" name="type">
-					    	<option value="1">Scallar</option>
+					    	<option value="1">Scalar</option>
 					    	<option value="2">Triple</option>				    		
 					    </select>
-					    <small id="type" class="form-text text-muted">Please select type.</small>
 					  </div>	
-					  
-					  <div class="form-group visibility1" style="visibility: visible">
-					    <label for="value">Value</label>
-					    <input type="text" class="form-control" id="value" name="value" placeholder="Enter value">
-					  </div>
 					  <div class="form-group visibility1" style="visibility: visible">
 					    <label for="assertType">Assert Type</label>
 					    <select class="form-control" id="assertType" name="assertType">
@@ -202,6 +196,11 @@
 					    	<option value="3">GREATER</option>				    		
 					    </select>
 					  </div>
+					  <div class="form-group visibility1" style="visibility: visible">
+					    <label for="value">Value</label>
+					    <input type="text" class="form-control" id="value" name="value" placeholder="Enter value">
+					  </div>
+					  
 					  <div class="form-group visibility2" style="visibility: hidden">
 					    <label for="subject">Subject</label>
 					    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
