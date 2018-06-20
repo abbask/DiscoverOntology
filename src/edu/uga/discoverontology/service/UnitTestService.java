@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -61,6 +62,7 @@ public class UnitTestService {
 		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID ");
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
+			int id = resObj.getInt("id");
 			MyUnitTest myUnitTest = new MyUnitTest();
 			myUnitTest.setID(resObj.getInt("id"));
 			myUnitTest.setName(resObj.getString("name"));
@@ -71,6 +73,20 @@ public class UnitTestService {
 			systemTest.setID(resObj.getInt("system_test_id"));
 			systemTest.setName(resObj.getString("system_test_name"));
 			myUnitTest.setSystemTest(systemTest);
+			
+			PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, subject,predicate, object from expected_values where unit_test_id=" + id);
+			ResultSet valueRes = valuesStatement.executeQuery();
+			ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
+			
+			while(valueRes.next()) {
+				ExpectedValue expectedValue = new ExpectedValue();
+				expectedValue.setID(valueRes.getInt("ID"));
+				expectedValue.setSubject(valueRes.getString("subject"));
+				expectedValue.setPredicate(valueRes.getString("predicate"));
+				expectedValue.setObject(valueRes.getString("object"));
+				expectedValues.add(expectedValue);
+			}
+			myUnitTest.setExpectedValues(expectedValues);
 			
 			list.add(myUnitTest);
         }

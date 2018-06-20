@@ -8,6 +8,11 @@ public class ExpectedValue {
 	private String object;
 	private MyUnitTest unitTest;
 	
+	
+	
+	public ExpectedValue() {
+	}
+
 	public ExpectedValue(String subject, String predicate, String object) {
 		super();
 		this.subject = subject;

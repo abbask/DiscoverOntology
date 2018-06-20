@@ -38,7 +38,6 @@
 		      <th scope="col">query</th>
 		      <th scope="col">message</th>
 		      <th scope="col">system test</th>
-		      
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -56,6 +55,8 @@
 					<td>
 						${unitTest.systemTest.name}
 					</td>
+
+					
 				</tr>
 			<#else>
 			  <tr>

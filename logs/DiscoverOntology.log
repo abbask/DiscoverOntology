@@ -1,28 +1,14 @@
-2018-06-20 12:48:10 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:49:49 INFO  UnitTestService:78 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:49:51 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:50:00 INFO  UnitTestService:44 - UnitTestService.add : new unit_test is rolled back.
-2018-06-20 12:50:00 ERROR UnitTestService:48 - Unknown column 'subject' in 'field list'
-com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'subject' in 'field list'
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
-	at com.mysql.jdbc.Util.getInstance(Util.java:381)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1030)
+2018-06-20 15:30:03 ERROR UnitTestService:105 - Column 'subject' not found.
+java.sql.SQLException: Column 'subject' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1055)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3491)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2536)
-	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
-	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
-	at edu.uga.discoverontology.service.UnitTestService.Add(UnitTestService.java:36)
-	at edu.uga.discoverontology.presentation.UnitTestNew.save(UnitTestNew.java:144)
-	at edu.uga.discoverontology.presentation.UnitTestNew.doPost(UnitTestNew.java:62)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:926)
+	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1093)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5488)
+	at edu.uga.discoverontology.service.UnitTestService.listAll(UnitTestService.java:90)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:80)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
@@ -44,50 +30,421 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'subje
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2018-06-20 12:50:00 INFO  UnitTestService:78 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:51:15 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:51:25 INFO  UnitTestService:40 - UnitTestService.add : new unit_test commited.
-2018-06-20 12:51:25 INFO  UnitTestService:78 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:51:30 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:51:48 INFO  UnitTestService:40 - UnitTestService.add : new unit_test commited.
-2018-06-20 12:51:48 INFO  UnitTestService:78 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:54:30 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:54:49 INFO  UnitTestService:40 - UnitTestService.add : new unit_test commited.
-2018-06-20 12:54:49 INFO  UnitTestService:78 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:57:31 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:57:41 INFO  UnitTestService:45 - UnitTestService.add : new unit_test commited.
-2018-06-20 12:57:41 INFO  UnitTestService:83 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 12:58:11 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 12:58:34 INFO  UnitTestService:45 - UnitTestService.add : new unit_test commited.
-2018-06-20 12:58:34 INFO  UnitTestService:83 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 13:28:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 13:29:55 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 13:30:12 INFO  UnitTestService:43 - UnitTestService.add : new unit_test commited.
-2018-06-20 13:30:12 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:36:15 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:37:19 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:37:41 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:38:52 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:39:20 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
-2018-06-20 14:39:20 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:39:30 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:39:32 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:39:34 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:39:35 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:39:37 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:39:38 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:40:26 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:40:31 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:40:54 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:40:57 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:40:58 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:40:59 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:41:32 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:41:52 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:41:57 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:41:58 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:42:23 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:43:01 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-20 14:43:22 INFO  UnitTestService:43 - UnitTestService.add : new unit_test commited.
-2018-06-20 14:43:22 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
-2018-06-20 14:43:37 INFO  UnitTestService:81 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:30:03 INFO  UnitTestService:107 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:31:22 INFO  UnitTestService:107 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:31:43 INFO  UnitTestService:107 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:31:56 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:32:09 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:32:12 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:32:18 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:32:18 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 65, column 59]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${unitTest.expectedValues[0].subject}  [in template "unitTestList.ftl" at line 65, column 57]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:77)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IfBlock.accept(IfBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:32:58 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:32:58 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 65, column 59]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${unitTest.expectedValues[0]}  [in template "unitTestList.ftl" at line 65, column 57]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:355)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IfBlock.accept(IfBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:33:04 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:33:04 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 65, column 59]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${unitTest.expectedValues[0]}  [in template "unitTestList.ftl" at line 65, column 57]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:355)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IfBlock.accept(IfBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:33:14 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:33:35 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:33:35 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 65, column 59]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${unitTest.expectedValues[0]}  [in template "unitTestList.ftl" at line 65, column 57]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:355)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IfBlock.accept(IfBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:34:51 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:36:29 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:36:29 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 65, column 59]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${unitTest.expectedValues[0].subject}  [in template "unitTestList.ftl" at line 65, column 57]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:77)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IfBlock.accept(IfBlock.java:48)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:37:33 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:37:59 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:39:40 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-20 15:39:40 ERROR runtime:60 - Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> unitTest.expectedValues[0]  [in template "unitTestList.ftl" at line 59, column 46]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if unitTest.expectedValues[0].predic...  [in template "unitTestList.ftl" at line 59, column 41]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:77)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.ExistsExpression._eval(ExistsExpression.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:124)
+	at freemarker.core.Expression.evalToBoolean(Expression.java:110)
+	at freemarker.core.IfBlock.accept(IfBlock.java:46)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visitByHiddingParent(Environment.java:345)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlockInner(IteratorBlock.java:268)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedBlock(IteratorBlock.java:220)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:194)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:572)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:78)
+	at freemarker.core.ListElseContainer.accept(ListElseContainer.java:36)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at edu.uga.discoverontology.presentation.UnitTestList.loadPage(UnitTestList.java:89)
+	at edu.uga.discoverontology.presentation.UnitTestList.doGet(UnitTestList.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-20 15:39:53 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
