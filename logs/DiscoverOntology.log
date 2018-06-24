@@ -60,3 +60,40 @@
 2018-06-24 16:34:25 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-24 16:35:55 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
 2018-06-24 16:37:15 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 16:47:23 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:00:42 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:02:34 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:03:17 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:03:20 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:03:48 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:19:14 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:19:16 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:19:34 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:19:40 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:20:11 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:20:13 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:21:10 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:21:12 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:21:37 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:21:39 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:21:49 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:37:09 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:37:12 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:37:17 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:37:20 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:37:24 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:39:48 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:39:50 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:41:06 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:41:09 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:52:47 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:52:49 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:53:11 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:53:43 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:53:46 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 17:54:27 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 17:54:29 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 18:01:56 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 18:02:01 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 18:03:03 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 18:03:06 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.

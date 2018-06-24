@@ -11,15 +11,47 @@ $(window).on("load",function(){
 		
 		if (system_test_id != 0){
 			
-		    $.get("RunTest",
+		    $.get("RunTest",{
+		    	system_test_id : system_test_id
+		    },
 	
 		    function(data, status){
-		    	alert(data);
-		    });
-	    
-		}
+		    	
+		    	textTable = "<table class='table'>";
+		    	textTable += "<thead><tr><th>ID</th><th>name</th><th>Status</th></tr></thead><tbody>";
+		    	
+		    	$.each(data, function( index, value ) {
+		    		
+		    		textTable += "<tr><td><span class='testToRun' unitTestID='" + value.ID + "'>" + value.ID + "</span></td><td>" + value.name + "</td><td><span id='statusID'></span></td></tr>";
+	    		  
+	    		}); // $.each(obj, function( index, value ) 
+		    	
+		    	textTable += "</tbody></table>";
+		    	
+		    	$("#divTable").empty();
+		    	$("#divTable").html(textTable);
+//		    	$("#statusID").html("OK");
+		    	
+		    	$(".testToRun").each(function(index){
+		    		console.log( index + ": " + $( this ).attr('unitTestID') );
+		    		unit_test_id = $( this ).attr('unitTestID');
+		    		
+			    	$.get("RunUnitTest",{
+			    		unit_test_id : unit_test_id
+				    },
+			
+				    function(data, status){
+				    
+				    });
+		    	});
+		    	
 
-	});
+		    	
+		    }); // function(data, status){
+	    
+		} // if (system_test_id != 0){
+
+	}); // #runTest click
 	
 	
 });

@@ -57,7 +57,12 @@
 		    </select>
 			<button id="runTest" type="button" class="btn btn-primary">Run</button>
 		</div>
-	</form>	
+	</form>
+	
+	<div id="divTable">
+	</div>	
+	
+	
 
 </div>
 

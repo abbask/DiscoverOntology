@@ -14,7 +14,9 @@ import org.apache.log4j.Logger;
 import com.google.gson.Gson;
 
 import edu.uga.discoverontology.model.MyTestSystem;
+import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.service.SystemTestService;
+import edu.uga.discoverontology.service.UnitTestService;
 
 
 @WebServlet("/RunTest")
@@ -36,11 +38,14 @@ public class TestRun extends HttpServlet{
 	
 	public void loadPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		SystemTestService systemTestService = new SystemTestService();
-
-		ArrayList<MyTestSystem> testSystems = systemTestService.listAll();
+		UnitTestService unitTestService = new UnitTestService();
 		
-	    String json = new Gson().toJson(testSystems);
+		int system_test_id = 0;
+		
+		system_test_id = (!req.getParameter("system_test_id").equals(""))? Integer.valueOf(req.getParameter("system_test_id")) : system_test_id ;
+		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(system_test_id);
+		
+	    String json = new Gson().toJson(unitTests);
 
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
