@@ -145,5 +145,49 @@ public class UnitTestService {
 		return list;
 	}
 	
+	public MyUnitTest findByID(int id) {
+		MyUnitTest myUnitTest = new MyUnitTest();
+		MySQLConnection conn = new MySQLConnection();
+		try {
+
+		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where u.id=" + id);
+		ResultSet resObj = prepStatement.executeQuery();
+		while(resObj.next()) {
+//			int id = resObj.getInt("id");
+			
+			myUnitTest.setID(resObj.getInt("id"));
+			myUnitTest.setName(resObj.getString("name"));
+			myUnitTest.setQuery(resObj.getString("query"));
+			myUnitTest.setMessage(resObj.getString("message"));
+			
+			MyTestSystem systemTest = new MyTestSystem();
+			systemTest.setID(resObj.getInt("system_test_id"));
+			systemTest.setName(resObj.getString("system_test_name"));
+			systemTest.setEndPoint(resObj.getString("endpoint"));
+			systemTest.setGraph(resObj.getString("graph"));
+			myUnitTest.setSystemTest(systemTest);
+			
+			PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, subject,predicate, object from expected_values where unit_test_id=" + id);
+			ResultSet valueRes = valuesStatement.executeQuery();
+			ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
+			
+			while(valueRes.next()) {
+				ExpectedValue expectedValue = new ExpectedValue();
+				expectedValue.setID(valueRes.getInt("ID"));
+				expectedValue.setSubject(valueRes.getString("subject"));
+				expectedValue.setPredicate(valueRes.getString("predicate"));
+				expectedValue.setObject(valueRes.getString("object"));
+				expectedValues.add(expectedValue);
+			}
+			myUnitTest.setExpectedValues(expectedValues);
+			
+        }
+		
+		} catch (Exception sqlException) {
+			logger.error(sqlException.getMessage(), sqlException);
+		}
+		logger.info("UnitTestService.findByID :  unit_test retrieved by id.");
+		return myUnitTest;
+	}
 
 }

@@ -20,7 +20,7 @@ import edu.uga.discoverontology.service.UnitTestService;
 
 
 @WebServlet("/RunTest")
-public class TestRun extends HttpServlet{
+public class RunSystemTest extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	final static Logger logger = Logger.getLogger(OntologyTest.class);
