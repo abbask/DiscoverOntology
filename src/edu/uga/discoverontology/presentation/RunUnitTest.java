@@ -1,6 +1,7 @@
 package edu.uga.discoverontology.presentation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 
+import edu.uga.discoverontology.datastore.EndpointConnection;
 import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.service.UnitTestService;
 
@@ -44,8 +46,12 @@ public class RunUnitTest extends HttpServlet{
 		
 		MyUnitTest unitTest = unitTestService.findByID(unit_test_id);
 		
-		System.out.println(unitTest);
-		System.err.println("---Test ok ---");
+//		System.out.println(unitTest);
+		
+		String queryString  = unitTest.getQuery();
+		
+		EndpointConnection endpoint = new EndpointConnection ( unitTest.getSystemTest().getEndPoint(),unitTest.getSystemTest().getGraph());
+		endpoint.executeQuery(queryString);
 		
 	    String json = new Gson().toJson(unitTest);
 

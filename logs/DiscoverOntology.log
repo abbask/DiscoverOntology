@@ -103,3 +103,249 @@
 2018-06-24 18:25:12 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
 2018-06-24 18:25:12 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
 2018-06-24 18:25:12 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 19:47:49 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 19:48:12 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 19:48:13 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 19:52:53 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 19:53:02 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 19:53:02 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 19:53:02 ERROR EndpointConnection:62 - String index out of range: -1
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1967)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:38)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:53)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:28)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-24 19:53:02 INFO  EndpointConnection:64 - EndpointConnection.executeQuery : retrieved result.
+2018-06-24 21:11:50 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:11:53 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 21:11:53 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 21:11:53 ERROR EndpointConnection:39 - EndpointConnection.executeQuery : Query is not formed correctly.
+2018-06-24 21:14:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:14:42 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
+2018-06-24 21:14:42 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:14:45 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-24 21:14:46 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:15:58 INFO  UnitTestService:48 - UnitTestService.add : new unit_test is rolled back.
+2018-06-24 21:15:58 ERROR UnitTestService:52 - Data truncation: Data too long for column 'query' at row 1
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'query' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3489)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2536)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at edu.uga.discoverontology.service.UnitTestService.Add(UnitTestService.java:31)
+	at edu.uga.discoverontology.presentation.UnitTestNew.save(UnitTestNew.java:145)
+	at edu.uga.discoverontology.presentation.UnitTestNew.doPost(UnitTestNew.java:62)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-24 21:15:58 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-24 21:17:38 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:18:14 INFO  UnitTestService:44 - UnitTestService.add : new unit_test commited.
+2018-06-24 21:18:14 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-24 21:18:27 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:18:33 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 21:18:33 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 21:18:34 ERROR EndpointConnection:67 - 
+java.lang.NullPointerException
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.init(HttpQuery.java:107)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.<init>(HttpQuery.java:90)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.makeHttpQuery(QueryEngineHTTP.java:589)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:344)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:46)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:54)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-24 21:18:34 INFO  EndpointConnection:69 - EndpointConnection.executeQuery : retrieved result.
+2018-06-24 21:18:43 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 21:18:43 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 21:18:43 ERROR EndpointConnection:67 - 
+java.lang.NullPointerException
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.init(HttpQuery.java:107)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.<init>(HttpQuery.java:90)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.makeHttpQuery(QueryEngineHTTP.java:589)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:344)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:46)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:54)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-24 21:18:43 INFO  EndpointConnection:69 - EndpointConnection.executeQuery : retrieved result.
+2018-06-24 21:19:55 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:19:58 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 21:19:58 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 21:19:59 ERROR EndpointConnection:67 - 
+java.lang.NullPointerException
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.init(HttpQuery.java:107)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.<init>(HttpQuery.java:90)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.makeHttpQuery(QueryEngineHTTP.java:589)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:344)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:46)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:54)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-06-24 21:19:59 INFO  EndpointConnection:69 - EndpointConnection.executeQuery : retrieved result.
+2018-06-24 21:23:03 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-24 21:23:07 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-06-24 21:23:07 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-06-24 21:23:10 ERROR EndpointConnection:67 - Error making the query, see cause for details
+HttpException: -1
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:340)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:46)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:54)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://localhost:8890 refused
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:190)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:645)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:480)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:137)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:118)
+	at org.apache.jena.riot.web.HttpOp.exec(HttpOp.java:1011)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:291)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:353)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:326)
+	... 27 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:127)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	... 37 more
+2018-06-24 21:23:10 INFO  EndpointConnection:69 - EndpointConnection.executeQuery : retrieved result.
