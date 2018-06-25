@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 
+import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
 
@@ -26,7 +27,7 @@ public class EndpointConnection {
 	
 	
 
-	public ArrayList<ArrayList<String>> executeQuery(String queryString) {
+	public ArrayList<ArrayList<String>> executeQueryForCol(String queryString) {
 		QueryEngineHTTP qeHTTP = null;
 		ResultSet results = null;
 		
@@ -41,17 +42,17 @@ public class EndpointConnection {
 			}
 			
 			queryString = queryString.substring(0, index) + " FROM <" + graphName + "> " + queryString.substring(index, queryString.length());
-//			System.out.println("queryString: " + queryString);
+			
 			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
+			
 			results = qeHTTP.execSelect();	
-			
+
 			Iterator<String> iter = results.nextSolution().varNames();
-			ArrayList<String> varNames = new ArrayList<>();
 			
+			ArrayList<String> varNames = new ArrayList<>();
 			while(iter.hasNext()) {
 				varNames.add(iter.next());
 			}
-			
 			
 			while (results.hasNext()){	
 				ArrayList<String> rs = new ArrayList<>();
@@ -71,5 +72,43 @@ public class EndpointConnection {
 		return list;
 	}	
 	
+	public int executeQueryForScalar(String queryString) {
+		QueryEngineHTTP qeHTTP = null;
+		ResultSet results = null;
+		
+		int count=0; 
+		
+		try {
+			
+			int index = queryString.toUpperCase().indexOf("WHERE");
+			
+			if (index == -1) {
+				logger.error("EndpointConnection.executeQuery : Query is not formed correctly.");
+				return count;
+			}
+			
+			queryString = queryString.substring(0, index) + " FROM <" + graphName + "> " + queryString.substring(index, queryString.length());
+			
+			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
+			
+			results = qeHTTP.execSelect();	
+			
+			System.out.println("varnames: " + results.getResultVars().size());
+			
+			while (results.hasNext()){
+				QuerySolution soln = results.nextSolution();
+				count =soln.getLiteral("count").getInt();
+			}
+			
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();	
+			logger.error(e.getMessage(), e);
+		}		
+		logger.info("EndpointConnection.executeQuery : retrieved result.");
+		qeHTTP.close();		
+		return count;
+	}	
 	
 }

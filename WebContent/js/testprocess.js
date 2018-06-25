@@ -33,7 +33,7 @@ $(window).on("load",function(){
 //		    	$("#statusID").html("OK");
 		    	
 		    	$(".testToRun").each(function(index){
-		    		console.log( index + ": " + $( this ).attr('unitTestID') );
+		    		//console.log("Second Ajax: " + index + ": " + $( this ).attr('unitTestID') );
 		    		unit_test_id = $( this ).attr('unitTestID');
 		    		
 			    	$.get("RunUnitTest",{
@@ -41,7 +41,9 @@ $(window).on("load",function(){
 				    },
 			
 				    function(data, status){
-				    
+				    	//console.log("Second Ajax:")
+				    	console.log(data);
+				    	
 				    });
 		    	});
 		    	

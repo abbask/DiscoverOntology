@@ -51,9 +51,11 @@ public class RunUnitTest extends HttpServlet{
 		String queryString  = unitTest.getQuery();
 		
 		EndpointConnection endpoint = new EndpointConnection ( unitTest.getSystemTest().getEndPoint(),unitTest.getSystemTest().getGraph());
-		endpoint.executeQuery(queryString);
 		
-	    String json = new Gson().toJson(unitTest);
+		
+		ArrayList<ArrayList<String>> result =  endpoint.executeQueryForCol(queryString);
+		
+	    String json = new Gson().toJson(result);
 
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
