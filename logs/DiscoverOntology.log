@@ -820,3 +820,16 @@ java.lang.ClassCastException: com.hp.hpl.jena.rdf.model.impl.LiteralImpl cannot 
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 2018-06-25 19:35:56 INFO  EndpointConnection:67 - EndpointConnection.executeQuery : retrieved result.
+2018-06-25 19:40:10 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-25 19:40:23 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:40:57 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:43:10 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:43:30 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:43:31 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:44:40 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:44:42 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:44:44 INFO  UnitTestService:97 - UnitTestService.listAll :  unit_tests retrieved.
+2018-06-25 19:44:46 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:46:19 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:46:21 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 19:46:36 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.

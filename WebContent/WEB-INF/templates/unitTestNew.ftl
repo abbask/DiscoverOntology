@@ -124,14 +124,17 @@
 				  }
 				}
 				console.log(listofvars.length);
+				console.log(listofvars);
 				if ( listofvars.length > 1 ) { // not scalar
 					//modal-body
-					
+					type = 2;
+					//HERE
 				}
 				else{  // scalar
+					type =1 ;
 					str = '<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="1">EQUAL</option><option value="2">LESS</option><option value="3">GREATER</option></select></div>';
-					str += '<div class="form-group"><label for="colName">Column Name</label><input type="text" class="form-control" id="colName" name="colName" placeholder="Enter Column Name"></div>';
-					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';					
+					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';
+					$('.modal-body').html(str);		
 				}
 				
 			});
