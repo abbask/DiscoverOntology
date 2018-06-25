@@ -1,44 +1,23 @@
-2018-06-25 16:28:18 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:28:18 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-06-25 16:28:20 INFO  EndpointConnection:75 - EndpointConnection.executeQuery : retrieved result.
-2018-06-25 16:29:44 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:29:44 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-06-25 16:29:45 ERROR EndpointConnection:73 - 
-java.lang.NullPointerException
-	at edu.uga.discoverontology.datastore.EndpointConnection.executeQuery(EndpointConnection.java:52)
-	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:54)
-	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:29)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
-	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2018-06-25 16:29:45 INFO  EndpointConnection:75 - EndpointConnection.executeQuery : retrieved result.
-2018-06-25 16:41:47 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:41:47 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-06-25 16:41:51 INFO  EndpointConnection:75 - EndpointConnection.executeQuery : retrieved result.
-2018-06-25 16:43:35 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:43:35 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-06-25 16:43:39 INFO  EndpointConnection:76 - EndpointConnection.executeQuery : retrieved result.
-2018-06-25 16:44:50 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:45:24 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
-2018-06-25 16:45:27 INFO  UnitTestService:144 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-06-25 16:45:27 INFO  UnitTestService:189 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-06-25 16:45:30 INFO  EndpointConnection:69 - EndpointConnection.executeQuery : retrieved result.
+2018-06-25 17:25:12 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:26:49 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:27:19 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:28:09 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:34:34 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:35:26 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:37:13 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:37:34 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:38:41 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:39:05 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:39:29 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:52:45 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:53:07 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:53:39 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:54:23 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:55:48 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:56:22 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 17:59:18 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 18:11:16 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 18:12:08 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 18:13:21 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 18:14:32 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.
+2018-06-25 18:15:43 INFO  SystemTestNew:68 - SystemTestService.listAll :  system_tests retrieved.

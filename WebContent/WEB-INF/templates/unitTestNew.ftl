@@ -15,34 +15,8 @@
 			//document.getElementById("demo").innerHTML = person["firstName"];
 			
 			list = [];
-	     
-	     	type = 1;
-	         $('#type').change(function(){
-	         	
-			    type = $(this).val();
-			    
-			    $('#value').val('');
-		    	$('#subject').val('');
-		    	$('#predicate').val('');
-		    	$('#object').val('');
-		    	$('#formValue').val('');
-		    	$('#formAssertType').val('');
-				$('#formSubject').val( '');
-				$('#formPredicate').val('');
-				$('#formObject').val('');
-			    
-			    if (type == 1){
-			    	$('.visibility1').css('visibility','visible');
-			    	$('.visibility2').css('visibility','hidden');
-			    	
-			    }
-			    else if (type == 2){
-			    	$('.visibility1').css('visibility','hidden');
-			    	$('.visibility2').css('visibility','visible');
-			    }
-			    
-			});// change
-			
+			listofvars = [];
+	     	
 			//modalSave
 			$('#modalSave').click(function(){	
 			
@@ -127,7 +101,41 @@
 				}
 				
 			});
-	     })
+			
+			$('#expectedValueModal').on('shown.bs.modal', function (e) {
+				query = $('#query').val();
+				
+				//check the query
+				startIndex = query.toUpperCase().indexOf("SELECT") + 6 ;
+				endIndex = query.toUpperCase().indexOf("WHERE");
+				
+				term = query.substring(startIndex, endIndex).trim();
+				console.log(term);
+				counter = 0;
+				
+				for (var i = 0; i < term.length; i++) {
+				  
+				  if ( term.charAt(i) == "?" ){
+				  	console.log(term.indexOf(" ", i+1));
+				  	console.log(i+1);
+				  	listofvars[counter] = term.substring(i+1, term.indexOf(" ", i+1));
+				  	console.log(listofvars[counter]);
+				  	counter++;
+				  }
+				}
+				console.log(listofvars.length);
+				if ( listofvars.length > 1 ) { // not scalar
+					//modal-body
+					
+				}
+				else{  // scalar
+					str = '<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="1">EQUAL</option><option value="2">LESS</option><option value="3">GREATER</option></select></div>';
+					str += '<div class="form-group"><label for="colName">Column Name</label><input type="text" class="form-control" id="colName" name="colName" placeholder="Enter Column Name"></div>';
+					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';					
+				}
+				
+			});
+	     });
 	});
 	
 	</script>
@@ -181,38 +189,10 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			      	 <div class="form-check form-group">
-					  	<label for="type">Expected Value type</label>
-					    <select class="form-control" id="type" name="type">
-					    	<option value="1">Scalar</option>
-					    	<option value="2">Triple</option>				    		
-					    </select>
-					  </div>	
-					  <div class="form-group visibility1" style="visibility: visible">
-					    <label for="assertType">Assert Type</label>
-					    <select class="form-control" id="assertType" name="assertType">
-					    	<option value="1">EQUAL</option>
-					    	<option value="2">LESS</option>
-					    	<option value="3">GREATER</option>				    		
-					    </select>
-					  </div>
-					  <div class="form-group visibility1" style="visibility: visible">
-					    <label for="value">Value</label>
-					    <input type="text" class="form-control" id="value" name="value" placeholder="Enter value">
-					  </div>
+	
 					  
-					  <div class="form-group visibility2" style="visibility: hidden">
-					    <label for="subject">Subject</label>
-					    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
-					  </div>
-					  <div class="form-group visibility2" style="visibility: hidden">
-					    <label for="predicate">Predicate</label>
-					    <input type="text" class="form-control" id="predicate" name="predicate" placeholder="Enter predicate">
-					  </div>
-					  <div class="form-group visibility2" style="visibility: hidden">
-					    <label for="object">Object</label>
-					    <input type="text" class="form-control" id="object" name="object" placeholder="Enter object">
-					  </div>
+					  
+					  
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
