@@ -2,6 +2,7 @@ package edu.uga.discoverontology.datastore;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -47,17 +48,13 @@ public class EndpointConnection {
 			
 			results = qeHTTP.execSelect();	
 
-			Iterator<String> iter = results.nextSolution().varNames();
-			
-			ArrayList<String> varNames = new ArrayList<>();
-			while(iter.hasNext()) {
-				varNames.add(iter.next());
-			}
-			
+			List<String> varNames = results.getResultVars();			
+
 			while (results.hasNext()){	
 				ArrayList<String> rs = new ArrayList<>();
+				QuerySolution soln = results.nextSolution();
 				for (String varName : varNames) {
-					rs.add(results.nextSolution().getResource(varName).toString());		
+					rs.add(soln.getResource(varName).toString());	
 				}
 				list.add(rs);
 			}
@@ -91,13 +88,16 @@ public class EndpointConnection {
 			
 			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
 			
+			System.out.println("queryString: " + queryString);
+			
+			
 			results = qeHTTP.execSelect();	
 			
 			System.out.println("varnames: " + results.getResultVars().size());
-			
+			System.out.println(results.getResultVars().get(0));
 			while (results.hasNext()){
 				QuerySolution soln = results.nextSolution();
-				count =soln.getLiteral("count").getInt();
+				count =soln.getLiteral(results.getResultVars().get(0)).getInt();
 			}
 			
 

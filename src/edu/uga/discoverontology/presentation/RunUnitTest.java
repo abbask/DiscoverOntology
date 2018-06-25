@@ -52,8 +52,9 @@ public class RunUnitTest extends HttpServlet{
 		
 		EndpointConnection endpoint = new EndpointConnection ( unitTest.getSystemTest().getEndPoint(),unitTest.getSystemTest().getGraph());
 		
-		
 		ArrayList<ArrayList<String>> result =  endpoint.executeQueryForCol(queryString);
+		
+		System.out.println("result: " + result);
 		
 	    String json = new Gson().toJson(result);
 
