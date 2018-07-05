@@ -130,6 +130,7 @@ public class UnitTestService {
 		try {
 
 		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where system_test_id=" + system_test_id);
+		
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
 			int id = resObj.getInt("id");
@@ -174,6 +175,7 @@ public class UnitTestService {
 			
 
 			myUnitTest.setExpectedValueGroups(expectedValuesGroups);
+			list.add(myUnitTest);
         }
 		
 		} catch (Exception sqlException) {

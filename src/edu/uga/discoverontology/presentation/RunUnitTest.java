@@ -61,6 +61,7 @@ public class RunUnitTest extends HttpServlet{
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
 	    res.getWriter().write(json);
+	    logger.info("RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]");
 		
 	}
 

@@ -16,7 +16,6 @@ $(window).on("load",function(){
 		    },
 	
 		    function(data, status){
-		    	
 		    	textTable = "<table class='table'>";
 		    	textTable += "<thead><tr><th>ID</th><th>name</th><th>Status</th></tr></thead><tbody>";
 		    	
