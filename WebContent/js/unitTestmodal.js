@@ -6,6 +6,8 @@
 			
 			list = [];
 			listofvars = [];
+			selectVars = [];
+			result = [];
 	     	
 			//modalSave
 			$('#modalSave').click(function(){	
@@ -27,6 +29,64 @@
 				else{ // when triple
 					count = list.length
 					
+					$.each(selectVars, function( index, value ) {
+						var varName = value.useName;
+						var varValue = $("#" + varName).val();
+						//console.log(varName + ' ' + varValue);
+						value.value = varValue;
+					});
+					
+					resultCount = result.length;
+					result[resultCount] = selectVars;
+
+					
+					var myJSON = JSON.stringify(result);
+					
+					$('#formTripple').val(myJSON);
+					
+					/*var text = $('#formTripple').val();
+					console.log(text);
+					var obj = JSON.parse(text);
+					*/
+			    	//tableHtml = "<table class='table' id='expectedValueTable'><tr><th>id</th><th>subject</th><th>predicate</th><th>object</th><th></th></tr>";
+			    	
+					
+					tableHtml = "<table class='table' id='expectedValueTable'>";
+					
+					$('#tableDiv').empty();
+					
+					//just the table header
+					console.log("result: " + result);
+					singleResult = result[0];
+					tableHtml += "<tr>";
+					
+					$.each( singleResult, function( key, value ) {
+						tableHtml += "<th>" + value.originalName + "</th>";
+					});
+					tableHtml += "</tr>";
+					
+					$.each( result, function( index, single ) {
+						tableHtml += "<tr>";
+						$.each( single, function( key, value ) {
+							tableHtml += "<td>" + value.value + "</td>";
+						});
+						tableHtml += "</tr>";
+					});
+					
+					tableHtml += "</table>";
+					
+					$('#tableDiv').html(tableHtml);
+					
+					
+					/*
+			    	$.each( selectVars, function( key, value ) {
+					  tableHtml += "<tr><td>" + value.id + "</td><td>" + value.subject + "</td><td>" + value.predicate + "</td><td>" + value.object + "</td><td><span id='removeTriple' idValue='" + value.id + "' class='glyphicon glyphicon-remove' style='color:red'></span><td></tr>";
+					});
+					tableHtml += "</table>";
+					
+					$('#tableDiv').html(tableHtml);
+					
+					
 					var triple = {
 						"id" : count,
 						"subject": $('#subject').val(),
@@ -39,11 +99,6 @@
 					$('#object').val('');
 					
 					list[count] = triple;
-					
-					//var obj  = JSON.parse(list);
-					//console.log(list);
-					//console.log("---");
-					//console.log(obj);
 					
 					var myJSON = JSON.stringify(list);
 					
@@ -61,6 +116,7 @@
 					tableHtml += "</table>";
 					
 					$('#tableDiv').html(tableHtml);
+					*/
 				
 				}
 				
@@ -100,32 +156,58 @@
 				endIndex = query.toUpperCase().indexOf("WHERE");
 				
 				term = query.substring(startIndex, endIndex).trim();
-				console.log(term);
+				//console.log(term);
 				counter = 0;
 				
-				for (var i = 0; i < term.length; i++) {
-				  
-				  if ( term.charAt(i) == "?" ){
-				  	console.log(term.indexOf(" ", i+1));
-				  	console.log(i+1);
-				  	listofvars[counter] = term.substring(i+1, term.indexOf(" ", i+1));
-				  	console.log(listofvars[counter]);
-				  	counter++;
-				  }
+				arr  = term.split(" ");
+				//console.log(arr);
+				listofvars = [];
+				for(var i=0 ; i<arr.length ; i++){
+					var patternVar = /\?\w+/i;
+					if (patternVar.test(arr[i])){
+						var patternAS = /AS/i;
+						if (patternAS.test(arr[i+1])){
+							
+							continue;
+						}
+						//console.log(arr[i]);
+						listofvars[counter] = arr[i];
+						counter++;
+					}
 				}
-				//console.log(listofvars.length);
-				//console.log(listofvars);
+				
+				selectVars = [];
+				$.each(listofvars, function( index, value ) {
+					var tempName = value.replace('?', '');
+					tempName = tempName.replace('(','');
+					tempName = tempName.replace(')','');
+					
+					var obj = {
+						"originalName" : value,
+						"useName": tempName,
+						"index": index,
+						"value": "0",
+					};
+					selectVars[index] = obj;
+				});
+				
 				if ( listofvars.length > 1 ) { // not scalar
 					//modal-body
 					type = 2;
+					str = "";
 					//HERE
+					$('#expectedValueModalLabel').html('Expected Value - Triple</br><small>if you do not see all variables in the query, you might have syntax error.</small>');
+					$.each(selectVars, function( index, value ) {
+						str += '<div class="form-group"><label for="' + value.useName + '">' + value.originalName + '</label><input type="text" class="form-control allVars" id="' + value.useName + '" name="' + value.useName + '" placeholder="Enter value"></div></div>';
+					});
+					$('.modal-body').html(str);	
 				}
 				else{  // scalar
 					type =1 ;
 					str = '<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="1">EQUAL</option><option value="2">LESS</option><option value="3">GREATER</option></select></div>';
 					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';
 					$('.modal-body').html(str);	
-					$('#expectedValueModalLabel').val('Expected Value - Scalar');
+					$('#expectedValueModalLabel').html('Expected Value - Scalar');
 				}
 				
 			});
