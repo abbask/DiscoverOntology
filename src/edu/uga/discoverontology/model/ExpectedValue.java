@@ -3,81 +3,85 @@ package edu.uga.discoverontology.model;
 public class ExpectedValue {
 	
 	private int ID;
-	private String subject;
-	private String predicate;
-	private String object;
-	private MyUnitTest unitTest;
-	
-	
+	private String originalName;
+	private String useName;
+	private String index;
+	private String value;
+	private int groupId;
+	private ExpectedValuesGroup expectedValuesGroup;
 	
 	public ExpectedValue() {
 	}
-
-	public ExpectedValue(String subject, String predicate, String object) {
+	
+	public ExpectedValue(String originalName, String useName, String index, String value) {
 		super();
-		this.subject = subject;
-		this.predicate = predicate;
-		this.object = object;
+		this.originalName = originalName;
+		this.useName = useName;
+		this.index = index;
+		this.value = value;
 	}
-
-	public ExpectedValue(int iD, String subject, String predicate, String object, MyUnitTest unitTest) {
+	public ExpectedValue(int iD, String originalName, String useName, String index, String value, ExpectedValuesGroup expectedValuesGroup) {
 		super();
 		ID = iD;
-		this.subject = subject;
-		this.predicate = predicate;
-		this.object = object;
-		this.unitTest = unitTest;
+		this.originalName = originalName;
+		this.useName = useName;
+		this.index = index;
+		this.value = value;
+		this.expectedValuesGroup = expectedValuesGroup;
 	}
-
 	public int getID() {
 		return ID;
 	}
-
 	public void setID(int iD) {
 		ID = iD;
 	}
-
-	public String getSubject() {
-		return subject;
+	public String getOriginalName() {
+		return originalName;
+	}
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
+	}
+	public String getUseName() {
+		return useName;
+	}
+	public void setUseName(String useName) {
+		this.useName = useName;
+	}
+	public String getIndex() {
+		return index;
+	}
+	public void setIndex(String index) {
+		this.index = index;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
+	
+	
+	public ExpectedValuesGroup getExpectedValuesGroup() {
+		return expectedValuesGroup;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setExpectedValuesGroup(ExpectedValuesGroup expectedValuesGroup) {
+		this.expectedValuesGroup = expectedValuesGroup;
 	}
 
-	public String getPredicate() {
-		return predicate;
+	public int getGroupId() {
+		return groupId;
 	}
 
-	public void setPredicate(String predicate) {
-		this.predicate = predicate;
-	}
-
-	public String getObject() {
-		return object;
-	}
-
-	public void setObject(String object) {
-		this.object = object;
-	}
-
-	public MyUnitTest getUnitTest() {
-		return unitTest;
-	}
-
-	public void setUnitTest(MyUnitTest unitTest) {
-		this.unitTest = unitTest;
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
 	}
 
 	@Override
 	public String toString() {
-		return "ExpectedValues [ID=" + ID + ", subject=" + subject + ", predicate=" + predicate + ", object=" + object
-				+ ", unitTest=" + unitTest + "]";
+		return "ExpectedValue [ID=" + ID + ", originalName=" + originalName + ", useName=" + useName + ", index="
+				+ index + ", value=" + value + ", expectedValuesGroup=" + expectedValuesGroup + "]";
 	}
-	
-	
-	
-	
-	
+		
 
 }

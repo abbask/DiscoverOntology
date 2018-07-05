@@ -12,14 +12,13 @@ import org.apache.log4j.Logger;
 
 import edu.uga.discoverontology.datastore.MySQLConnection;
 import edu.uga.discoverontology.model.*;
-import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.presentation.SystemTestNew;
 
 public class UnitTestService {
 	
 	final static Logger logger = Logger.getLogger(UnitTestService.class);
 	
-	public void Add(String name, String query, String assertType,ExpectedValue[] expectedValues, String  message, int systemTestID) {
+	public void Add(String name, String query, String assertType,ExpectedValue[][] expectedValues, String  message, int systemTestID) {
 		MySQLConnection conn = new MySQLConnection();
 		Connection c = conn.openConnection();
 		
@@ -34,10 +33,21 @@ public class UnitTestService {
             if(rs.next()){
             	unit_test_id=rs.getInt(1);
             }
-			
-			for(ExpectedValue e : expectedValues) {
-				String queryString2 = "INSERT INTO expected_values (subject,predicate,object, unit_test_id) VALUES ('" + e.getSubject() + "','" + e.getPredicate() + "','" + e.getObject() + "', '" + unit_test_id + "')";
+            
+			for(ExpectedValue[] ex : expectedValues) {
+				String queryString2 = "INSERT INTO expected_value_group (unit_test_id) VALUES ('" + unit_test_id + "')";
 				stmtObj.executeUpdate(queryString2); 
+				ResultSet rs2 = stmtObj.getGeneratedKeys();
+				int expected_value_group_id = 0;
+	            if(rs2.next()){
+	            	expected_value_group_id = rs2.getInt(1);
+	            }
+	            
+	            for(ExpectedValue e : ex) {
+	            	System.out.println(e.getValue());
+	            	String queryString3 = "INSERT INTO expected_values (originalName, useName, indx, value, expected_value_group_id) VALUES ('" + e.getOriginalName() + "','" + e.getUseName() + "','" + e.getIndex() + "','" + e.getValue() + "'," + expected_value_group_id +")";
+	            	stmtObj.executeUpdate(queryString3); 
+	            }
 			}
 
 			c.commit();
@@ -74,19 +84,34 @@ public class UnitTestService {
 			systemTest.setName(resObj.getString("system_test_name"));
 			myUnitTest.setSystemTest(systemTest);
 			
-			PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, subject,predicate, object from expected_values where unit_test_id=" + id);
-			ResultSet valueRes = valuesStatement.executeQuery();
-			ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
-			
-			while(valueRes.next()) {
-				ExpectedValue expectedValue = new ExpectedValue();
-				expectedValue.setID(valueRes.getInt("ID"));
-				expectedValue.setSubject(valueRes.getString("subject"));
-				expectedValue.setPredicate(valueRes.getString("predicate"));
-				expectedValue.setObject(valueRes.getString("object"));
-				expectedValues.add(expectedValue);
+			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+			ResultSet groupRes = groupStatement.executeQuery();
+			ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
+			while(groupRes.next()) {
+				ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
+				expectedValuesGroup.setID(groupRes.getInt("ID"));
+				
+				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+				ResultSet valueRes = valuesStatement.executeQuery();
+				ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
+				
+				while(valueRes.next()) {
+					ExpectedValue expectedValue = new ExpectedValue();
+					expectedValue.setID(valueRes.getInt("ID"));
+					expectedValue.setOriginalName(valueRes.getString("originalName"));
+					expectedValue.setUseName(valueRes.getString("useName"));
+					expectedValue.setIndex(valueRes.getString("indx"));
+					expectedValue.setValue(valueRes.getString("value"));
+					expectedValue.setGroupId(valueRes.getInt("expected_value_group_id"));
+					expectedValues.add(expectedValue);
+				}
+				
+				expectedValuesGroup.setExpectedValues(expectedValues);
 			}
-			myUnitTest.setExpectedValues(expectedValues);
+			
+			
+
+			myUnitTest.setExpectedValueGroups(expectedValuesGroups);
 			
 			list.add(myUnitTest);
         }
@@ -121,21 +146,34 @@ public class UnitTestService {
 			systemTest.setGraph(resObj.getString("graph"));
 			myUnitTest.setSystemTest(systemTest);
 			
-			PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, subject,predicate, object from expected_values where unit_test_id=" + id);
-			ResultSet valueRes = valuesStatement.executeQuery();
-			ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
-			
-			while(valueRes.next()) {
-				ExpectedValue expectedValue = new ExpectedValue();
-				expectedValue.setID(valueRes.getInt("ID"));
-				expectedValue.setSubject(valueRes.getString("subject"));
-				expectedValue.setPredicate(valueRes.getString("predicate"));
-				expectedValue.setObject(valueRes.getString("object"));
-				expectedValues.add(expectedValue);
+			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+			ResultSet groupRes = groupStatement.executeQuery();
+			ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
+			while(groupRes.next()) {
+				ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
+				expectedValuesGroup.setID(groupRes.getInt("ID"));
+				
+				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+				ResultSet valueRes = valuesStatement.executeQuery();
+				ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
+				
+				while(valueRes.next()) {
+					ExpectedValue expectedValue = new ExpectedValue();
+					expectedValue.setID(valueRes.getInt("ID"));
+					expectedValue.setOriginalName(valueRes.getString("originalName"));
+					expectedValue.setUseName(valueRes.getString("useName"));
+					expectedValue.setIndex(valueRes.getString("indx"));
+					expectedValue.setValue(valueRes.getString("value"));
+					expectedValue.setGroupId(valueRes.getInt("expected_value_group_id"));
+					expectedValues.add(expectedValue);
+				}
+				
+				expectedValuesGroup.setExpectedValues(expectedValues);
 			}
-			myUnitTest.setExpectedValues(expectedValues);
 			
-			list.add(myUnitTest);
+			
+
+			myUnitTest.setExpectedValueGroups(expectedValuesGroups);
         }
 		
 		} catch (Exception sqlException) {
@@ -167,19 +205,34 @@ public class UnitTestService {
 			systemTest.setGraph(resObj.getString("graph"));
 			myUnitTest.setSystemTest(systemTest);
 			
-			PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, subject,predicate, object from expected_values where unit_test_id=" + id);
-			ResultSet valueRes = valuesStatement.executeQuery();
-			ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
-			
-			while(valueRes.next()) {
-				ExpectedValue expectedValue = new ExpectedValue();
-				expectedValue.setID(valueRes.getInt("ID"));
-				expectedValue.setSubject(valueRes.getString("subject"));
-				expectedValue.setPredicate(valueRes.getString("predicate"));
-				expectedValue.setObject(valueRes.getString("object"));
-				expectedValues.add(expectedValue);
+			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+			ResultSet groupRes = groupStatement.executeQuery();
+			ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
+			while(groupRes.next()) {
+				ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
+				expectedValuesGroup.setID(groupRes.getInt("ID"));
+				
+				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+				ResultSet valueRes = valuesStatement.executeQuery();
+				ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
+				
+				while(valueRes.next()) {
+					ExpectedValue expectedValue = new ExpectedValue();
+					expectedValue.setID(valueRes.getInt("ID"));
+					expectedValue.setOriginalName(valueRes.getString("originalName"));
+					expectedValue.setUseName(valueRes.getString("useName"));
+					expectedValue.setIndex(valueRes.getString("indx"));
+					expectedValue.setValue(valueRes.getString("value"));
+					expectedValue.setGroupId(valueRes.getInt("expected_value_group_id"));
+					expectedValues.add(expectedValue);
+				}
+				
+				expectedValuesGroup.setExpectedValues(expectedValues);
 			}
-			myUnitTest.setExpectedValues(expectedValues);
+			
+			
+
+			myUnitTest.setExpectedValueGroups(expectedValuesGroups);
 			
         }
 		

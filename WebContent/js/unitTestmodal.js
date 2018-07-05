@@ -44,13 +44,6 @@
 					
 					$('#formTripple').val(myJSON);
 					
-					/*var text = $('#formTripple').val();
-					console.log(text);
-					var obj = JSON.parse(text);
-					*/
-			    	//tableHtml = "<table class='table' id='expectedValueTable'><tr><th>id</th><th>subject</th><th>predicate</th><th>object</th><th></th></tr>";
-			    	
-					
 					tableHtml = "<table class='table' id='expectedValueTable'>";
 					
 					$('#tableDiv').empty();
@@ -78,46 +71,6 @@
 					$('#tableDiv').html(tableHtml);
 					
 					
-					/*
-			    	$.each( selectVars, function( key, value ) {
-					  tableHtml += "<tr><td>" + value.id + "</td><td>" + value.subject + "</td><td>" + value.predicate + "</td><td>" + value.object + "</td><td><span id='removeTriple' idValue='" + value.id + "' class='glyphicon glyphicon-remove' style='color:red'></span><td></tr>";
-					});
-					tableHtml += "</table>";
-					
-					$('#tableDiv').html(tableHtml);
-					
-					
-					var triple = {
-						"id" : count,
-						"subject": $('#subject').val(),
-						"predicate": $('#predicate').val(),
-						"object" : $('#object').val()
-					};
-					
-					$('#subject').val('');
-					$('#predicate').val('');
-					$('#object').val('');
-					
-					list[count] = triple;
-					
-					var myJSON = JSON.stringify(list);
-					
-					$('#formTripple').val(myJSON);
-					
-					var text = $('#formTripple').val();
-					console.log(text);
-					var obj = JSON.parse(text);
-					
-			    	tableHtml = "<table class='table' id='expectedValueTable'><tr><th>id</th><th>subject</th><th>predicate</th><th>object</th><th></th></tr>";
-			    	$('#tableDiv').empty();
-			    	$.each( list, function( key, value ) {
-					  tableHtml += "<tr><td>" + value.id + "</td><td>" + value.subject + "</td><td>" + value.predicate + "</td><td>" + value.object + "</td><td><span id='removeTriple' idValue='" + value.id + "' class='glyphicon glyphicon-remove' style='color:red'></span><td></tr>";
-					});
-					tableHtml += "</table>";
-					
-					$('#tableDiv').html(tableHtml);
-					*/
-				
 				}
 				
 				$('#expectedValueModalBut').addClass('btn-primary').removeClass('btn-danger');

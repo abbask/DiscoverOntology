@@ -10,7 +10,7 @@ public class MyUnitTest {
 	private String query;
 	private String message;
 	private MyTestSystem systemTest;
-	private ArrayList<ExpectedValue> expectedValues;
+	private ArrayList<ExpectedValuesGroup> expectedValueGroups;
 	
 	public int getID() {
 		return ID;
@@ -52,17 +52,17 @@ public class MyUnitTest {
 		this.systemTest = systemTest;
 	}
 	
-	public ArrayList<ExpectedValue> getExpectedValues() {
-		return expectedValues;
-	}
-	public void setExpectedValues(ArrayList<ExpectedValue> expectedValues) {
-		this.expectedValues = expectedValues;
-	}
 	
+	public ArrayList<ExpectedValuesGroup> getExpectedValueGroups() {
+		return expectedValueGroups;
+	}
+	public void setExpectedValueGroups(ArrayList<ExpectedValuesGroup> expectedValueGroups) {
+		this.expectedValueGroups = expectedValueGroups;
+	}
 	@Override
 	public String toString() {
 		return "MyUnitTest [ID=" + ID + ", name=" + name + ", assertType=" + assertType + ", query=" + query
-				+ ", message=" + message + ", systemTest=" + systemTest + ", expectedValues=" + expectedValues + "]";
+				+ ", message=" + message + ", systemTest=" + systemTest + ", expectedValues=" + expectedValueGroups + "]";
 	}
 	
 	

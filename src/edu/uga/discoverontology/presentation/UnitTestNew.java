@@ -126,27 +126,37 @@ public class UnitTestNew extends HttpServlet {
 		scallar = (!req.getParameter("formValue").equals(""))? req.getParameter("formValue") : scallar ;
 		triple = (!req.getParameter("formTripple").equals(""))? req.getParameter("formTripple") : triple ;
 		
+		
+		System.out.println("assertType: " + assertType);
+		System.out.println("scallar: " + scallar);
+		System.out.println("triple: " + triple);
+		
 		Gson gson = new Gson();
 	    
-		ArrayList<ExpectedValue> tempExpectedValues = new ArrayList<>();
-		ExpectedValue[] expectedValues ;
+		ArrayList<ArrayList<ExpectedValue>> tempExpectedValues = new ArrayList<ArrayList<ExpectedValue>>();
+		ExpectedValue[][] expectedValues ;
 		if (scallar.isEmpty() || scallar == null) {
-			expectedValues = gson.fromJson(triple, ExpectedValue[].class);
+			expectedValues = gson.fromJson(triple, ExpectedValue[][].class);
 			assertType = "EQUAL";
 		}
 		else{
-			ExpectedValue expectedValue = new ExpectedValue(scallar, "", "");
-			tempExpectedValues.add(expectedValue);
-			expectedValues = new ExpectedValue[tempExpectedValues.size()];
+			ExpectedValue expectedValue = new ExpectedValue("scallar", "scallar", "0", scallar);
+			ArrayList<ExpectedValue> temp = new ArrayList<>();
+			temp.add(expectedValue);
+			tempExpectedValues.add(temp);
+			expectedValues = new ExpectedValue[0][tempExpectedValues.size()];
 			expectedValues = tempExpectedValues.toArray(expectedValues);
 		}
 		
 		UnitTestService unitTestService = new UnitTestService(); 
-		unitTestService.Add(name, query,assertType, expectedValues, message,systemTestID);
+		System.out.println("start");
+		System.out.println(expectedValues);
 		
+		unitTestService.Add(name, query,assertType, expectedValues, message,systemTestID);
+		System.out.println("end");
 		
 		res.sendRedirect(req.getContextPath() + "/UnitTestList");
-	
+		
 	}
 	
 }
