@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import com.google.gson.Gson;
 
 import edu.uga.discoverontology.datastore.EndpointConnection;
+import edu.uga.discoverontology.model.ExpectedValue;
 import edu.uga.discoverontology.model.ExpectedValuesGroup;
 import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.service.UnitTestService;
@@ -56,26 +57,41 @@ public class RunUnitTest extends HttpServlet{
 		
 		ArrayList<HashMap<String,String>> result =  endpoint.executeQueryForCol(queryString);
 		
-		System.out.println("result: " + result);
-		System.out.println("result Size: " + result.size());
+		//System.out.println("result: " + result);
+		//System.out.println("result Size: " + result.size());
 		
 	    ArrayList<ExpectedValuesGroup> expectedValueGroups =	unitTest.getExpectedValueGroups();
-	    System.out.println("expectedValueGroups: " + expectedValueGroups);
-		System.out.println("expectedValueGroups Size: " + expectedValueGroups.size());
+	   // System.out.println("expectedValueGroups: " + expectedValueGroups);
+		//System.out.println("expectedValueGroups Size: " + expectedValueGroups.size());
 	    
-	    for (ExpectedValuesGroup expectedValueGroup : expectedValueGroups) {
+	    Boolean success = true;
+	    
+	    if (expectedValueGroups.size() == result.size()) {
+	    
+		    for (ExpectedValuesGroup expectedValueGroup : expectedValueGroups) {
+		    	ArrayList<ExpectedValue> expectedValues = expectedValueGroup.getExpectedValues();
+		    	for (ExpectedValue expectedValue : expectedValues) {
+		    		expectedValue.getOriginalName();
+		    		
+		    	//HERE
+		    	}
+		    }
+	    
 	    }
-	    
+	    else {
+	    	success = false;
+	    }
 		
 	    String json = new Gson().toJson(result);
 
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
-	    if (result.size()== 0) {
-	    	 res.setStatus(HttpServletResponse.SC_NOT_FOUND);
+	    if (success) {
+	    	res.setStatus(HttpServletResponse.SC_OK); 
 	    }
 	    else {
-	    	res.setStatus(HttpServletResponse.SC_OK);
+	    	res.setStatus(HttpServletResponse.SC_NOT_FOUND);
+	    	
 	    }
 	    
 	    res.getWriter().write(json);
