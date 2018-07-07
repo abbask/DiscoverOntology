@@ -2,6 +2,7 @@ package edu.uga.discoverontology.presentation;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import org.apache.log4j.Logger;
 import com.google.gson.Gson;
 
 import edu.uga.discoverontology.datastore.EndpointConnection;
+import edu.uga.discoverontology.model.ExpectedValuesGroup;
 import edu.uga.discoverontology.model.MyUnitTest;
 import edu.uga.discoverontology.service.UnitTestService;
 
@@ -52,14 +54,30 @@ public class RunUnitTest extends HttpServlet{
 		
 		EndpointConnection endpoint = new EndpointConnection ( unitTest.getSystemTest().getEndPoint(),unitTest.getSystemTest().getGraph());
 		
-		ArrayList<ArrayList<String>> result =  endpoint.executeQueryForCol(queryString);
+		ArrayList<HashMap<String,String>> result =  endpoint.executeQueryForCol(queryString);
 		
 		System.out.println("result: " + result);
+		System.out.println("result Size: " + result.size());
+		
+	    ArrayList<ExpectedValuesGroup> expectedValueGroups =	unitTest.getExpectedValueGroups();
+	    System.out.println("expectedValueGroups: " + expectedValueGroups);
+		System.out.println("expectedValueGroups Size: " + expectedValueGroups.size());
+	    
+	    for (ExpectedValuesGroup expectedValueGroup : expectedValueGroups) {
+	    }
+	    
 		
 	    String json = new Gson().toJson(result);
 
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
+	    if (result.size()== 0) {
+	    	 res.setStatus(HttpServletResponse.SC_NOT_FOUND);
+	    }
+	    else {
+	    	res.setStatus(HttpServletResponse.SC_OK);
+	    }
+	    
 	    res.getWriter().write(json);
 	    logger.info("RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]");
 		

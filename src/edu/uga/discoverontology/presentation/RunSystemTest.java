@@ -44,7 +44,6 @@ public class RunSystemTest extends HttpServlet{
 		
 		system_test_id = (!req.getParameter("system_test_id").equals(""))? Integer.valueOf(req.getParameter("system_test_id")) : system_test_id ;
 		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(system_test_id);
-		System.out.println(unitTests.size());
 	    String json = new Gson().toJson(unitTests);
 
 	    res.setContentType("application/json");

@@ -1,6 +1,7 @@
 package edu.uga.discoverontology.datastore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -28,11 +29,12 @@ public class EndpointConnection {
 	
 	
 
-	public ArrayList<ArrayList<String>> executeQueryForCol(String queryString) {
+	public ArrayList<HashMap<String, String>> executeQueryForCol(String queryString) {
 		QueryEngineHTTP qeHTTP = null;
 		ResultSet results = null;
 		
-		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+//		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 		try {
 			
 			int index = queryString.toUpperCase().indexOf("WHERE");
@@ -48,21 +50,26 @@ public class EndpointConnection {
 			
 			results = qeHTTP.execSelect();	
 
-			List<String> varNames = results.getResultVars();			
+			List<String> varNames = results.getResultVars();	
+			
 
 			while (results.hasNext()){	
-				ArrayList<String> rs = new ArrayList<>();
+				HashMap<String, String> rs = new HashMap<String, String>();
 				QuerySolution soln = results.nextSolution();
+
 				for (String varName : varNames) {
-					rs.add(soln.getResource(varName).toString());	
+					rs.put(varName, soln.getLiteral(varName).toString());
 				}
 				list.add(rs);
 			}
 
 		}
 		catch (Exception e) {
-			e.printStackTrace();	
+//			e.printStackTrace();
+			
 			logger.error(e.getMessage(), e);
+			qeHTTP.close();		
+			return list;
 		}		
 		logger.info("EndpointConnection.executeQuery : retrieved result.");
 		qeHTTP.close();		

@@ -41,8 +41,11 @@ $(window).on("load",function(){
 			
 				    function(data, status){
 				    	//console.log("Second Ajax:")
-				    	console.log(data);
+				    	console.log("Succesed");
 				    	
+				    })
+				    .fail(function(){
+				    	console.log("Not able to make the connection");
 				    });
 		    	});
 		    	

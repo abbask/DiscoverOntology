@@ -41,6 +41,7 @@ public class SystemTestService {
 //			logger.info("SystemTestService.add : error in committing.");
 			logger.error(sqlException.getMessage(), sqlException);
 		}
+		conn = null;
 	}
 	
 	public ArrayList<MyTestSystem> listAll() {
@@ -66,6 +67,7 @@ public class SystemTestService {
 			logger.error(sqlException.getMessage(), sqlException);
 		}
 		logger.info("SystemTestService.listAll :  system_tests retrieved.");
+		conn = null;
 		return list;
 	}
 
