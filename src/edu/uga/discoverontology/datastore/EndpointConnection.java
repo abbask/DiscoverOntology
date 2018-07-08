@@ -58,7 +58,10 @@ public class EndpointConnection {
 				QuerySolution soln = results.nextSolution();
 
 				for (String varName : varNames) {
-					rs.put(varName, soln.getLiteral(varName).toString());
+					rs.put(varName, soln.getLiteral(varName).getString());
+					//System.out.println("getValue :" + soln.getLiteral(varName).getValue());
+					//System.out.println("getString: " + soln.getLiteral(varName).getString());
+					//System.out.println("getDatatypeURI: " + soln.getLiteral(varName).getDatatypeURI());
 				}
 				list.add(rs);
 			}

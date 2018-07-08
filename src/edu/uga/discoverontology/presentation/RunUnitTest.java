@@ -57,29 +57,33 @@ public class RunUnitTest extends HttpServlet{
 		
 		ArrayList<HashMap<String,String>> result =  endpoint.executeQueryForCol(queryString);
 		
-		//System.out.println("result: " + result);
-		//System.out.println("result Size: " + result.size());
-		
 	    ArrayList<ExpectedValuesGroup> expectedValueGroups =	unitTest.getExpectedValueGroups();
-	   // System.out.println("expectedValueGroups: " + expectedValueGroups);
-		//System.out.println("expectedValueGroups Size: " + expectedValueGroups.size());
+
+	    Boolean success = false;
 	    
-	    Boolean success = true;
-	    
-	    if (expectedValueGroups.size() == result.size()) {
-	    
-		    for (ExpectedValuesGroup expectedValueGroup : expectedValueGroups) {
-		    	ArrayList<ExpectedValue> expectedValues = expectedValueGroup.getExpectedValues();
-		    	for (ExpectedValue expectedValue : expectedValues) {
-		    		expectedValue.getOriginalName();
-		    		
-		    	//HERE
-		    	}
-		    }
-	    
+	    if (result.size() == 1) {
+	    	String key = expectedValueGroups.get(0).getExpectedValues().get(0).getUseName();
+	    	if (result.get(0).get(key).equals(expectedValueGroups.get(0).getExpectedValues().get(0).getValue())) {
+	    		success = true;
+	    	}
 	    }
-	    else {
-	    	success = false;
+	    else
+	    {
+		    if (expectedValueGroups.size() == result.size()) {
+			    for (ExpectedValuesGroup expectedValueGroup : expectedValueGroups) {
+			    	ArrayList<ExpectedValue> expectedValues = expectedValueGroup.getExpectedValues();
+	
+			    	for (HashMap<String, String> map : result) {
+			    		if (findInList(map, expectedValues) == true) {
+			    			success = true;
+			    			break;
+			    		}
+			    	}
+			    }
+		    }
+		    else {
+		    	success = false;
+		    }
 	    }
 		
 	    String json = new Gson().toJson(result);
@@ -97,6 +101,51 @@ public class RunUnitTest extends HttpServlet{
 	    res.getWriter().write(json);
 	    logger.info("RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]");
 		
+	}
+	
+	private boolean findInList(HashMap<String,String> map, ArrayList<ExpectedValue> expectedValues) {
+		
+		int numberofChecks = expectedValues.size();
+		
+		Boolean[] checks = new Boolean[numberofChecks];
+		int count = 0;
+		for (ExpectedValue expectedValue : expectedValues) {
+    		String key = expectedValue.getOriginalName().replace("?", "").replace(")","");
+    		String value = expectedValue.getValue();
+    		checks[count] = false;
+    		if (map.containsKey(key)) {
+    			if (map.get(key).equals(value)) {
+    				checks[count] = true;
+    			}
+    		}
+    		count++;
+		}
+		
+		boolean found = true;
+		for(int i = 0 ; i < numberofChecks ; i++) {
+			if (checks[i] == false)
+				found = false;
+		}
+		return found;
+	}
+	
+	private ArrayList<HashMap<String,String>> createHashMap(ArrayList<ExpectedValuesGroup> expectedValuesGroups){
+		ArrayList<HashMap<String,String>> result = new ArrayList<HashMap<String,String>>();
+		
+		for (ExpectedValuesGroup expectedValuesGroup : expectedValuesGroups ) {
+			ArrayList<ExpectedValue> expectedValues = expectedValuesGroup.getExpectedValues();
+			HashMap<String, String> map = new HashMap<String, String>();
+			for(ExpectedValue expectedValue : expectedValues) {
+				
+//				String originalName = expectedValue.getOriginalName().replace("?", "").replace(")","");
+				String originalName = expectedValue.getUseName();
+				String value = expectedValue.getValue();
+				map.put(originalName, value);
+			}
+			result.add(map);
+		}
+		
+		return result;
 	}
 
 }

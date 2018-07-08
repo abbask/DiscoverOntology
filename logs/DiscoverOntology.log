@@ -1,60 +1,6 @@
-2018-07-07 13:43:38 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
-2018-07-07 13:44:20 INFO  UnitTestService:67 - UnitTestService.add : new unit_test is rolled back.
-2018-07-07 13:44:20 ERROR UnitTestService:71 - Data truncation: Data too long for column 'message' at row 1
-com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'message' at row 1
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3489)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2019)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1937)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1922)
-	at edu.uga.discoverontology.service.UnitTestService.Add(UnitTestService.java:37)
-	at edu.uga.discoverontology.presentation.UnitTestNew.save(UnitTestNew.java:168)
-	at edu.uga.discoverontology.presentation.UnitTestNew.doPost(UnitTestNew.java:62)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:650)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
-	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2018-07-07 13:44:20 INFO  UnitTestService:132 - UnitTestService.listAll :  unit_tests retrieved.
-2018-07-07 13:45:08 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
-2018-07-07 13:46:07 INFO  UnitTestService:63 - UnitTestService.add : new unit_test commited.
-2018-07-07 13:46:07 INFO  UnitTestService:132 - UnitTestService.listAll :  unit_tests retrieved.
-2018-07-07 13:46:17 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
-2018-07-07 13:46:23 INFO  UnitTestService:195 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-07-07 13:46:23 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
-2018-07-07 13:46:23 INFO  UnitTestService:256 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-07-07 13:46:23 INFO  UnitTestService:256 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-07-07 13:46:26 INFO  EndpointConnection:74 - EndpointConnection.executeQuery : retrieved result.
-2018-07-07 13:46:26 INFO  OntologyTest:82 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
-2018-07-07 13:46:26 INFO  EndpointConnection:74 - EndpointConnection.executeQuery : retrieved result.
-2018-07-07 13:46:26 INFO  OntologyTest:82 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
-2018-07-07 13:48:22 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
-2018-07-07 13:48:25 INFO  UnitTestService:195 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
-2018-07-07 13:48:26 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
-2018-07-07 13:48:26 INFO  UnitTestService:255 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-07-07 13:48:26 INFO  UnitTestService:255 - UnitTestService.findByID :  unit_test retrieved by id.
-2018-07-07 13:48:27 INFO  EndpointConnection:74 - EndpointConnection.executeQuery : retrieved result.
-2018-07-07 13:48:27 INFO  OntologyTest:82 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
-2018-07-07 13:48:27 INFO  EndpointConnection:74 - EndpointConnection.executeQuery : retrieved result.
-2018-07-07 13:48:27 INFO  OntologyTest:82 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-08 12:49:33 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-08 12:49:36 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-08 12:50:04 INFO  SystemTestNew:32 - SystemTestService.add : new system_test commited.
+2018-07-08 12:50:04 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-08 12:50:07 INFO  UnitTestService:132 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-08 13:10:22 INFO  SystemTestNew:69 - SystemTestService.listAll :  system_tests retrieved.
