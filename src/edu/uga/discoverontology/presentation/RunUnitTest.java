@@ -18,6 +18,7 @@ import edu.uga.discoverontology.datastore.EndpointConnection;
 import edu.uga.discoverontology.model.ExpectedValue;
 import edu.uga.discoverontology.model.ExpectedValuesGroup;
 import edu.uga.discoverontology.model.MyUnitTest;
+import edu.uga.discoverontology.service.UnitHistoryService;
 import edu.uga.discoverontology.service.UnitTestService;
 
 
@@ -44,8 +45,11 @@ public class RunUnitTest extends HttpServlet{
 		UnitTestService unitTestService = new UnitTestService();
 		
 		int unit_test_id = 0;
+		int system_test_history_id = 0;
 		
 		unit_test_id = (!req.getParameter("unit_test_id").equals(""))? Integer.valueOf(req.getParameter("unit_test_id")) : unit_test_id ;
+		system_test_history_id = (!req.getParameter("system_test_history_id").equals(""))? Integer.valueOf(req.getParameter("system_test_history_id")) : system_test_history_id ;
+		
 		
 		MyUnitTest unitTest = unitTestService.findByID(unit_test_id);
 		
@@ -59,7 +63,7 @@ public class RunUnitTest extends HttpServlet{
 		
 	    ArrayList<ExpectedValuesGroup> expectedValueGroups =	unitTest.getExpectedValueGroups();
 
-//	    System.out.println("result: " + result);
+	    String message = "";
 	    
 	    Boolean success = false;
 	    
@@ -68,6 +72,7 @@ public class RunUnitTest extends HttpServlet{
 		    
 	    	if (result.get(0).get(key).equals(expectedValueGroups.get(0).getExpectedValues().get(0).getValue())) {
 	    		success = true;
+	    		message ="Test passed.";
 	    	}
 	    }
 	    else
@@ -83,18 +88,25 @@ public class RunUnitTest extends HttpServlet{
 			    		}
 			    	}
 			    }
+			    if (success != true) {
+			    	message = "Test failed. Although the number of records matched but it is was not the exact same as what expected.";
+			    }
+			    else {
+			    	message = "Test passed.";
+			    }
 		    }
 		    else {
 		    	success = false;
+		    	message = "Test failed. " + expectedValueGroups.size() + " record expected but " + result.size() + " was retrieved.";
 		    }
 	    }
 		
-	    //String json = new Gson().toJson(result);
-
 	    String json = new Gson().toJson(unit_test_id);
 	    
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
+	    
+	    
 	    if (success) {
 	    	res.setStatus(HttpServletResponse.SC_OK); 
 	    }
@@ -102,6 +114,14 @@ public class RunUnitTest extends HttpServlet{
 	    	res.setStatus(HttpServletResponse.SC_NOT_FOUND);
 	    	
 	    }
+	    
+	    String status = "failed";
+	    if (success) {
+	    	status = "passed";
+	    }
+	    
+	    UnitHistoryService unitHistoryService = new UnitHistoryService();
+	    unitHistoryService.Add(system_test_history_id, unit_test_id, status , message);
 	    
 	    res.getWriter().write(json);
 	    logger.info("RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]");

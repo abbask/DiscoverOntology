@@ -2,6 +2,8 @@ package edu.uga.discoverontology.presentation;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ import com.google.gson.Gson;
 
 import edu.uga.discoverontology.model.MyTestSystem;
 import edu.uga.discoverontology.model.MyUnitTest;
+import edu.uga.discoverontology.service.SystemHistoryService;
 import edu.uga.discoverontology.service.SystemTestService;
 import edu.uga.discoverontology.service.UnitTestService;
 
@@ -44,7 +47,17 @@ public class RunSystemTest extends HttpServlet{
 		
 		system_test_id = (!req.getParameter("system_test_id").equals(""))? Integer.valueOf(req.getParameter("system_test_id")) : system_test_id ;
 		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(system_test_id);
-	    String json = new Gson().toJson(unitTests);
+		
+		SystemHistoryService historyService = new SystemHistoryService();
+		int system_test_history_id = historyService.Add(system_test_id);
+		
+		Map<String, Object> map = new HashMap<>();		
+		map.put("list", unitTests);
+		map.put("system_test_history_id", system_test_history_id);
+		
+		
+		
+	    String json = new Gson().toJson(map);
 
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");

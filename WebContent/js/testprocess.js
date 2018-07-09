@@ -19,7 +19,14 @@ $(window).on("load",function(){
 		    	textTable = "<table class='table'>";
 		    	textTable += "<thead><tr><th>ID</th><th>name</th><th>Status</th></tr></thead><tbody>";
 		    	
-		    	$.each(data, function( index, value ) {
+		    	list = data.list;
+		    	system_test_history_id = data.system_test_history_id;
+		    	
+		    	console.log(data);
+		    	console.log(list);
+		    	console.log(system_test_history_id);
+		    	
+		    	$.each(list, function( index, value ) {
 		    		
 		    		textTable += "<tr><td><span class='testToRun' unitTestID='" + value.ID + "'>" + value.ID + "</span></td><td>" + value.name + "</td><td><span unitTestID=" + value.ID + " class='statusID'><div class='loader'></div></span></td></tr>";
 	    		  
@@ -34,7 +41,8 @@ $(window).on("load",function(){
 		    		unit_test_id = $( this ).attr('unitTestID');
 		    		
 			    	$.get("RunUnitTest",{
-			    		unit_test_id : unit_test_id
+			    		unit_test_id : unit_test_id,
+			    		system_test_history_id: system_test_history_id
 				    },
 			
 				    function(data, status){
