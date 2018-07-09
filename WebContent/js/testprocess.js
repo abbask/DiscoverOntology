@@ -21,7 +21,7 @@ $(window).on("load",function(){
 		    	
 		    	$.each(data, function( index, value ) {
 		    		
-		    		textTable += "<tr><td><span class='testToRun' unitTestID='" + value.ID + "'>" + value.ID + "</span></td><td>" + value.name + "</td><td><span id='statusID'></span></td></tr>";
+		    		textTable += "<tr><td><span class='testToRun' unitTestID='" + value.ID + "'>" + value.ID + "</span></td><td>" + value.name + "</td><td><span unitTestID=" + value.ID + " class='statusID'><div class='loader'></div></span></td></tr>";
 	    		  
 	    		}); // $.each(obj, function( index, value ) 
 		    	
@@ -29,10 +29,8 @@ $(window).on("load",function(){
 		    	
 		    	$("#divTable").empty();
 		    	$("#divTable").html(textTable);
-//		    	$("#statusID").html("OK");
 		    	
 		    	$(".testToRun").each(function(index){
-		    		//console.log("Second Ajax: " + index + ": " + $( this ).attr('unitTestID') );
 		    		unit_test_id = $( this ).attr('unitTestID');
 		    		
 			    	$.get("RunUnitTest",{
@@ -40,12 +38,21 @@ $(window).on("load",function(){
 				    },
 			
 				    function(data, status){
-				    	//console.log("Second Ajax:")
-				    	console.log("Succesed");
-				    	
+				    	if (status == "success"){
+				    		$.each($('.statusID'), function( index, value ) {
+					    		if ($(value).attr('unittestid') == data){
+					    			$(value).html("<span style='color:green' class='glyphicon glyphicon-ok'></span>");
+					    		}
+				    		});
+				    	}
 				    })
-				    .fail(function(){
-				    	console.log("Not able to make the connection");
+				    .fail(function(data) {
+				    	console.log("data.responseJSON: " + data.responseJSON);
+						$.each($('.statusID'), function( index, value ) {
+							if ($(value).attr('unittestid') == data.responseJSON){
+								$(value).html("<span style='color:red' class='glyphicon glyphicon-remove'></span>");
+							}
+						});
 				    });
 		    	});
 		    	

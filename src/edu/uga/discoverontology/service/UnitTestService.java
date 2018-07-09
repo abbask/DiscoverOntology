@@ -60,11 +60,13 @@ public class UnitTestService {
 			}
 
 			c.commit();
+			conn.closeConnection();
 			logger.info("UnitTestService.add : new unit_test commited.");
 		} catch (Exception sqlException) {
 			try {
 				c.rollback();
 				logger.info("UnitTestService.add : new unit_test is rolled back.");
+				conn.closeConnection();
 			} catch (SQLException e) {
 				logger.error(e.getMessage(), e);
 			}
@@ -125,6 +127,7 @@ public class UnitTestService {
 			
 			list.add(myUnitTest);
         }
+		conn.closeConnection();
 		
 		} catch (Exception sqlException) {
 			logger.error(sqlException.getMessage(), sqlException);
@@ -188,6 +191,7 @@ public class UnitTestService {
 			myUnitTest.setExpectedValueGroups(expectedValuesGroups);
 			list.add(myUnitTest);
         }
+		conn.closeConnection();
 		
 		} catch (Exception sqlException) {
 			logger.error(sqlException.getMessage(), sqlException);
@@ -248,7 +252,7 @@ public class UnitTestService {
 				myUnitTest.setExpectedValueGroups(expectedValuesGroups);
 	        }
 		
-			
+			conn.closeConnection();
 		} catch (Exception sqlException) {
 			logger.error(sqlException.getMessage(), sqlException);
 		}

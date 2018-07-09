@@ -29,10 +29,12 @@ public class SystemTestService {
 			stmtObj.executeUpdate(query); 
 
 			c.commit();
+			conn.closeConnection();
 			logger.info("SystemTestService.add : new system_test commited.");
 		} catch (Exception sqlException) {
 			try {
 				c.rollback();
+				conn.closeConnection();
 				logger.info("SystemTestService.add : new system_test is rolled back.");
 			} catch (SQLException e) {
 //				logger.info("SystemTestService.add : error in rolling back.");
@@ -61,13 +63,12 @@ public class SystemTestService {
 			
 			list.add(myTestSystem);
         }
-		
+		conn.closeConnection();
 		} catch (Exception sqlException) {
 //			sqlException.printStackTrace();
 			logger.error(sqlException.getMessage(), sqlException);
 		}
 		logger.info("SystemTestService.listAll :  system_tests retrieved.");
-		conn = null;
 		return list;
 	}
 

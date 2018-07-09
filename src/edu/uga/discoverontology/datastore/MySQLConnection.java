@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
@@ -30,8 +31,17 @@ public class MySQLConnection {
 			connObj = DriverManager.getConnection(JDBC_DB_URL, JDBC_USER, JDBC_PASS);
 		} catch (Exception sqlException) {
 			sqlException.printStackTrace();
-			logger.error("MySQLConnection: sqlException error - Connection error");			
+			logger.error("MySQLConnection: sqlException error - Connection openning error");			
 		}
 		return connObj;
+	}
+	
+	public void closeConnection() {
+		try {
+			connObj.close();
+		} catch (SQLException e) {
+			logger.error("MySQLConnection: sqlException error - Connection closing error");	
+			e.printStackTrace();
+		}
 	}
 }

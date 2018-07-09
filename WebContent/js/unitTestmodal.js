@@ -134,6 +134,7 @@
 					var tempName = value.replace('?', '');
 					tempName = tempName.replace('(','');
 					tempName = tempName.replace(')','');
+					value=value.replace(')','')
 					
 					var obj = {
 						"originalName" : value,

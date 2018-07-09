@@ -63,6 +63,7 @@ public class RunUnitTest extends HttpServlet{
 	    
 	    if (result.size() == 1) {
 	    	String key = expectedValueGroups.get(0).getExpectedValues().get(0).getUseName();
+		    
 	    	if (result.get(0).get(key).equals(expectedValueGroups.get(0).getExpectedValues().get(0).getValue())) {
 	    		success = true;
 	    	}
@@ -86,8 +87,12 @@ public class RunUnitTest extends HttpServlet{
 		    }
 	    }
 		
-	    String json = new Gson().toJson(result);
+	    //String json = new Gson().toJson(result);
 
+	    String json = new Gson().toJson(unit_test_id);
+	    
+	    System.out.println("Done.. " + unit_test_id);
+	    
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
 	    if (success) {
