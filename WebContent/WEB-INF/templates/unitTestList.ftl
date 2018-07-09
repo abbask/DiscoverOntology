@@ -47,7 +47,10 @@
 						${unitTest.name}
 					</td>
 					<td style="text-overflow: ellipsis;">
+
+						<#outputformat "XML">
 						${unitTest.query}
+						</#outputformat>
 					</td>
 					<td>
 						${unitTest.message}
