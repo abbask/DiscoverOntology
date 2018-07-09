@@ -59,6 +59,8 @@ public class RunUnitTest extends HttpServlet{
 		
 	    ArrayList<ExpectedValuesGroup> expectedValueGroups =	unitTest.getExpectedValueGroups();
 
+//	    System.out.println("result: " + result);
+	    
 	    Boolean success = false;
 	    
 	    if (result.size() == 1) {

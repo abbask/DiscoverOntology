@@ -127,10 +127,6 @@ public class UnitTestNew extends HttpServlet {
 		triple = (!req.getParameter("formTripple").equals(""))? req.getParameter("formTripple") : triple ;
 		
 		
-		System.out.println("assertType: " + assertType);
-		System.out.println("scallar: " + scallar);
-		System.out.println("triple: " + triple);
-		
 		Gson gson = new Gson();
 	    
 		//ArrayList<ArrayList<ExpectedValue>> tempExpectedValues = new ArrayList<ArrayList<ExpectedValue>>();
@@ -146,24 +142,9 @@ public class UnitTestNew extends HttpServlet {
 			tempExpectedValues[0][0]= expectedValue;
 			expectedValues = tempExpectedValues;
 			
-			/*
-			ExpectedValue expectedValue = new ExpectedValue("scallar", "scallar", "0", scallar);
-			ArrayList<ExpectedValue> temp = new ArrayList<>();
-			temp.add(expectedValue);
-			System.out.println("expectedValue: " + expectedValue);
-			tempExpectedValues.add(temp);
-			System.out.println("tempExpectedValues: " + tempExpectedValues);
-			expectedValues = new ExpectedValue[1][tempExpectedValues.size()];
-			System.out.println("tempExpectedValues.size(): " + tempExpectedValues.size());
-//			expectedValues = tempExpectedValues.toArray(expectedValues);
-			expectedValues = tempExpectedValues.toArray(expectedValues);
-			*/
 		}
 		
 		UnitTestService unitTestService = new UnitTestService(); 
-		System.out.println("expectedValues: " + expectedValues);
-		
-		System.out.println("name:" + name + " query:" + query + " assertType:" + assertType + " expectedValues:" + expectedValues + " message:" + message +  " systemTestID:" + systemTestID);
 		
 		unitTestService.Add(name, query,assertType, expectedValues, message,systemTestID);
 		

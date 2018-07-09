@@ -117,3 +117,112 @@ java.sql.SQLException: Operation not allowed after ResultSet closed
 2018-07-09 11:57:58 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-09 11:58:03 INFO  SystemTestNew:33 - SystemTestService.add : new system_test commited.
 2018-07-09 11:58:03 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 11:58:47 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 11:58:48 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 11:58:50 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 11:58:50 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 11:58:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 11:58:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 11:58:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 11:58:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 11:58:51 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 11:58:51 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 11:58:51 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 11:58:51 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 11:58:51 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 11:58:51 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 11:58:52 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 11:58:52 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 11:58:57 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 11:59:00 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 11:59:03 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 11:59:04 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 11:59:05 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:33:54 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:33:55 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:34:08 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:39:27 INFO  SystemTestNew:33 - SystemTestService.add : new system_test commited.
+2018-07-09 12:39:27 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:39:50 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 12:39:51 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:40:55 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:44:05 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-09 12:44:05 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 12:44:18 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:44:26 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:44:46 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-09 12:44:46 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 12:44:48 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:44:50 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 12:44:50 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 12:44:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 12:44:50 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 12:44:51 ERROR EndpointConnection:73 - 
+java.lang.NullPointerException
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:61)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:58)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:32)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-09 12:44:51 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 12:44:51 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 12:44:51 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 12:46:45 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 12:46:47 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 12:46:47 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 12:46:47 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 12:46:47 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 12:46:49 ERROR EndpointConnection:73 - 
+java.lang.NullPointerException
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:61)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:58)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:32)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-09 12:46:49 INFO  OntologyTest:107 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 12:46:50 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 12:46:50 INFO  OntologyTest:107 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 15:32:57 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 15:32:58 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 15:33:02 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 15:33:06 INFO  UnitTestService:138 - UnitTestService.listAll :  unit_tests retrieved.
