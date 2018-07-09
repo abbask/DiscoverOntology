@@ -69,11 +69,34 @@ public class RunUnitTest extends HttpServlet{
 	    
 	    if (result.size() == 1) {
 	    	String key = expectedValueGroups.get(0).getExpectedValues().get(0).getUseName();
+	    	
+	    	int retrieveValue = Integer.valueOf(result.get(0).get(key));
+	    	int expectedValue = Integer.valueOf(expectedValueGroups.get(0).getExpectedValues().get(0).getValue());
+	    	
+		    switch (unitTest.getAssertType()) {
+		    case "EQUAL": 
+		    	if (retrieveValue == expectedValue) {
+		    		success = true;
+		    		message ="Test passed.";
+		    	}
+		    	break;
+		    case "GREATER": 
+		    	if (retrieveValue > expectedValue) {
+		    		success = true;
+		    		message ="Test passed.";
+		    	}
+		    	break;
+		    	
+		    case "LESS":
+		    	if (retrieveValue < expectedValue) {
+		    		success = true;
+		    		message ="Test passed.";
+		    	}
+		    	break;
 		    
-	    	if (result.get(0).get(key).equals(expectedValueGroups.get(0).getExpectedValues().get(0).getValue())) {
-	    		success = true;
-	    		message ="Test passed.";
-	    	}
+		    }
+
+		    
 	    }
 	    else
 	    {
