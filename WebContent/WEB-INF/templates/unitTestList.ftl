@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/unitTestList.js" type='text/javascript'></script>
 </head>
 <body>
 
@@ -26,10 +27,29 @@
 <div class="container">
 	<h3>List of Unit Tests</h3>
 	<p>You can see list of unit test and load them.</p>
-	<div>
+	<div  style="float: left;">
 		<a href="UnitTestNew" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add Unit Test</a>
-	
 	</div>
+	<div style="float: right;">
+		<form class="form-inline" method="post">
+		  <div class="form-group mx-sm-3 mb-2">
+		    <label for="systemTest">Filter</label>
+		    <select class="form-control" id="systemTestSelect" name="systemTestSelect">
+		    	<#list systemTests as systemTest>
+		    		<#if systemTest.ID == systemTestId>
+		    			<option selected  value="${systemTest.ID}">${systemTest.name}</option>
+		    		<#else>
+		    			<option  value="${systemTest.ID}">${systemTest.name}</option>
+		    		</#if>
+		    	<#else>
+		    		
+		    	</#list>
+		    </select>
+		  </div>
+		  <button type="submit" class="btn btn-primary mb-2">run</button>
+		</form>
+	</div>
+
 	<div>
 		<table class="table">
 		  <thead>

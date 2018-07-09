@@ -49,7 +49,7 @@ public class UnitTestList extends HttpServlet{
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
 
-		loadPage(req, res);
+		filterPage(req, res);
 		
 	}
 	
@@ -75,10 +75,70 @@ public class UnitTestList extends HttpServlet{
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
 		res.setContentType("text/html; charset=" + template.getEncoding());
 		
+		SystemTestService systemTestService = new SystemTestService();
 		UnitTestService unitTestService = new UnitTestService();
+		
+		ArrayList<MyTestSystem> systemTests = systemTestService.listAll();
 
-		ArrayList<MyUnitTest> unitTests = unitTestService.listAll();
+		//DEFAULT
+		MyTestSystem myTestSystem = systemTests.get(0);
+		
+		
+		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(myTestSystem.getID());
+		root.put("systemTestId", myTestSystem.getID());
+		root.put("systemTests", systemTests);
+		root.put("unitTests", unitTests);
+		
+		toClient = new BufferedWriter(
+				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
+		res.setContentType("text/html; charset=" + template.getEncoding());
 
+		try {
+			template.process(root, toClient);
+			toClient.flush();
+			
+		} catch (TemplateException e) {
+			throw new ServletException(
+					"Error while processing FreeMarker template", e);
+		}
+
+		toClient.close();
+	}
+	
+	public void filterPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		Template       					template;
+		String         					templatePath = null;
+		BufferedWriter 					toClient = null;
+
+		templatePath = templateDir + "/" + templateName;
+
+		// load the template
+		try {
+			template = cfg.getTemplate(templateName);
+		} 
+		catch (IOException e) {
+			throw new ServletException( 
+					"Can't load template " + templateDir + "/" + templateName + ": " + e.toString());
+		}
+		
+		Map<String, Object> root = new HashMap<>();				
+
+		toClient = new BufferedWriter(
+				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
+		res.setContentType("text/html; charset=" + template.getEncoding());
+		
+		SystemTestService systemTestService = new SystemTestService();
+		UnitTestService unitTestService = new UnitTestService();
+		
+		ArrayList<MyTestSystem> systemTests = systemTestService.listAll();
+		int systemTestId = 0;
+		systemTestId = (!req.getParameter("systemTestSelect").equals(""))? Integer.valueOf(req.getParameter("systemTestSelect")) : systemTestId ;
+		
+		System.out.println("systemTestId: " + systemTestId);
+		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(systemTestId);
+
+		root.put("systemTestId", systemTestId);
+		root.put("systemTests", systemTests);
 		root.put("unitTests", unitTests);
 		
 		toClient = new BufferedWriter(
