@@ -91,8 +91,6 @@ public class RunUnitTest extends HttpServlet{
 
 	    String json = new Gson().toJson(unit_test_id);
 	    
-	    System.out.println("Done.. " + unit_test_id);
-	    
 	    res.setContentType("application/json");
 	    res.setCharacterEncoding("UTF-8");
 	    if (success) {

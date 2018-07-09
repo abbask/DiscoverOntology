@@ -2250,3 +2250,65 @@ HttpException: 400
 2018-07-09 10:18:17 INFO  OntologyTest:107 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
 2018-07-09 10:18:17 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
 2018-07-09 10:18:17 INFO  OntologyTest:107 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:22:47 INFO  UnitTestService:135 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 10:23:32 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:23:41 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:40:58 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:41:15 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:41:35 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:42:15 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:42:56 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-09 10:42:56 INFO  UnitTestService:135 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 10:43:01 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:43:04 INFO  UnitTestService:199 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 10:43:04 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 10:43:04 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:43:04 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:43:04 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:43:05 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:43:05 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:43:05 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:43:05 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:43:09 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:43:09 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:43:20 INFO  UnitTestService:135 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 10:43:58 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:46:29 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-09 10:46:29 INFO  UnitTestService:135 - UnitTestService.listAll :  unit_tests retrieved.
+2018-07-09 10:46:38 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-09 10:46:41 INFO  UnitTestService:199 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 10:46:41 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 10:46:41 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:41 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:41 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:41 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:42 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:42 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:42 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:42 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:42 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:42 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:43 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:43 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:52 INFO  UnitTestService:199 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 10:46:52 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 10:46:52 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:53 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:53 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:53 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:53 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:53 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:59 INFO  UnitTestService:199 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-09 10:46:59 INFO  OntologyTest:52 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-09 10:46:59 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:59 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:59 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:59 INFO  UnitTestService:259 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-09 10:46:59 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:59 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:59 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:59 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:46:59 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:46:59 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-09 10:47:01 INFO  EndpointConnection:77 - EndpointConnection.executeQuery : retrieved result.
+2018-07-09 10:47:01 INFO  OntologyTest:105 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]

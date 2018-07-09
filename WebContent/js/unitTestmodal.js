@@ -49,7 +49,6 @@
 					$('#tableDiv').empty();
 					
 					//just the table header
-					console.log("result: " + result);
 					singleResult = result[0];
 					tableHtml += "<tr>";
 					
@@ -144,25 +143,35 @@
 					};
 					selectVars[index] = obj;
 				});
+
+				//modal-body
+				type = 2;
+				str = "";
+				//HERE
+				$('#expectedValueModalLabel').html('Expected Value - Triple</br><small>if you do not see all variables in the query, you might have syntax error.</small>');
+				$.each(selectVars, function( index, value ) {
+					str += '<div class="form-group"><label for="' + value.useName + '">' + value.originalName + '</label><input type="text" class="form-control allVars" id="' + value.useName + '" name="' + value.useName + '" placeholder="Enter value"></div></div>';
+				});
+				$('.modal-body').html(str);	
 				
-				if ( listofvars.length > 1 ) { // not scalar
-					//modal-body
-					type = 2;
-					str = "";
-					//HERE
-					$('#expectedValueModalLabel').html('Expected Value - Triple</br><small>if you do not see all variables in the query, you might have syntax error.</small>');
-					$.each(selectVars, function( index, value ) {
-						str += '<div class="form-group"><label for="' + value.useName + '">' + value.originalName + '</label><input type="text" class="form-control allVars" id="' + value.useName + '" name="' + value.useName + '" placeholder="Enter value"></div></div>';
-					});
-					$('.modal-body').html(str);	
-				}
-				else{  // scalar
-					type =1 ;
-					str = '<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="1">EQUAL</option><option value="2">LESS</option><option value="3">GREATER</option></select></div>';
-					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';
-					$('.modal-body').html(str);	
-					$('#expectedValueModalLabel').html('Expected Value - Scalar');
-				}
+//				if ( listofvars.length > 1 ) { // not scalar
+//					//modal-body
+//					type = 2;
+//					str = "";
+//					//HERE
+//					$('#expectedValueModalLabel').html('Expected Value - Triple</br><small>if you do not see all variables in the query, you might have syntax error.</small>');
+//					$.each(selectVars, function( index, value ) {
+//						str += '<div class="form-group"><label for="' + value.useName + '">' + value.originalName + '</label><input type="text" class="form-control allVars" id="' + value.useName + '" name="' + value.useName + '" placeholder="Enter value"></div></div>';
+//					});
+//					$('.modal-body').html(str);	
+//				}
+//				else{  // scalar
+//					type =1 ;
+//					str = '<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="1">EQUAL</option><option value="2">LESS</option><option value="3">GREATER</option></select></div>';
+//					str += '<div class="form-group"><label for="value">Value</label><input type="text" class="form-control" id="value" name="value" placeholder="Enter value"></div>';
+//					$('.modal-body').html(str);	
+//					$('#expectedValueModalLabel').html('Expected Value - Scalar');
+//				}
 				
 			});
 	     });
