@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.apache.log4j.Logger;
 
@@ -19,9 +20,14 @@ public class MySQLConnection {
 	static final String JDBC_PASS = "";
 	
 	Connection connObj;
+	Statement statement;
+	PreparedStatement preparedStatement;
 	
 	public MySQLConnection() {
 		connObj = null;
+		statement = null;
+		preparedStatement =null;
+		openConnection();
 	}
 
 	public Connection openConnection() {
@@ -34,6 +40,32 @@ public class MySQLConnection {
 			logger.error("MySQLConnection: sqlException error - Connection openning error");			
 		}
 		return connObj;
+	}
+	
+	public PreparedStatement createPreparedStatement(String sql) {
+		
+		try {
+			
+			preparedStatement = connObj.prepareStatement(sql);
+			
+		} catch (SQLException e) {
+			logger.error("MySQLConnection: sqlException error - Connection openning error");	
+			closeConnection();
+		}
+		return preparedStatement ;
+	}
+	
+	public Statement createStatement() {
+		
+		try {
+			
+			statement = connObj.createStatement();
+			
+		} catch (SQLException e) {
+			logger.error("MySQLConnection: sqlException error - Connection openning error");	
+			closeConnection();
+		}
+		return statement ;
 	}
 	
 	public void closeConnection() {

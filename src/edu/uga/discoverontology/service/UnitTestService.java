@@ -81,8 +81,9 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID Order by system_test_name ");
-		ResultSet resObj = prepStatement.executeQuery();
+//		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID Order by system_test_name ");
+		Statement stmt = conn.createStatement();
+		ResultSet resObj = stmt.executeQuery("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID Order by system_test_name ");
 		while(resObj.next()) {
 			int id = resObj.getInt("id");
 			MyUnitTest myUnitTest = new MyUnitTest();
@@ -96,15 +97,17 @@ public class UnitTestService {
 			systemTest.setName(resObj.getString("system_test_name"));
 			myUnitTest.setSystemTest(systemTest);
 			
-			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
-			ResultSet groupRes = groupStatement.executeQuery();
+//			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+			Statement stmtGroupRes = conn.createStatement();
+			ResultSet groupRes = stmtGroupRes.executeQuery("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
 			ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
 			while(groupRes.next()) {
 				ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
 				expectedValuesGroup.setID(groupRes.getInt("ID"));
 				
-				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
-				ResultSet valueRes = valuesStatement.executeQuery();
+//				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+				Statement stmtValueRes = conn.createStatement();
+				ResultSet valueRes = stmtValueRes.executeQuery("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
 				ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
 				
 				while(valueRes.next()) {
@@ -143,7 +146,7 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where system_test_id=" + system_test_id);
+		PreparedStatement prepStatement = conn.createPreparedStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where system_test_id=" + system_test_id);
 		
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
@@ -161,14 +164,14 @@ public class UnitTestService {
 			systemTest.setGraph(resObj.getString("graph"));
 			myUnitTest.setSystemTest(systemTest);
 			
-			PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+			PreparedStatement groupStatement = conn.createPreparedStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
 			ResultSet groupRes = groupStatement.executeQuery();
 			ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
 			while(groupRes.next()) {
 				ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
 				expectedValuesGroup.setID(groupRes.getInt("ID"));
 				
-				PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+				PreparedStatement valuesStatement = conn.createPreparedStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
 				ResultSet valueRes = valuesStatement.executeQuery();
 				ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
 				
@@ -206,7 +209,7 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-			PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where u.id=" + id);
+			PreparedStatement prepStatement = conn.createPreparedStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where u.id=" + id);
 			ResultSet resObj = prepStatement.executeQuery();
 			while(resObj.next()) {
 	//			int id = resObj.getInt("id");
@@ -223,7 +226,7 @@ public class UnitTestService {
 				systemTest.setGraph(resObj.getString("graph"));
 				myUnitTest.setSystemTest(systemTest);
 				
-				PreparedStatement groupStatement = conn.openConnection().prepareStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
+				PreparedStatement groupStatement = conn.createPreparedStatement("SELECT ID, unit_test_id  from expected_value_group where unit_test_id=" + id);
 				ResultSet groupRes = groupStatement.executeQuery();
 				ArrayList<ExpectedValuesGroup> expectedValuesGroups = new ArrayList<>();
 				
@@ -231,7 +234,7 @@ public class UnitTestService {
 					ExpectedValuesGroup expectedValuesGroup = new ExpectedValuesGroup();
 					expectedValuesGroup.setID(groupRes.getInt("ID"));
 					
-					PreparedStatement valuesStatement = conn.openConnection().prepareStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
+					PreparedStatement valuesStatement = conn.createPreparedStatement("SELECT 	ID, originalName,useName, indx,value,expected_value_group_id  from expected_values where expected_value_group_id=" + expectedValuesGroup.getID());
 					ResultSet valueRes = valuesStatement.executeQuery();
 					ArrayList<ExpectedValue> expectedValues = new ArrayList<>();
 					

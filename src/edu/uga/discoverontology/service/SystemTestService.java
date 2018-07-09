@@ -52,7 +52,7 @@ public class SystemTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-		PreparedStatement prepStatement = conn.openConnection().prepareStatement("SELECT * FROM system_tests");
+		PreparedStatement prepStatement = conn.createPreparedStatement("SELECT * FROM system_tests");
 		ResultSet resObj = prepStatement.executeQuery();
 		while(resObj.next()) {
 			MyTestSystem myTestSystem = new MyTestSystem();
