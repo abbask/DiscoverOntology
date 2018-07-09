@@ -134,7 +134,6 @@ public class UnitTestList extends HttpServlet{
 		int systemTestId = 0;
 		systemTestId = (!req.getParameter("systemTestSelect").equals(""))? Integer.valueOf(req.getParameter("systemTestSelect")) : systemTestId ;
 		
-		System.out.println("systemTestId: " + systemTestId);
 		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(systemTestId);
 
 		root.put("systemTestId", systemTestId);
