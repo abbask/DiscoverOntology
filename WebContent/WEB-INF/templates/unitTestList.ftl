@@ -45,7 +45,7 @@
 		    	</#list>
 		    </select>
 		  </div>
-		  <button type="submit" class="btn btn-primary mb-2">run</button>
+		  <button type="submit" class="btn btn-primary mb-2">Go</button>
 		</form>
 	</div>
 

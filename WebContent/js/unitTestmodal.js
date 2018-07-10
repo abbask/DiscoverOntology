@@ -28,7 +28,7 @@
 				}
 				else{ // when triple
 					count = list.length
-					
+					$('#formAssertType').val( $('#assertType').val());
 					$.each(selectVars, function( index, value ) {
 						var varName = value.useName;
 						var varValue = $("#" + varName).val();
@@ -149,9 +149,11 @@
 				str = "";
 				//HERE
 				$('#expectedValueModalLabel').html('Expected Value - Triple</br><small>if you do not see all variables in the query, you might have syntax error.</small>');
+				str+='<div class="form-group"><label for="assertType">Assert Type</label><select class="form-control" id="assertType" name="assertType"><option value="EQUAL">EQUAL</option><option value="LESS">LESS</option><option value="GREATER">GREATER</option></select></div>';
 				$.each(selectVars, function( index, value ) {
 					str += '<div class="form-group"><label for="' + value.useName + '">' + value.originalName + '</label><input type="text" class="form-control allVars" id="' + value.useName + '" name="' + value.useName + '" placeholder="Enter value"></div></div>';
 				});
+				
 				$('.modal-body').html(str);	
 				
 //				if ( listofvars.length > 1 ) { // not scalar

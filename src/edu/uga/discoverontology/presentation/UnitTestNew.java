@@ -135,7 +135,7 @@ public class UnitTestNew extends HttpServlet {
 		ExpectedValue[][] expectedValues ;
 		if (scallar.isEmpty() || scallar == null) {
 			expectedValues = gson.fromJson(triple, ExpectedValue[][].class);
-			assertType = "EQUAL";
+//			assertType = "EQUAL";
 		}
 		else{
 			ExpectedValue expectedValue = new ExpectedValue("scallar", "scallar", "0", scallar);

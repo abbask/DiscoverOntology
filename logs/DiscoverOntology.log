@@ -69,3 +69,186 @@ java.lang.NullPointerException
 2018-07-09 23:37:06 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-09 23:37:06 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
 2018-07-09 23:37:07 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:34:43 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:34:43 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:34:45 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:35:19 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:35:55 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:35:55 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:36:13 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:36:36 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:36:37 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:36:37 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:37:13 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:37:29 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:37:29 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:37:29 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:40:52 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:40:52 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:40:54 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:40:54 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:40:54 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:40:54 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:40:55 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:41:20 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:41:20 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:41:20 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:42:15 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:42:34 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:42:34 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:42:34 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:43:02 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:43:02 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:43:05 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:43:05 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:43:06 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:43:22 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:43:22 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:43:22 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:44:37 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:44:38 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:44:38 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:44:40 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:44:58 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:44:58 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:44:58 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:45:09 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:45:26 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-10 11:45:26 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:45:26 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:47:15 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:47:15 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:47:20 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:47:20 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:47:27 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:47:27 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:48:29 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:29 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:48:33 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:33 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:48:35 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:35 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:48:36 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:39 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:48:39 INFO  SystemHistoryService:40 - HistoryService.add : new History commited.
+2018-07-10 11:48:39 INFO  OntologyTest:65 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-10 11:48:39 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-10 11:48:39 INFO  UnitTestService:262 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-10 11:48:44 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:45 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:46 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-10 11:48:46 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-10 11:49:02 ERROR EndpointConnection:73 - Error making the query, see cause for details
+HttpException: -1
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:340)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:51)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:62)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:33)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://128.192.62.253:8890 refused
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:190)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:645)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:480)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:137)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:118)
+	at org.apache.jena.riot.web.HttpOp.exec(HttpOp.java:1011)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:291)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:353)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:326)
+	... 27 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:127)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	... 37 more
+2018-07-10 11:49:02 ERROR EndpointConnection:73 - Error making the query, see cause for details
+HttpException: -1
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:340)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:51)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:62)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:33)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connection to http://128.192.62.253:8890 refused
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:190)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:645)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:480)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:137)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:118)
+	at org.apache.jena.riot.web.HttpOp.exec(HttpOp.java:1011)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:291)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:353)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:326)
+	... 27 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:127)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	... 37 more
+2018-07-10 11:49:02 INFO  UnitHistoryService:36 - HistoryService.add : new History commited.
+2018-07-10 11:49:02 INFO  OntologyTest:150 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-10 11:49:02 INFO  UnitHistoryService:36 - HistoryService.add : new History commited.
+2018-07-10 11:49:02 INFO  OntologyTest:150 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
