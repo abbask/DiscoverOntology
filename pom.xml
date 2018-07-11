@@ -53,9 +53,8 @@
 		<groupId>org.apache.tomcat.maven</groupId>
 		<artifactId>tomcat7-maven-plugin</artifactId>
 		<version>2.2</version>
-		<update>true</update>
 		<configuration>
-			<url>http://localhost:8080/</url>
+			<url>http://128.192.62.253:8080/</url>
 			<server>128.192.62.253</server>
 			<path>/DiscoverOntology</path>
 		</configuration>
