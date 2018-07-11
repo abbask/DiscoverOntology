@@ -2,3 +2,75 @@ PREFIX ta:      <https://tutorial-academy.com/2015/spin#> PREFIX sp:      <http:
 Select ?s ?p ?o Where { ?s ?p ?o} Order by desc (?s ?p ?o)
 
 select distinct ?Concept where {[] a ?Concept} LIMIT 100
+
+
+
+
+SPARQL Query:
+SELECT DISTINCT ?Concept
+WHERE {
+    _:0 a ?Concept .
+}
+LIMIT 100
+
+SPIN Representation:
+_:b0    <http://spinrdf.org/sp#object>  [ <http://spinrdf.org/sp#varName>
+                          "Concept"^^<http://www.w3.org/2001/XMLSchema#string> ] ;
+        <http://spinrdf.org/sp#predicate>
+                <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+        <http://spinrdf.org/sp#subject>
+                [ <http://spinrdf.org/sp#varName>
+                          "?0"^^<http://www.w3.org/2001/XMLSchema#string> ] .
+
+_:b1    <http://spinrdf.org/sp#varName>
+                "Concept"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+[ a                              <http://spinrdf.org/sp#Select> ;
+  <http://spinrdf.org/sp#distinct>
+          true ;
+  <http://spinrdf.org/sp#limit>  "100"^^<http://www.w3.org/2001/XMLSchema#long> ;
+  <http://spinrdf.org/sp#resultVariables>
+          ( _:b1 ) ;
+  <http://spinrdf.org/sp#where>  ( _:b0 )
+] .
+
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://spinrdf.org/sp#">
+  <j.0:Select>
+    <j.0:limit rdf:datatype="http://www.w3.org/2001/XMLSchema#long"
+    >100</j.0:limit>
+    <j.0:resultVariables rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Concept</j.0:varName>
+      </rdf:Description>
+    </j.0:resultVariables>
+    <j.0:distinct rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.0:distinct>
+    <j.0:where rdf:parseType="Collection">
+      <rdf:Description>
+        <j.0:object rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Concept</j.0:varName>
+        </j.0:object>
+        <j.0:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <j.0:subject rdf:parseType="Resource">
+          <j.0:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >?0</j.0:varName>
+        </j.0:subject>
+      </rdf:Description>
+    </j.0:where>
+  </j.0:Select>
+</rdf:RDF>
+
+
+Start reading...
+Start searching...
+Select Class: Select
+Select URL: http://spinrdf.org/sp#Select
+Select getVersionInfo: null
+Select getProfile: com.hp.hpl.jena.ontology.impl.OWLProfile@270df931
+Select getRDFType: http://www.w3.org/2000/01/rdf-schema#Class
+Select getSeeAlso: null
+Done!
