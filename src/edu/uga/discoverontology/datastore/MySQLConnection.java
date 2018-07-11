@@ -17,7 +17,7 @@ public class MySQLConnection {
 	static final String JDBC_DB_URL = "jdbc:mysql://localhost:3306/discover_ontology?useUnicode=yes&characterEncoding=UTF-8"; //http://localhost/phpmyadmin/
 	
 	static final String JDBC_USER = "root";
-	static final String JDBC_PASS = "";
+	static final String JDBC_PASS = "root";
 	
 	Connection connObj;
 	Statement statement;
