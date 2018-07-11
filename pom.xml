@@ -55,7 +55,7 @@
 		<version>2.2</version>
 		<configuration>
 			<url>http://localhost:8080/</url>
-			<server>localhost</server>
+			<server>TomcatServer</server>
 			<path>/DiscoverOntology</path>
 		</configuration>
 	</plugin>
