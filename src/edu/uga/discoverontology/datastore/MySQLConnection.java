@@ -14,7 +14,8 @@ public class MySQLConnection {
 	final static Logger logger = Logger.getLogger(MySQLConnection.class);
 	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String JDBC_DB_URL = "jdbc:mysql://localhost:3306/discover_ontology?useUnicode=yes&characterEncoding=UTF-8"; //http://localhost/phpmyadmin/
+	//static final String JDBC_DB_URL = "jdbc:mysql://localhost:3306/discover_ontology?useUnicode=yes&characterEncoding=UTF-8"; //http://localhost/phpmyadmin/
+	static final String JDBC_DB_URL = "jdbc:mysql://localhost:3306/discover_ontology"; //http://localhost/phpmyadmin/
 	
 	static final String JDBC_USER = "root";
 	static final String JDBC_PASS = "root";
