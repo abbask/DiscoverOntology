@@ -209,7 +209,7 @@ public class UnitTestService {
 		MySQLConnection conn = new MySQLConnection();
 		try {
 
-			PreparedStatement prepStatement = conn.createPreparedStatement("SELECT u.id,u.name,u.query,u.message, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where u.id=" + id);
+			PreparedStatement prepStatement = conn.createPreparedStatement("SELECT u.id,u.name,u.query,u.message,u.assert_type, u.system_test_id, s.name as system_test_name, s.Endpoint as endpoint, s.Graph as graph  FROM unit_tests u Inner join system_tests s on u.system_test_id = s.ID where u.id=" + id);
 			ResultSet resObj = prepStatement.executeQuery();
 			while(resObj.next()) {
 	//			int id = resObj.getInt("id");
@@ -217,6 +217,7 @@ public class UnitTestService {
 				myUnitTest.setID(resObj.getInt("id"));
 				myUnitTest.setName(resObj.getString("name"));
 				myUnitTest.setQuery(resObj.getString("query"));
+				myUnitTest.setAssertType(resObj.getString("assert_type"));
 				myUnitTest.setMessage(resObj.getString("message"));
 				
 				MyTestSystem systemTest = new MyTestSystem();
