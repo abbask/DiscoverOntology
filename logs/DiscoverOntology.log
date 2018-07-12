@@ -958,3 +958,11 @@ java.sql.SQLException: Generated keys not requested. You need to specify Stateme
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 2018-07-12 14:26:01 INFO  OntologyTest:149 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-12 17:56:50 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 17:56:50 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-12 17:56:53 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 17:56:53 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-12 17:57:15 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 17:57:16 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 17:57:16 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 17:57:16 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
