@@ -36,7 +36,7 @@ public class MySQLConnection {
 		try {
 			Class.forName(JDBC_DRIVER);  
 //			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER);
-			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER + "&password=" + JDBC_PASS + "&serverTimezone=UTC");
+			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER + "&password=" + JDBC_PASS + "&serverTimezone=UTC&useSSL=false");
 			//conn =  DriverManager.getConnection("jdbc:mysql://localhost/test?user=minty&password=greatsqldb")
 		} catch (Exception sqlException) {
 			sqlException.printStackTrace();
