@@ -150,3 +150,5 @@ java.lang.NullPointerException
 2018-07-12 12:41:13 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-12 12:41:44 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-12 12:41:44 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-12 13:00:07 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-12 13:00:07 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
