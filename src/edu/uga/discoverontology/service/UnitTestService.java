@@ -28,7 +28,7 @@ public class UnitTestService {
 			
 			//String queryString = "INSERT INTO unit_tests (name,query,assert_type,message,system_test_id) VALUES ('" + name + "','" + query + "', '" + assertType + "','" +  message + "'," + systemTestID + ")";
 			String queryString = "INSERT INTO unit_tests (name,query,assert_type,message,system_test_id) VALUES (?,?,?,?,?)";
-			PreparedStatement statement= c.prepareStatement(queryString );
+			PreparedStatement statement= c.prepareStatement(queryString, Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1,name);
 			statement.setString(2,query);
 			statement.setString(3,assertType);
@@ -45,7 +45,7 @@ public class UnitTestService {
             
 			for(ExpectedValue[] ex : expectedValues) {
 				String queryString2 = "INSERT INTO expected_value_group (unit_test_id) VALUES ('" + unit_test_id + "')";
-				statement.executeUpdate(queryString2); 
+				statement.executeUpdate(queryString2,Statement.RETURN_GENERATED_KEYS); 
 				ResultSet rs2 = statement.getGeneratedKeys();
 				int expected_value_group_id = 0;
 	            if(rs2.next()){
