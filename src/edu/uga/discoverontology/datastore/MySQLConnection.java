@@ -18,7 +18,7 @@ public class MySQLConnection {
 	static final String JDBC_DB_URL = "jdbc:mysql://localhost:3306/discover_ontology"; //http://localhost/phpmyadmin/
 	
 	static final String JDBC_USER = "root";
-	static final String JDBC_PASS = "root";
+	static final String JDBC_PASS = "";
 	
 	Connection connObj;
 	Statement statement;
@@ -35,8 +35,8 @@ public class MySQLConnection {
 		
 		try {
 			Class.forName(JDBC_DRIVER);  
-			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER);
-			//connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER + "&password=" + JDBC_PASS);
+//			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER);
+			connObj = DriverManager.getConnection(JDBC_DB_URL + "?user=" + JDBC_USER + "&password=" + JDBC_PASS);
 			//conn =  DriverManager.getConnection("jdbc:mysql://localhost/test?user=minty&password=greatsqldb")
 		} catch (Exception sqlException) {
 			sqlException.printStackTrace();
