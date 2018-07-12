@@ -23,7 +23,7 @@ public class UnitHistoryService {
 			
 
 			String query = "INSERT INTO unit_test_history (system_test_history_id,unit_test_id,status,message) VALUES (" + system_test_history_id + "," + unit_test_id + ",'" + status +  "','" + message + "')";
-			stmtObj.executeUpdate(query); 
+			stmtObj.executeUpdate(query,Statement.RETURN_GENERATED_KEYS); 
 			
 			ResultSet rs = stmtObj.getGeneratedKeys();
             if(rs.next()){

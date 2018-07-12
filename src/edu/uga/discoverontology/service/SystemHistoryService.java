@@ -26,7 +26,7 @@ public class SystemHistoryService {
 			java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
 			String query = "INSERT INTO system_test_history (system_test_id,date) VALUES (" + system_test_id + ",'" + sqlDate + "')";
-			stmtObj.executeUpdate(query); 
+			stmtObj.executeUpdate(query, Statement.RETURN_GENERATED_KEYS); 
 			
 			ResultSet rs = stmtObj.getGeneratedKeys();
             if(rs.next()){
