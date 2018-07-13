@@ -53,8 +53,6 @@ public class RunUnitTest extends HttpServlet{
 		
 		MyUnitTest unitTest = unitTestService.findByID(unit_test_id);
 		
-		System.out.println(unitTest);
-		
 		String queryString  = unitTest.getQuery();
 		EndpointConnection endpoint = new EndpointConnection ( unitTest.getSystemTest().getEndPoint(),unitTest.getSystemTest().getGraph());
 		
