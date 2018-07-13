@@ -79,7 +79,7 @@
 						${unitTest.systemTest.name}
 					</td>
 					<td>
-						<a href="UnitTestRemove" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Remove</a>
+						<a href="UnitTestRemove?id=${unitTest.ID}" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Remove</a>
 					</td>
 					
 				</tr>

@@ -264,5 +264,49 @@ public class UnitTestService {
 		conn = null;
 		return myUnitTest;
 	}
+	
+	public int remove(int id) {
+		
+		int unitTestId = 0;
+		
+		MySQLConnection conn = new MySQLConnection();
+		Connection c = conn.openConnection();
+		
+		try {
+			c.setAutoCommit(false);
+			String queryString = "Select ID from expected_value_group where unit_test_id=?";
+			PreparedStatement prepStatement= c.prepareStatement(queryString);
+			prepStatement.setInt(1,id);
+			ResultSet resObj = prepStatement.executeQuery();
+			while(resObj.next()) {
+				PreparedStatement prepStatement2 = c.prepareStatement(queryString);
+				int expected_value_group_id = resObj.getInt("ID");
+				prepStatement2.executeUpdate("Delete FROM expected_values Where expected_value_group_id =" + expected_value_group_id);
+			}
+			
+			prepStatement.executeUpdate("Delete FROM expected_value_group Where unit_test_id =" + id);
+			
+			prepStatement.executeUpdate("DELETE FROM unit_tests WHERE ID=" + id);
+			
+			
+			c.commit();
+			unitTestId = id;
+			conn.closeConnection();
+			logger.info("UnitTestService.remove : remove unit_test commited.");
+		} catch (Exception sqlException) {
+			try {
+				c.rollback();
+				logger.info("UnitTestService.remove : remove unit_test is rolled back.");
+				conn.closeConnection();
+			} catch (SQLException e) {
+				logger.error(e.getMessage(), e);
+			}
+			logger.error(sqlException.getMessage(), sqlException);
+		}
+		conn = null;
+		
+		return unitTestId;
+		
+	}
 
 }

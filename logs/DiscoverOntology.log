@@ -1,0 +1,51 @@
+
+2018-07-13 12:06:54 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:06:54 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:06:57 INFO  UnitTestService:300 - UnitTestService.remove : remove unit_test is rolled back.
+2018-07-13 12:06:57 ERROR UnitTestService:305 - Operation not allowed after ResultSet closed
+java.sql.SQLException: Operation not allowed after ResultSet closed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.checkClosed(ResultSetImpl.java:459)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.next(ResultSetImpl.java:1688)
+	at edu.uga.discoverontology.service.UnitTestService.remove(UnitTestService.java:281)
+	at edu.uga.discoverontology.presentation.UnitTestRemove.remove(UnitTestRemove.java:56)
+	at edu.uga.discoverontology.presentation.UnitTestRemove.doGet(UnitTestRemove.java:40)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-13 12:06:57 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:06:57 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:08:33 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:08:33 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:08:35 INFO  UnitTestService:297 - UnitTestService.remove : remove unit_test commited.
+2018-07-13 12:08:35 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:08:35 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:08:38 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:08:38 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:09:04 INFO  UnitTestService:295 - UnitTestService.remove : remove unit_test commited.
+2018-07-13 12:09:04 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:09:04 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-13 12:09:06 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-13 12:09:06 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
