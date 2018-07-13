@@ -37,6 +37,7 @@
 		      <th scope="col">name</th>
 		      <th scope="col">end point</th>
 		      <th scope="col">graph</th>
+		      <th scope="col"></th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -50,6 +51,9 @@
 					</td>
 					<td>
 						${testSystem.graph}
+					</td>
+					<td>
+						<a href="SystemTestRemove?id=${testSystem.ID}" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Remove</a>
 					</td>
 				</tr>
 			<#else>
