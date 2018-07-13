@@ -57,6 +57,7 @@
 		      <th scope="col">query</th>
 		      <th scope="col">message</th>
 		      <th scope="col">system test</th>
+		      <th scope="col"></th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -77,7 +78,9 @@
 					<td>
 						${unitTest.systemTest.name}
 					</td>
-
+					<td>
+						<a href="UnitTestRemove" class="btn btn-danger btn-md active" role="button" aria-pressed="true">Remove</a>
+					</td>
 					
 				</tr>
 			<#else>
