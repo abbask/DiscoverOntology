@@ -227,3 +227,8 @@ Caused by: java.net.NoRouteToHostException: No route to host: connect
 2018-07-14 13:42:36 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-14 13:42:36 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
 2018-07-14 13:42:41 INFO  SystemHistoryService:113 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:45:51 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:47:37 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:47:56 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:47:57 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:47:57 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
