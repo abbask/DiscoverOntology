@@ -22,16 +22,14 @@ $(window).on("load",function(){
 		    	list = data.list;
 		    	system_test_history_id = data.system_test_history_id;
 		    	
-		    	console.log(data);
-		    	console.log(list);
-		    	console.log(system_test_history_id);
-		    	
 		    	$.each(list, function( index, value ) {
 		    		
 		    		textTable += "<tr><td><span class='testToRun' unitTestID='" + value.ID + "'>" + value.ID + "</span></td><td>" + value.name + "</td><td><span unitTestID=" + value.ID + " class='statusID'><div class='loader'></div></span></td></tr>";
 	    		  
 	    		}); // $.each(obj, function( index, value ) 
 		    	
+		    	if (list.length == 0)
+		    		textTable='<tr><td colspan="3"><small class="form-text text-muted">No unit test found. Please add unit test first.</small></td></tr>';
 		    	textTable += "</tbody></table>";
 		    	
 		    	$("#divTable").empty();
