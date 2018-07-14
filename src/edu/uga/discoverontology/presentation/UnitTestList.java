@@ -85,6 +85,10 @@ public class UnitTestList extends HttpServlet{
 		int systemTestSelect = 0;
 		systemTestSelect = (req.getParameter("systemTestSelect") != null)? Integer.valueOf(req.getParameter("systemTestSelect")) : systemTestSelect ;
 		
+		if (systemTestSelect == 0) {
+			systemTestSelect = systemTests.get(0).getID();
+		}
+		
 		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(systemTestSelect);
 		root.put("systemTestId", systemTestSelect);
 		root.put("systemTests", systemTests);
