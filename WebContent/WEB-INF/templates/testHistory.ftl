@@ -49,7 +49,8 @@
 			  <div class="panel-body">
 			    <#list systemHistory.unitTestHistorys as unitTestHistory>
 			    	 <p> name: ${unitTestHistory.myUnitTest.name} - status: ${unitTestHistory.status} - message: ${unitTestHistory.message} </p><br/>
-			    	 
+			   	<#else>
+			   		<small id="nameHelp" class="form-text text-muted">No unit test found. You should have added unit test first.</small>
 			    </#list>
 			  </div>
 			</div>

@@ -19,3 +19,56 @@
 2018-07-14 14:22:57 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-14 14:22:58 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
 2018-07-14 14:22:58 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:23:30 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:23:30 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:23:33 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:23:33 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:23:43 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:23:59 INFO  UnitTestService:64 - UnitTestService.add : new unit_test commited.
+2018-07-14 14:23:59 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:23:59 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:24:02 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:24:02 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:24:04 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:24:05 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:24:07 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:24:07 INFO  SystemHistoryService:45 - HistoryService.add : new History commited.
+2018-07-14 14:24:07 INFO  OntologyTest:65 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-14 14:24:07 INFO  UnitTestService:263 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-14 14:24:08 ERROR EndpointConnection:73 - Malformed URL: java.net.MalformedURLException: no protocol: some?query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+prokino%3A+%3Chttp%3A%2F%2Fom.cs.uga.edu%2Fprokino%2F2.0%2F%23%3E+SELECT+%28SuM%28*%29+AS+%3FCount%29++FROM+%3Csome%3E+WHERE+%7B+%3Fmut+rdf%3Atype+prokino%3AMissense+.+%3Fmut+prokino%3AhasWildTypeResidue+%3Fwt+.+%3Fmut+prokino%3AhasPKAStartLocation+%3Fpka+.+filter%28STR%28%3Fpka%29+%21%3D+%270%27%29+%7D
+HttpException: 0 Malformed URL: java.net.MalformedURLException: no protocol: some?query=PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+PREFIX+prokino%3A+%3Chttp%3A%2F%2Fom.cs.uga.edu%2Fprokino%2F2.0%2F%23%3E+SELECT+%28SuM%28*%29+AS+%3FCount%29++FROM+%3Csome%3E+WHERE+%7B+%3Fmut+rdf%3Atype+prokino%3AMissense+.+%3Fmut+prokino%3AhasWildTypeResidue+%3Fwt+.+%3Fmut+prokino%3AhasPKAStartLocation+%3Fpka+.+filter%28STR%28%3Fpka%29+%21%3D+%270%27%29+%7D
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:298)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:51)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:59)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:33)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-14 14:24:08 INFO  UnitHistoryService:42 - HistoryService.add : new History commited.
+2018-07-14 14:24:08 INFO  OntologyTest:147 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-14 14:24:10 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:24:21 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:26:07 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:26:15 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:26:23 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
