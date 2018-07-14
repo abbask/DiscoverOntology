@@ -232,3 +232,26 @@ Caused by: java.net.NoRouteToHostException: No route to host: connect
 2018-07-14 13:47:56 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
 2018-07-14 13:47:57 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
 2018-07-14 13:47:57 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:50:38 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:50:39 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:39 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:50:40 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:41 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:42 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:43 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:44 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:44 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:50:45 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:46 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:46 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:50:47 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:47 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:50:49 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:50 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:50:50 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:50:51 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:51:17 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:51:17 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 13:51:18 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 13:51:19 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 13:51:26 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
