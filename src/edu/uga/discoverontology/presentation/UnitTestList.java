@@ -81,11 +81,12 @@ public class UnitTestList extends HttpServlet{
 		ArrayList<MyTestSystem> systemTests = systemTestService.listAll();
 
 		//DEFAULT
-		MyTestSystem myTestSystem = systemTests.get(0);
+		//MyTestSystem myTestSystem = systemTests.get(0);
+		int systemTestSelect = 0;
+		systemTestSelect = (req.getParameter("systemTestSelect") != null)? Integer.valueOf(req.getParameter("systemTestSelect")) : systemTestSelect ;
 		
-		
-		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(myTestSystem.getID());
-		root.put("systemTestId", myTestSystem.getID());
+		ArrayList<MyUnitTest> unitTests = unitTestService.listBySystemTest(systemTestSelect);
+		root.put("systemTestId", systemTestSelect);
 		root.put("systemTests", systemTests);
 		root.put("unitTests", unitTests);
 		

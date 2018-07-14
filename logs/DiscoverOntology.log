@@ -264,3 +264,153 @@ Caused by: java.net.NoRouteToHostException: No route to host: connect
 2018-07-14 14:05:39 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
 2018-07-14 14:05:42 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
 2018-07-14 14:05:56 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:06:31 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:06:31 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:06:32 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:06:33 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:06:33 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:06:33 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:06:36 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:06:36 INFO  SystemHistoryService:45 - HistoryService.add : new History commited.
+2018-07-14 14:06:36 INFO  OntologyTest:65 - RunSystemTest.loadPage : list of unit tests retrieved.[Ajax Call]
+2018-07-14 14:06:36 INFO  UnitTestService:263 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-14 14:06:36 INFO  UnitTestService:263 - UnitTestService.findByID :  unit_test retrieved by id.
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:658 - I/O exception (java.net.NoRouteToHostException) caught when connecting to the target host: No route to host: connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 INFO  SystemDefaultHttpClient:664 - Retrying connect
+2018-07-14 14:06:37 ERROR EndpointConnection:73 - Error making the query, see cause for details
+HttpException: -1
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:340)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:51)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:59)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:33)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:127)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:645)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:480)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:137)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:118)
+	at org.apache.jena.riot.web.HttpOp.exec(HttpOp.java:1011)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:291)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:353)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:326)
+	... 27 more
+2018-07-14 14:06:37 ERROR EndpointConnection:73 - Error making the query, see cause for details
+HttpException: -1
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:340)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.exec(HttpQuery.java:276)
+	at com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP.execSelect(QueryEngineHTTP.java:346)
+	at edu.uga.discoverontology.datastore.EndpointConnection.executeQueryForCol(EndpointConnection.java:51)
+	at edu.uga.discoverontology.presentation.RunUnitTest.loadPage(RunUnitTest.java:59)
+	at edu.uga.discoverontology.presentation.RunUnitTest.doGet(RunUnitTest.java:33)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:498)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:1025)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1139)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:127)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:294)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:645)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:480)
+	at org.apache.http.impl.client.AbstractHttpClient.execute(AbstractHttpClient.java:906)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:137)
+	at org.apache.http.impl.client.DecompressingHttpClient.execute(DecompressingHttpClient.java:118)
+	at org.apache.jena.riot.web.HttpOp.exec(HttpOp.java:1011)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:291)
+	at org.apache.jena.riot.web.HttpOp.execHttpGet(HttpOp.java:353)
+	at com.hp.hpl.jena.sparql.engine.http.HttpQuery.execGet(HttpQuery.java:326)
+	... 27 more
+2018-07-14 14:06:37 INFO  UnitHistoryService:42 - HistoryService.add : new History commited.
+2018-07-14 14:06:37 INFO  OntologyTest:147 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-14 14:06:37 INFO  UnitHistoryService:42 - HistoryService.add : new History commited.
+2018-07-14 14:06:37 INFO  OntologyTest:147 - RunUnitTest.loadPage : Found unit test and its expected values.[Ajax Call]
+2018-07-14 14:06:39 INFO  SystemHistoryService:116 - HistoryService.ListbyNumber : History retrived.
+2018-07-14 14:06:44 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:06:44 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:03 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:03 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:03 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:03 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:04 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:07 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:14 INFO  SystemTestNew:33 - SystemTestService.add : new system_test commited.
+2018-07-14 14:09:14 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:17 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:17 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:19 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:19 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:22 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:22 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
+2018-07-14 14:09:24 INFO  SystemTestNew:71 - SystemTestService.listAll :  system_tests retrieved.
+2018-07-14 14:09:24 INFO  UnitTestService:202 - UnitTestService.listBySystemTest :  unit_tests retrieved by system_test_id.
