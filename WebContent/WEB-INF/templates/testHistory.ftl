@@ -32,10 +32,10 @@
 		  <div class="form-group mx-sm-3 mb-2">
 		    <label for="systemTest">Number of records:</label>
 		    <select class="form-control" id="numberofRows" name="numberofRows">
-		    	<option value="5">5</option>
-		    	<option value="5">10</option>
-		    	<option value="5">15</option>
-		    	<option value="5">20</option>
+		    	<option <#if numberofRows == 5>selected</#if> value="5">5</option>
+		    	<option <#if numberofRows == 10>selected</#if> value="10">10</option>
+		    	<option <#if numberofRows == 15>selected</#if> value="15">15</option>
+		    	<option <#if numberofRows == 20>selected</#if> value="20">20</option>
 		    </select>
 		  </div>
 		  <button type="submit" class="btn btn-primary mb-2">Go</button>

@@ -50,8 +50,7 @@ public class TestHistory extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {		
-
-		
+		loadPage(req,res);
 	}
 	
 	public void loadPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -72,11 +71,7 @@ public class TestHistory extends HttpServlet {
 		
 		int numberofRows = 5;
 		
-		
-		
 		numberofRows = (req.getParameter("numberofRows") != null)? Integer.valueOf(req.getParameter("numberofRows")) : numberofRows ;
-		
-		
 		
 		Map<String, Object> root = new HashMap<>();				
 
@@ -89,8 +84,8 @@ public class TestHistory extends HttpServlet {
 		
 		systemTestHistorys = systemHistoryService.ListbyNumber(numberofRows);
 
-		System.out.println(systemTestHistorys);
 		root.put("systemHistorys", systemTestHistorys);
+		root.put("numberofRows", numberofRows);
 		
 		toClient = new BufferedWriter(
 				new OutputStreamWriter(res.getOutputStream(), template.getEncoding()));
