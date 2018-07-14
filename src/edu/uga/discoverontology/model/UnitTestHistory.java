@@ -69,5 +69,52 @@ public class UnitTestHistory {
 				+ ", status=" + status + ", message=" + message + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ID;
+		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		result = prime * result + ((myUnitTest == null) ? 0 : myUnitTest.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
+		result = prime * result + ((systemTestHistory == null) ? 0 : systemTestHistory.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UnitTestHistory other = (UnitTestHistory) obj;
+		if (ID != other.ID)
+			return false;
+		if (message == null) {
+			if (other.message != null)
+				return false;
+		} else if (!message.equals(other.message))
+			return false;
+		if (myUnitTest == null) {
+			if (other.myUnitTest != null)
+				return false;
+		} else if (!myUnitTest.equals(other.myUnitTest))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
+			return false;
+		if (systemTestHistory == null) {
+			if (other.systemTestHistory != null)
+				return false;
+		} else if (!systemTestHistory.equals(other.systemTestHistory))
+			return false;
+		return true;
+	}
+
+	
 	
 }
