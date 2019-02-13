@@ -121,64 +121,7 @@ public class Comparison extends HttpServlet {
 		
 	}
 	
-	public Map<String, Object> examineClassListCompare(String newGraphName, String newEndpoint, String oldGraphName, String oldEndpoint  ){
-		Map<String, Object> root = new HashMap<>();	
-
-		Map<String, Object> classCount = new HashMap<>();	
-		Map<String, Object> classListNew = new HashMap<>();
-		Map<String, Object> classListOld = new HashMap<>();
-
-		DataStoreConnection queryNew = new DataStoreConnection(newEndpoint, newGraphName);
-		DataStoreConnection queryOld = new DataStoreConnection(oldEndpoint, oldGraphName);
-
-
-		classListNew = queryNew.restoreAllClasses();
-		classListOld = queryOld.restoreAllClasses();
-
-		System.out.println("classListNew" + classListNew.get("classes"));
-		System.out.println("classListOld" + classListOld.get("classes"));
-
-		return root;
-	}
 	
-	/* Not Used */
-	public Map<String, Object> examinOntology(String newGraphName, String newEndpoint, String oldGraphName, String oldEndpoint  ){
-
-		Map<String, Object> root = new HashMap<>();	
-
-		Map<String, Object> classCount = new HashMap<>();	
-		Map<String, Object> classCountNew = new HashMap<>();
-		Map<String, Object> classCountOld = new HashMap<>();
-
-		Map<String, Object> objectPropertyCount = new HashMap<>();	
-		Map<String, Object> objectPropertyCountNew = new HashMap<>();
-		Map<String, Object> objectPropertyCountOld = new HashMap<>();
-
-		DataStoreConnection queryNew = new DataStoreConnection(newEndpoint, newGraphName);
-		DataStoreConnection queryOld = new DataStoreConnection(oldEndpoint, oldGraphName);
-
-
-		classCountNew = queryNew.countClasses();
-		classCountOld = queryOld.countClasses();
-
-		objectPropertyCountNew = queryNew.countObjectProperty();
-		objectPropertyCountOld = queryOld.countObjectProperty();
-
-
-		classCount.put("classCountNew", classCountNew.get("classCount"));
-		classCount.put("classCountOld", classCountOld.get("classCount"));
-
-		root.put("classCount", classCount);
-
-		objectPropertyCount.put("objectPropertyCountNew", objectPropertyCountNew.get("objectPropertyCount"));
-		objectPropertyCount.put("objectPropertyCountOld", objectPropertyCountOld.get("objectPropertyCount"));
-
-		root.put("objectPropertyCount", objectPropertyCount);
-
-		return root;
-
-	}
-
 	public Map<String, Object> examinClassCount(String newGraphName, String newEndpoint, String oldGraphName, String oldEndpoint  ){
 
 		Map<String, Object> root = new HashMap<>();	
