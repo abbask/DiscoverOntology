@@ -65,10 +65,14 @@ public class RunUnitTest extends HttpServlet{
 	    Boolean success = false;
 	    
 	    if (result.size() == 1) {
+	    	
+	    	
 	    	String key = expectedValueGroups.get(0).getExpectedValues().get(0).getUseName();
 	    	
 	    	int retrieveValue = Integer.valueOf(result.get(0).get(key));
 	    	int expectedValue = Integer.valueOf(expectedValueGroups.get(0).getExpectedValues().get(0).getValue());
+	    	
+	    	//System.out.println("E: " + expectedValue + ", R: " + retrieveValue);
 	    	
 		    switch (unitTest.getAssertType()) {
 		    case "EQUAL": 
