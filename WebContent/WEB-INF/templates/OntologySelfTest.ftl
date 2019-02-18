@@ -80,7 +80,7 @@
 		    	<input type="text" class="form-control mb-3" id="graphName" name="graphName"  placeholder="Enter Graph Name" required>		    	
 		  	</div>
 		  	<div class="col-auto">
-		  		<button type="submit" class="btn btn-primary">Retrive</button>
+		  		<button id="retrieveTests" type="button" class="btn btn-primary">Retrive</button>
 		  	</div>
 		</div>
 	</form>
