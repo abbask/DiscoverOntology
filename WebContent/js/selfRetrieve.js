@@ -5,16 +5,11 @@ $(window).on("load",function(){
 		endpoint = $('#endpoint').val();
 		graphName = $('#graphName').val();
 		
-		//console.log("E: " + endpoint + ", G:" + graphName);
-		
-//		textTable = "E: " + endpoint + ", G:" + graphName;
-//		
-//		$("#divTable").empty();
-//    	$("#divTable").html(textTable);
+
     	
     	if (endpoint != "" && graphName !=""){
     		
-    		$.get("RetrieveTests",{
+    		$.get("RetrieveSelfTests",{
     			endpoint : endpoint,
     			graphName : graphName
 		    },
