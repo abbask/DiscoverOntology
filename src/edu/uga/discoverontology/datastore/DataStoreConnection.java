@@ -6,9 +6,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdfconnection.RDFConnection;
+import org.apache.jena.rdfconnection.RDFConnectionRemote;
+import org.apache.jena.rdfconnection.RDFConnectionRemoteBuilder;
 
 import edu.uga.discoverontology.model.MyConcept;
 import edu.uga.discoverontology.model.MyProperty;
@@ -46,23 +53,25 @@ public class DataStoreConnection {
 	}
 
 	private ArrayList<String> executeQuery(String queryString) {
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
-		ArrayList<String> rs = new ArrayList<String>();
-		try {					
+		
 
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();							
-			while (results.hasNext()){	
-				rs.add(results.nextSolution().getResource("s").toString());				
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+		
+		ArrayList<String> list = new ArrayList<String>();
+		
+		try {					
+			org.apache.jena.query.ResultSet rs = qexec.execSelect();
+			while(rs.hasNext()) {
+				org.apache.jena.query.QuerySolution sol = rs.nextSolution();
+				list.add(sol.getResource("s").toString());				
 			}
 
 		}
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
-		return rs;
+		qexec.close();	
+		return list;
 	}	
 
 	//showClasses	
@@ -70,23 +79,25 @@ public class DataStoreConnection {
 
 		//		String queryString = "SELECT DISTINCT ?className ?classLabel ?superClass FROM <http://prokino.uga.edu> WHERE { ?className rdf:type owl:Class. optional {?className rdfs:label ?classLabel.} optional {?className rdfs:subClassOf ?superClass.} FILTER regex(str(?className),'prokino') } ORDER BY ?className";
 		String queryString = "SELECT DISTINCT ?className ?classLabel ?superClass COUNT(DISTINCT ?entity) as ?count FROM " + graphName + " WHERE { ?className rdf:type owl:Class. ?entity rdf:type ?className. optional {?className rdfs:label ?classLabel.} optional {?className rdfs:subClassOf ?superClass.} FILTER regex(str(?className),'prokino') } GROUP BY ?className ?classLabel ?superClass ORDER BY ?className";
-		System.out.println(queryString);
+		//System.out.println(queryString);
 		
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
+		
+		
+		
 		MyConcept concept;
 		Map<String, Object> returnResult = new HashMap<String, Object>();
 		ArrayList<MyConcept> conceptList = new ArrayList<MyConcept>();
 
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
 		try {					
 
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();	
+			
+			ResultSet rs = qexec.execSelect();
 
-			while (results.hasNext()){
+			while (rs.hasNext()){
 
 				concept = new MyConcept();
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 
 				concept.setClassName(soln.getResource("className").getLocalName());				
 
@@ -110,7 +121,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
+		qexec.close();		
 		return returnResult;
 	}
 
@@ -118,17 +129,17 @@ public class DataStoreConnection {
 	public Map<String, Object> countClasses () {
 
 		String queryString = "SELECT count(?className) as ?count FROM " + graphName + " WHERE { ?className rdf:type owl:Class. optional {?className rdfs:label ?classLabel.} optional {?className rdfs:subClassOf ?superClass.} FILTER regex(str(?className),'prokino') }";
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;		
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+			
 		Map<String, Object> returnResult = new HashMap<String, Object>();		
 		
 		
 		try {					
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();	
+			ResultSet rs = qexec.execSelect();
+			
 			int count=0; 
-			while (results.hasNext()){
-				QuerySolution soln = results.nextSolution();
+			while (rs.hasNext()){
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 				count =soln.getLiteral("count").getInt();
 			}
 			returnResult.put("classCount", count);
@@ -136,7 +147,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
+		qexec.close();		
 		return returnResult;
 	}
 	
@@ -144,18 +155,19 @@ public class DataStoreConnection {
 	public Map<String, Object> countDataProperty () {
 
 		String queryString = "SELECT count(?name) as ?count FROM " + graphName  + " WHERE { ?name rdf:type owl:DatatypeProperty optional {?name rdfs:domain ?o. ?o owl:unionOf ?l. {?l rdf:first ?domain.} UNION {?l rdf:rest ?rest. ?rest rdf:first ?domain}} optional {?name rdfs:domain ?domain} optional {?name rdfs:range ?range} } ";
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;		
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+		
+			
 		Map<String, Object> returnResult = new HashMap<String, Object>();		
 
 		try {					
-//			System.out.println(serviceURI);
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();	
+			ResultSet rs = qexec.execSelect();
+			
+			
 			int count=0; 
-			while (results.hasNext()){
+			while (rs.hasNext()){
 
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 				count =soln.getLiteral("count").getInt();
 
 			}
@@ -165,7 +177,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
+		qexec.close();		
 		return returnResult;
 	}
 	
@@ -173,19 +185,18 @@ public class DataStoreConnection {
 	public Map<String, Object> countObjectProperty () {
 
 		String queryString = "SELECT count(?name) as ?count FROM " + graphName + " WHERE { ?name rdf:type owl:ObjectProperty optional {?name rdfs:domain ?o. ?o owl:unionOf ?l. {?l rdf:first ?domain.} UNION {?l rdf:rest ?rest. ?rest rdf:first ?domain}} optional {?name rdfs:domain ?domain} optional {?name rdfs:range ?range} } ";
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;		
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+			
 		Map<String, Object> returnResult = new HashMap<String, Object>();		
 
 		try {					
-//			System.out.println(serviceURI);
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();	
-//			System.out.println("ob" + queryString);
+			ResultSet rs = qexec.execSelect();
+			
+			
 			int count=0; 
-			while (results.hasNext()){
+			while (rs.hasNext()){
 
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 				count =soln.getLiteral("count").getInt();
 
 			}
@@ -196,7 +207,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
+		qexec.close();		
 		return returnResult;
 	}
 
@@ -207,13 +218,8 @@ public class DataStoreConnection {
 		
 		String queryString = "SELECT DISTINCT ?domain ?name ?range COUNT(?object) as ?count FROM " + graphName + "  WHERE { ?name rdf:type owl:ObjectProperty optional { ?name rdfs:domain ?o. ?o owl:unionOf ?l.  {?l rdf:first ?domain. } UNION {?l rdf:rest ?rest. ?rest rdf:first ?domain}} optional {?name rdfs:domain ?domain} optional {?name rdfs:range ?range. ?range rdf:type owl:Class} ?subject ?name ?object} GROUP By ?name ?domain ?range ORDER BY ?name";
 		
-		System.out.println(queryString);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
 		
-		QueryEngineHTTP qeHTTP = null;
-
-		
-		ResultSet results = null;
-
 		
 		MyProperty prop;
 		Map<String, Object> returnResult = new HashMap<String, Object>();
@@ -221,21 +227,16 @@ public class DataStoreConnection {
 
 		try {					
 
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-
-			
-			results = qeHTTP.execSelect();	
-
-			
+			ResultSet rs = qexec.execSelect();			
 			
 			int count = 0;
 			
 			List<MyProperty> lstDomain = new LinkedList<MyProperty>();				
 			
 			
-			while (results.hasNext()){
+			while (rs.hasNext()){
 				prop = new MyProperty();
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 
 
 				if (soln.getResource("name") != null){
@@ -267,30 +268,6 @@ public class DataStoreConnection {
 				
 				prop.setCount(soln.getLiteral("count").getInt());
 				
-//				for (MyProperty p : lstDomain){
-//					
-//
-//					if (p.getName().equalsIgnoreCase(prop.getName())&& 
-//							p.getDomain().equalsIgnoreCase(prop.getDomain()) &&
-//							p.getRange().equalsIgnoreCase(prop.getRange())){
-//						prop.setCountDomain(p.getCountDomain());
-//						break;
-//					}
-//				}
-//				
-////				prop.setCountDomain(soln.getLiteral("countDomain").getInt());
-//				
-//				for (MyProperty p : lstRange){
-//					
-//
-//					if (p.getName().equalsIgnoreCase(prop.getName()) && 
-//							p.getDomain().equalsIgnoreCase(prop.getDomain()) &&
-//							p.getRange().equalsIgnoreCase(prop.getRange())){
-//						prop.setCountRange(p.getCountRange());
-//						break;
-//					}
-//				}
-
 				count++;
 				propertytList.add(prop);				
 			}
@@ -302,7 +279,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();	
+		qexec.close();	
 
 		
 		return returnResult;
@@ -314,22 +291,20 @@ public class DataStoreConnection {
 		//String queryString = "SELECT DISTINCT ?domain ?name ?range COUNT(?name) as ?count FROM <http://prokino.uga.edu> WHERE { ?name rdf:type owl:DatatypeProperty optional {?name rdfs:domain ?domain} optional {?name  rdfs:range ?range} } ORDER BY ?name ?domain ?range";
 		String queryString = "SELECT DISTINCT ?domain ?name ?range FROM " + graphName + " WHERE { ?name rdf:type owl:DatatypeProperty optional {?name rdfs:domain ?o. ?o owl:unionOf ?l. {?l rdf:first ?domain.} UNION {?l rdf:rest ?rest. ?rest rdf:first ?domain}} optional {?name rdfs:domain ?domain} optional {?name rdfs:range ?range} } ORDER BY ?name ?domain ?range";
 
-		System.out.println(queryString);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
 		
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
+		
 		MyProperty prop;
 		Map<String, Object> returnResult = new HashMap<String, Object>();
 		ArrayList<MyProperty> propertytList = new ArrayList<MyProperty>();
 
 		try {					
-
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			results = qeHTTP.execSelect();	
+			ResultSet rs = qexec.execSelect();
+		
 			int count = 0;
-			while (results.hasNext()){
+			while (rs.hasNext()){
 				prop = new MyProperty();
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 
 
 				if (soln.getResource("name") != null){
@@ -371,7 +346,7 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();		
+		qexec.close();		
 		return returnResult;
 	}
 	
@@ -379,22 +354,20 @@ public class DataStoreConnection {
 	public Map<String, Object> restoreInstancesOfClasses () {
 
 		String queryString = "SELECT COUNT(DISTINCT ?entity) as ?count FROM " + graphName + " WHERE{ ?entity rdf:type ?class. ?class rdf:type owl:Class. }";
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
+		
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+		
 
 		Map<String, Object> returnResult = new HashMap<String, Object>();
 
 
 		try {					
 
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-//			System.out.println(serviceURI);
-			results = qeHTTP.execSelect();	
+			ResultSet rs = qexec.execSelect();
 
+			while (rs.hasNext()){
 
-			while (results.hasNext()){
-
-				QuerySolution soln = results.nextSolution();
+				org.apache.jena.query.QuerySolution soln = rs.nextSolution();
 								
 				returnResult.put("classInstance", soln.getLiteral("count").getValue());			
 
@@ -403,44 +376,8 @@ public class DataStoreConnection {
 		catch (Exception e) {
 			e.printStackTrace();		
 		}		
-		qeHTTP.close();	
+		qexec.close();	
 		return returnResult;
 	}
-
-	
-//	///???
-//	public Map<String, Object> restoreInstancesOfObjectProperties () {
-//
-//		String queryString = "SELECT COUNT(?entity) as ?count FROM " + graphName + " WHERE { ?name rdf:type owl:ObjectProperty. ?entity a ?name  } ";
-//
-//		QueryEngineHTTP qeHTTP = null;
-//		ResultSet results = null;
-//
-//		Map<String, Object> returnResult = new HashMap<String, Object>();
-//
-//
-//		try {					
-//
-//			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-//
-//			results = qeHTTP.execSelect();	
-//
-//
-//			while (results.hasNext()){
-//
-//				QuerySolution soln = results.nextSolution();
-//
-//
-//				returnResult.put("PropertyInstance", soln.getLiteral("count").getValue());
-//
-//
-//			}
-//		}
-//		catch (Exception e) {
-//			e.printStackTrace();		
-//		}		
-//		qeHTTP.close();		
-//		return returnResult;
-//	}
 
 }
