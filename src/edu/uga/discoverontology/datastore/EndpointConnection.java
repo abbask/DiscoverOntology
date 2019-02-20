@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
 import org.apache.log4j.Logger;
-
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
 
 
 public class EndpointConnection {
@@ -30,8 +30,8 @@ public class EndpointConnection {
 	
 
 	public ArrayList<HashMap<String, String>> executeQueryForCol(String queryString) {
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+		
 		
 //		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
@@ -46,24 +46,20 @@ public class EndpointConnection {
 			
 			queryString = queryString.substring(0, index) + " FROM <" + graphName + "> " + queryString.substring(index, queryString.length());
 			
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
-			
-			results = qeHTTP.execSelect();	
+			ResultSet rs = qexec.execSelect();	
 
-			List<String> varNames = results.getResultVars();	
+			List<String> varNames = rs.getResultVars();	
 			
 
-			while (results.hasNext()){	
-				HashMap<String, String> rs = new HashMap<String, String>();
-				QuerySolution soln = results.nextSolution();
+			while (rs.hasNext()){	
+				HashMap<String, String> map = new HashMap<String, String>();
+				QuerySolution soln = rs.nextSolution();
 
 				for (String varName : varNames) {
-					rs.put(varName, soln.getLiteral(varName).getString());
-					//System.out.println("getValue :" + soln.getLiteral(varName).getValue());
-					//System.out.println("getString: " + soln.getLiteral(varName).getString());
-					//System.out.println("getDatatypeURI: " + soln.getLiteral(varName).getDatatypeURI());
+					map.put(varName, soln.getLiteral(varName).getString());
+
 				}
-				list.add(rs);
+				list.add(map);
 			}
 
 		}
@@ -71,17 +67,17 @@ public class EndpointConnection {
 //			e.printStackTrace();
 			
 			logger.error(e.getMessage(), e);
-			qeHTTP.close();		
+			qexec.close();		
 			return list;
 		}		
 		logger.info("EndpointConnection.executeQuery : retrieved result.");
-		qeHTTP.close();		
+		qexec.close();			
 		return list;
 	}	
 	
 	public int executeQueryForScalar(String queryString) {
-		QueryEngineHTTP qeHTTP = null;
-		ResultSet results = null;
+		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
+		
 		
 		int count=0; 
 		
@@ -96,18 +92,13 @@ public class EndpointConnection {
 			
 			queryString = queryString.substring(0, index) + " FROM <" + graphName + "> " + queryString.substring(index, queryString.length());
 			
-			qeHTTP = new QueryEngineHTTP(serviceURI, queryString );
+			ResultSet rs = qexec.execSelect();	
 			
-			System.out.println("queryString: " + queryString);
-			
-			
-			results = qeHTTP.execSelect();	
-			
-			System.out.println("varnames: " + results.getResultVars().size());
-			System.out.println(results.getResultVars().get(0));
-			while (results.hasNext()){
-				QuerySolution soln = results.nextSolution();
-				count =soln.getLiteral(results.getResultVars().get(0)).getInt();
+			System.out.println("varnames: " + rs.getResultVars().size());
+			System.out.println(rs.getResultVars().get(0));
+			while (rs.hasNext()){
+				QuerySolution soln = rs.nextSolution();
+				count =soln.getLiteral(rs.getResultVars().get(0)).getInt();
 			}
 			
 
@@ -117,7 +108,7 @@ public class EndpointConnection {
 			logger.error(e.getMessage(), e);
 		}		
 		logger.info("EndpointConnection.executeQuery : retrieved result.");
-		qeHTTP.close();		
+		qexec.close();	
 		return count;
 	}	
 	
