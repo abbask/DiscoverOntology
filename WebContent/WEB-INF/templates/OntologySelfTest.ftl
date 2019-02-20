@@ -85,8 +85,11 @@
 		</div>
 	</form>
 	
-	<div id="divTable">
+	<div id="divTable" class="row">
 	</div>	
+	<!--<div class="row">
+	    <div class="col-md-2 col-md-offset-5">Hello Wordl</div>
+	</div>-->
 	
 
 	

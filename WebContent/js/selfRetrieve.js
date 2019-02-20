@@ -5,7 +5,7 @@ $(window).on("load",function(){
 		endpoint = $('#endpoint').val();
 		graphName = $('#graphName').val();
 		
-
+		
     	
     	if (endpoint != "" && graphName !=""){
     		
@@ -15,9 +15,9 @@ $(window).on("load",function(){
 		    },
 	
 		    function(data, status){
-		    	textTable += "<div  style='float: left;'><a href='UnitTestNew' class='btn btn-primary btn-md active' role='button' aria-pressed='true'>Add Unit Test</a></div>"
-		    	textTable += "<table class='table'>";
-		    	textTable += "<thead><tr><th>name</th><th>Edit</th><th>Run</th></tr></thead><tbody>";
+		    	
+		    	textTable = "<div class='row'><table class='table'>";
+		    	textTable += "<thead><tr><th scope='col'>name</th><th scope='col'>Edit</th><th scope='col'>Run</th></tr></thead><tbody>";
 //		    	
 //		    	list = data.list;
 //		    	system_test_history_id = data.system_test_history_id;
@@ -30,8 +30,8 @@ $(window).on("load",function(){
 //		    	
 //		    	if (list.length == 0)
 //		    		textTable='<tr><td colspan="3"><small class="form-text text-muted">No unit test found. Please add unit test first.</small></td></tr>';
-//		    	textTable += "</tbody></table>";
-		    	
+		    	textTable += "</tbody></table></div>";
+		    	textTable += "<div class='row'><a href='UnitSelfTestNew' class='btn btn-primary btn-md active' role='button' aria-pressed='true'>Add Unit Test</a></div>";
 		    	$("#divTable").empty();
 		    	$("#divTable").html(textTable);
 		    			    			    	
