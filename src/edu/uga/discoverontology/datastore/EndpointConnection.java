@@ -1,14 +1,17 @@
 package edu.uga.discoverontology.datastore;
 
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.jena.graph.Graph;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Model;
 import org.apache.log4j.Logger;
 
 
@@ -27,6 +30,27 @@ public class EndpointConnection {
 		this.graphName = graphName;
 	}
 	
+	public void executeQueryForSPIN(Model model) throws Exception {
+		try {
+			String syntax = "N-TRIPLE";
+			StringWriter out = new StringWriter();
+			model.write(out, syntax);
+			String queryString = out.toString();
+			
+			//
+			String query = "INSERT {" + queryString + " } WHERE { SELECT * { OPTIONAL { ?s ?p ?o . } } LIMIT 1 }";
+			System.out.println(queryString);
+			
+			//QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, query);
+			//qexec.execSelect();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("EndpointConnection: Error saving data!");
+			
+		}
+		
+	}
 	
 
 	public ArrayList<HashMap<String, String>> executeQueryForCol(String queryString) {
