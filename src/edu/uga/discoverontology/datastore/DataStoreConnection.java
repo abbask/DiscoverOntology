@@ -127,8 +127,8 @@ public class DataStoreConnection {
 
 	//listAllInfo, updateAllInfo
 	public Map<String, Object> countClasses () {
-
-		String queryString = "SELECT count(?className) as ?count FROM " + graphName + " WHERE { ?className rdf:type owl:Class. optional {?className rdfs:label ?classLabel.} optional {?className rdfs:subClassOf ?superClass.} FILTER regex(str(?className),'prokino') }";
+		String queryString = "PREFIX rdf: String http://www.w3.org/1999/02/22-rdf-syntax-ns";
+		queryString += "SELECT (count(?className) as ?count) FROM " + graphName + " WHERE { ?className rdf:type owl:Class. optional {?className rdfs:label ?classLabel.} optional {?className rdfs:subClassOf ?superClass.} FILTER regex(str(?className),'prokino') }";
 		QueryExecution qexec = QueryExecutionFactory.sparqlService(serviceURI, queryString);
 			
 		Map<String, Object> returnResult = new HashMap<String, Object>();		
